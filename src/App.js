@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import fire from './config/fire';
+import Login from './components/Login';
+import Dashboard from './components/Dashboard';
 
-function App() {
+function App() {  
+
+  const [user, setUser] = useState(null);
+
+  const authListener = () => {
+    fire.auth().onAuthStateChanged((newUser) => {
+      if (newUser) {
+        setUser(newUser);
+      } else {
+        setUser(null);
+      };
+    });
+  };
+
+  useEffect(()=>{
+    authListener();
+  }, [user]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Cape</h1>
+      {user ? <Dashboard /> : <Login />}
     </div>
   );
 }
