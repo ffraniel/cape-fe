@@ -1,7 +1,7 @@
 import React from 'react';
 import './Index.css';
-import Login from '../components/Login';
-import HeaderPublic from '../components/HeaderPublic';
+import Login from '../../components/Login';
+import HeaderPublic from '../../components/HeaderPublic';
 
 const Index = () => {
 

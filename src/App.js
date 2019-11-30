@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import fire from './config/fire';
-import Index from './pages/Index';
-import Dashboard from './pages/Dashboard';
+import Index from './pages/public/Index';
+import Dashboard from './pages/user/Dashboard';
 
 function App() {  
 

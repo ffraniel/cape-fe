@@ -1,7 +1,7 @@
 import React from 'react';
 import './Dashboard.css';
-import HeaderUser from '../components/HeaderUser';
-import fire from '../config/fire';
+import HeaderUser from '../../components/HeaderUser';
+import fire from '../../config/fire';
 
 const Dashboard = () => {
 
