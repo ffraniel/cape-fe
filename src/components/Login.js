@@ -27,7 +27,7 @@ const Login = () => {
   };
 
   return (
-    <section>
+    <section class="form-element">
       <p>Sign In</p>
       {loginError && <h3>{loginError}</h3>}
       <form onSubmit={handleSubmit}>

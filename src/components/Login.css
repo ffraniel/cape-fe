@@ -1,0 +1,18 @@
+.form-element {
+  max-width: 400px;
+  margin: auto;
+}
+
+form {
+  background: #e6e6e6;
+  box-shadow: 0 2px 5px 1px #a49b9b;
+  border-radius: 5px;
+  padding: 10px;
+  padding-top: 15px;
+
+}
+
+input {
+  display: block;
+  margin: 5px auto;
+}

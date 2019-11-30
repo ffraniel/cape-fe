@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import fire from './config/fire';
-import Login from './components/Login';
-import Dashboard from './components/Dashboard';
+import Index from './pages/Index';
+import Dashboard from './pages/Dashboard';
 
 function App() {  
 
@@ -24,8 +24,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Cape</h1>
-      {user ? <Dashboard /> : <Login />}
+      {user ? <Dashboard /> : <Index />}
     </div>
   );
 }
