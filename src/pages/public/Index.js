@@ -1,19 +1,46 @@
-import React from 'react';
-import './Index.css';
-import Login from '../../components/Login';
-import HeaderPublic from '../../components/HeaderPublic';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./Index.css";
+import HeaderPublic from "../../components/HeaderPublic";
+import Home from './Home';
+import About from './About';
+import Conferences from './Conferences';
+import Constitution from '../Constitution';
+import Join from "./Join";
+import LoginPage from "./LoginPage";
+import NoMatch from '../../components/NoMatch';
 
 const Index = () => {
-
-  // all the frontend goes here 
+  // all the frontend goes here
 
   return (
     <section className="index container">
-      <HeaderPublic />
-      <h1>Index</h1>
-      <Login />
+      <Router className="test">
+        <HeaderPublic />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/join">
+            <Join />
+          </Route>
+          <Route path="/conferences">
+            <Conferences />
+          </Route>
+          <Route path="/constitution">
+            <Constitution />
+          </Route>
+          <Route path="/login">
+            <LoginPage />
+          </Route>
+          <Route default component={NoMatch}/>
+        </Switch>
+      </Router>
     </section>
-  )
-}
+  );
+};
 
 export default Index;

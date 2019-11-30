@@ -1,10 +1,14 @@
 import React from 'react';
 import './LoginPage.css';
+import Login from '../../components/Login';
 
 const LoginPage = () => {
 
   return (
-    <h3>Login Page</h3>
+    <div class="login-page">
+      <h3>Login Page</h3>
+      <Login />
+    </div>
   );
 };
 
