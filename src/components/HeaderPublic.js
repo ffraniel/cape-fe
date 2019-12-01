@@ -1,30 +1,39 @@
 import React from "react";
 import "./HeaderPublic.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import Logo from "../assets/Logo1.svg";
 
 const HeaderPublic = () => {
   return (
-    <section>
-      <h1>Cape - Header Public</h1>
+    <section className="header">
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink className="logo" to="/">
+              <img
+                className="logo-img"
+                src={Logo}
+                alt="CAPE logo - child figure holding two adult hands"
+              />
+            </NavLink>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <Link to="/join">Join</Link>
+            <NavLink to="/about">About</NavLink>
           </li>
           <li>
-            <Link to="/conferences">Conferences</Link>
+            <NavLink to="/join">Join</NavLink>
           </li>
           <li>
-            <Link to="/constitution">Constitution</Link>
+            <NavLink to="/conferences">Conferences</NavLink>
           </li>
           <li>
-            <Link to="/login">Log In</Link>
+            <NavLink to="/constitution">Constitution</NavLink>
+          </li>
+          <li>
+            <NavLink to="/login">Log In</NavLink>
           </li>
         </ul>
       </nav>

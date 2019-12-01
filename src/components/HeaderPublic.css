@@ -1,0 +1,38 @@
+.header {
+  height: 90px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+}
+
+.logo {
+  margin-left: 20px;
+  display: inline-block;
+}
+
+.logo-img {
+  display: block;
+}
+
+.header nav {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  /* border: solid red 2px; */
+  vertical-align: middle;
+  height: 100%;
+}
+
+.header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+}
+
+
+.header nav ul li {
+  display: inline;
+  margin: 0 10px;
+}

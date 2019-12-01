@@ -1,9 +1,12 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import './HeaderUser.css';
+import Logo from "../assets/Logo1.svg";
 import fire from "../config/fire";
 
 const HeaderUser = () => {
+
+  let history = useHistory();
 
   const signOut = () => {
     fire
@@ -11,6 +14,7 @@ const HeaderUser = () => {
       .signOut()
       .then(function() {
         console.log("sign-out successful.");
+        history.push('/');
       })
       .catch(function(error) {
         console.log(error);
@@ -18,21 +22,29 @@ const HeaderUser = () => {
   };
 
   return (
-    <section>
-      <h1>Cape - Header User</h1>
+    <section className="header">
       <nav>
         <ul>
           <li>
-            <Link to="/">News Feed</Link>
+            <NavLink className="logo" to="/">
+              <img
+                className="logo-img"
+                src={Logo}
+                alt="CAPE logo - child figure holding two adult hands"
+              />
+            </NavLink>
           </li>
           <li>
-            <Link to="/events">Events</Link>
+            <NavLink to="/">News Feed</NavLink>
           </li>
           <li>
-            <Link to="/constitution">Constitution</Link>
+            <NavLink to="/events">Events</NavLink>
           </li>
           <li>
-            <Link to="/profile">Profile</Link>
+            <NavLink to="/constitution">Constitution</NavLink>
+          </li>
+          <li>
+            <NavLink to="/profile">Profile</NavLink>
           </li>
           <li>
             <button onClick={signOut}>SIGN OUT</button>

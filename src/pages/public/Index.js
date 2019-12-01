@@ -14,30 +14,34 @@ const Index = () => {
   // all the frontend goes here
 
   return (
-    <section className="index container">
-      <Router className="test">
+    <section className="index">
+      <Router>
         <HeaderPublic />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/join">
-            <Join />
-          </Route>
-          <Route path="/conferences">
-            <Conferences />
-          </Route>
-          <Route path="/constitution">
-            <Constitution />
-          </Route>
-          <Route path="/login">
-            <LoginPage />
-          </Route>
-          <Route default component={NoMatch}/>
-        </Switch>
+          <div className="margin-top">
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/join">
+              <Join />
+            </Route>
+            <Route path="/conferences">
+              <Conferences />
+            </Route>
+            <Route path="/constitution">
+              <Constitution />
+            </Route>
+            <Route path="/login">
+              <LoginPage />
+            </Route>
+            <Route>
+              <NoMatch default />
+            </Route>
+          </Switch>
+          </div>
       </Router>
     </section>
   );
