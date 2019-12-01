@@ -23,9 +23,9 @@ function App() {
   }, [user]);
 
   return (
-    <div className="App">
-      {user ? <Dashboard /> : <Index />}
-    </div>
+      <div className="App">
+        {user ? <Dashboard /> : <Index />}
+      </div>
   );
 }
 
