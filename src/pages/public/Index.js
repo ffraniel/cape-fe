@@ -18,29 +18,29 @@ const Index = () => {
       <Router>
         <HeaderPublic />
           <div className="margin-top">
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/join">
-              <Join />
-            </Route>
-            <Route path="/conferences">
-              <Conferences />
-            </Route>
-            <Route path="/constitution">
-              <Constitution />
-            </Route>
-            <Route path="/login">
-              <LoginPage />
-            </Route>
-            <Route>
-              <NoMatch default />
-            </Route>
-          </Switch>
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/join">
+                <Join />
+              </Route>
+              <Route path="/conferences">
+                <Conferences />
+              </Route>
+              <Route path="/constitution">
+                <Constitution />
+              </Route>
+              <Route path="/login">
+                <LoginPage />
+              </Route>
+              <Route>
+                <NoMatch default />
+              </Route>
+            </Switch>
           </div>
       </Router>
     </section>
