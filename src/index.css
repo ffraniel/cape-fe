@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+body {
+  background-color: #96CB99;
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+}
+
+:root {
+  --white-text: rgb(235, 241, 235);
+  --link-text-size: 20px;
+  --text-font: 'Poppins', sans-serif;
+  --white-text-hover: rgb(255, 255, 255);
+}

@@ -7,16 +7,14 @@ const HeaderPublic = () => {
   return (
     <section className="header">
       <nav>
+        <NavLink className="logo" to="/">
+          <img
+            className="logo-img"
+            src={Logo}
+            alt="CAPE logo - child figure holding two adult hands"
+          />
+        </NavLink>
         <ul>
-          <li>
-            <NavLink className="logo" to="/">
-              <img
-                className="logo-img"
-                src={Logo}
-                alt="CAPE logo - child figure holding two adult hands"
-              />
-            </NavLink>
-          </li>
           <li>
             <NavLink to="/">Home</NavLink>
           </li>

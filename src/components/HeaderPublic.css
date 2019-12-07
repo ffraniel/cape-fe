@@ -1,38 +1,44 @@
 .header {
-  height: 90px;
   position: fixed;
   top: 0;
   width: 100%;
-
+  box-sizing: border-box;
 }
 
 .logo {
-  margin-left: 20px;
   display: inline-block;
+  margin-left: 25px;
 }
 
-.logo-img {
-  display: block;
+.logo img {
 }
 
 .header nav {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  /* border: solid red 2px; */
-  vertical-align: middle;
-  height: 100%;
+  width: 100%;
+  display: flex;
 }
 
 .header nav ul {
+  display: inline;
   list-style: none;
-  margin: 0;
   padding: 0;
-
-}
-
+  margin: 25px 25px 0 auto;
+} 
 
 .header nav ul li {
   display: inline;
-  margin: 0 10px;
+  margin: 0 25px;
+}
+
+.header nav ul li a {
+  text-decoration: none;
+  font-size: var(--link-text-size);
+  color: var(--white-text);
+  font-family: var(--text-font);
+  font-weight: 400;
+  transition: color 0.25s;
+}
+
+.header nav ul li a:hover {
+  color: var(--white-text-hover);
 }
