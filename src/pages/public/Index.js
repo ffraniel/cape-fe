@@ -17,7 +17,7 @@ const Index = () => {
     <section className="index">
       <Router>
         <HeaderPublic />
-          <div className="margin-top">
+          <div >
             <Switch>
               <Route exact path="/">
                 <Home />

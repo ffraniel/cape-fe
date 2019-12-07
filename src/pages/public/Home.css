@@ -1,0 +1,61 @@
+.jumbotron {
+  display: grid;
+  grid-template-columns: 50% 1fr;
+  height: 100vh;
+}
+
+.jumbo-text-container {
+  background-color: #4FA753;
+}
+
+.jumbo-text {
+  color: var(--white-text);
+  font-family: var(--text-font);
+  margin: 200px auto;
+  padding: 20px;
+}
+
+.jumbo-text h1 {
+  font-size: 72px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.jumbo-text h2 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.jumbo-text .secondary-button {
+  margin: 0 20px;
+}
+
+.jumbo-image-container {
+
+}
+
+.jumbo-image-container img {
+  margin: 200px auto;
+  width: 560px;
+  display: block;
+}
+
+.news-background {
+  background-color: #EEF5EB;
+  height: 50vh;
+}
+
+.news-background .three-panel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 35px;
+  margin: 0 auto;
+  width: 75%;
+  transform: translate(0, -40px);
+}
+
+.news-background .three-panel div {
+  background-color: white;
+  height: 300px;
+  border-radius: 10px;
+}

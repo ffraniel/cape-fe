@@ -27,3 +27,36 @@ body {
   --text-font: 'Poppins', sans-serif;
   --white-text-hover: rgb(255, 255, 255);
 }
+
+.button {
+  text-decoration: none;
+  font-size: 22px;
+  border-radius: 10px;
+  color: var(--white-text);
+  font-family: var(--text-font);
+  width: 160px;
+  height: 38px;
+  font-size: 22px;
+  display: inline-block;
+  text-align: center;
+  transition: color 0.25s, background-color 0.25s;
+}
+
+.button:hover {
+  color: white;
+}
+
+.primary-button {
+  background-color: #60B74A;
+}
+.primary-button:hover {
+  background-color: rgb(63, 148, 42);
+}
+
+.secondary-button {
+  background-color: #226FB7;
+}
+
+.secondary-button:hover {
+  background-color: rgb(17, 78, 134);
+}
