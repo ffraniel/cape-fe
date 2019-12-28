@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import './App.css';
 import fire from './config/fire';
 import Index from './pages/public/Index';
-import Dashboard from './pages/user/Dashboard';
+const Dashboard = lazy(() => import('./pages/user/Dashboard'));
 
 function App() {  
 
@@ -24,7 +24,9 @@ function App() {
 
   return (
       <div className="App">
-        {user ? <Dashboard /> : <Index />}
+        <Suspense fallback={<div>Loading...</div>}>
+          {user ? <Dashboard /> : <Index />}
+        </Suspense>
       </div>
   );
 }
