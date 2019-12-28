@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
     <section className="jumbotron">
-      <div class="jumbo-image-container">
+      <div className="jumbo-image-container">
         <img src={conversationImage} alt="drawing of two adults talking" />
       </div>
       <div className="jumbo-text-container">
@@ -15,8 +15,8 @@ const Home = () => {
           <h1>CAPE</h1>
           <h2>For professionals who support child protection and 
             safeguarding activities and training across a range of ed​ucation and similar settings</h2>
-          <Link className="button primary-button" to="/about">Learn More</Link>
-          <Link className="button secondary-button" to="/join">Join</Link>
+          <Link className="btn primary-btn" to="/about">Learn More</Link>
+          <Link className="btn secondary-btn" to="/join">Join</Link>
         </div>
       </div>
     </section>

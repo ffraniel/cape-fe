@@ -28,7 +28,7 @@ body {
   --white-text-hover: rgb(255, 255, 255);
 }
 
-.button {
+.btn {
   text-decoration: none;
   font-size: 22px;
   border-radius: 10px;
@@ -46,17 +46,27 @@ body {
   color: white;
 }
 
-.primary-button {
+.primary-btn {
   background-color: #60B74A;
 }
-.primary-button:hover {
+.primary-btn:hover {
   background-color: rgb(63, 148, 42);
 }
 
-.secondary-button {
+.secondary-btn {
   background-color: #226FB7;
 }
 
-.secondary-button:hover {
+.secondary-btn:hover {
+  background-color: rgb(17, 78, 134);
+}
+
+.sign-out-btn {
+  border: none;
+  background-color: #226FB7;
+  color: var(--white-text);
+}
+
+.sign-out-btn:hover {
   background-color: rgb(17, 78, 134);
 }

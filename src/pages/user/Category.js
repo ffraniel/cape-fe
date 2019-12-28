@@ -1,32 +1,32 @@
 import React from "react";
-import "./Feed.css";
+import "./Category.css";
 import { useQuery } from '@apollo/react-hooks';
 import { 
-  getArticlesPreview
-} from '../../queries/queries';
-import { Link } from "react-router-dom";
+  Link, 
+  useParams
+} from 'react-router-dom';
+import { getArticlesByTheme } from '../../queries/queries';
 
-const Feed = () => {
+const Category = () => {
+  const { category } = useParams();
+  console.log("props", category);
 
-  const { loading, error, data } = useQuery(getArticlesPreview, {
+  const { loading, error, data } = useQuery(getArticlesByTheme, {
     variables: {
-      category: "News"
+      categeoryEvery: category
     }
   });
 
   return (
-    <div className="feed">
-      <h2>The Feed</h2>
-      {error && console.log(error) }
+    <div className="category">
+      <h1>Category : "{category}"</h1>
       {loading && <h1>Loading</h1>}
-      {data && console.log(data)}
+      {error && <h1>ERROR{console.log("error: ", error)}</h1>}
 
       {data && data.articles.map(article => {
         return (
           <article key={article.id}>
-            <Link to={`/article/${article.id}`}>
-              <h1>{article.title}</h1>
-            </Link>
+            <h1>{article.title}</h1>
             <p>{article.text.text.split(" ").slice(0, 30).join(" ")}...</p>
             <div className="categories-list">
               {article.category.map(category => {
@@ -35,8 +35,9 @@ const Feed = () => {
             </div>
           </article>
         )})}
+
     </div>
   );
 };
 
-export default Feed;
+export default Category
