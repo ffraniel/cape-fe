@@ -24,21 +24,19 @@ const HeaderUser = () => {
   return (
     <section className="header">
       <nav>
-        <ul>
-          <li>
-            <NavLink className="logo" to="/">
-              <img
-                className="logo-img"
-                src={Logo}
-                alt="CAPE logo - child figure holding two adult hands"
+        <NavLink className="logo" to="/">
+          <img
+            className="logo-img"
+            src={Logo}
+            alt="CAPE logo - child figure holding two adult hands"
               />
-            </NavLink>
-          </li>
+        </NavLink>
+        <ul>
           <li>
             <NavLink to="/">News Feed</NavLink>
           </li>
           <li>
-            <NavLink to="/events">Events</NavLink>
+            <NavLink to="/category/events">Events</NavLink>
           </li>
           <li>
             <NavLink to="/constitution">Constitution</NavLink>
@@ -47,7 +45,7 @@ const HeaderUser = () => {
             <NavLink to="/profile">Profile</NavLink>
           </li>
           <li>
-            <button onClick={signOut}>SIGN OUT</button>
+            <button className="btn sign-out-btn" onClick={signOut}>SIGN OUT</button>
           </li>
         </ul>
       </nav>
