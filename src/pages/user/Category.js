@@ -8,12 +8,12 @@ import {
 import { getArticlesByTheme } from '../../queries/queries';
 
 const Category = () => {
+  
   const { category } = useParams();
-  console.log("props", category);
 
   const { loading, error, data } = useQuery(getArticlesByTheme, {
     variables: {
-      categeoryEvery: category
+      category: category
     }
   });
 

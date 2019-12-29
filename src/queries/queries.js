@@ -15,7 +15,7 @@ const getArticles = gql`
     }
   `;
 
-  const getArticlesPreview = gql`
+const getArticlesPreview = gql`
   {
     articles {
       title
@@ -46,8 +46,8 @@ query ($id: ID) {
 `
 
 const getArticlesByTheme = gql`
-query ($category: CategoryWhereInput) {
-  articles (where: {category_every: $category}) {
+query ($category: String) {
+  articles(where: { category_some: { title: $category } }) {
     id
     title
     category {
