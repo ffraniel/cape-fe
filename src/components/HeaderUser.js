@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, useHistory } from "react-router-dom";
 import './HeaderUser.css';
-import Logo from "../assets/Logo1.svg";
+import Logo from "../assets/WhiteTrans.png";
 import fire from "../config/fire";
 
 const HeaderUser = () => {

@@ -23,7 +23,7 @@ const Article = () => {
       {error && <h1>ERROR{console.log("error: ", error)}</h1>}
 
       {data && 
-        <article key={data.article.id}>
+        <article className="container" key={data.article.id}>
           <h1>{data.article.title}</h1>
           <p>{data.article.text.text}</p>
           <div className="categories-list">

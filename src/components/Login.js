@@ -21,15 +21,19 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     fire.auth().signInWithEmailAndPassword(email, password)
-      .catch(function(error) {
-      setLoginError(error.message);
+    .then(()=>{
+      setLoginError(false);
+    })
+    .catch(function(error) {
+      // setLoginError(error.message);
+      setLoginError(true);
     });
   };
 
   return (
     <section className="form-element">
       <p>Sign In</p>
-      {loginError && <h3>{loginError}</h3>}
+      {loginError && <h3>Incorrect Username and/or Password. Please try again.</h3>}
       <form onSubmit={handleSubmit}>
         <input type="text" name="email" placeholder="Email" onChange={handleInput} value={email} />
         <input type="password" name="password" placeholder="Password" onChange={handleInput} value={password} />

@@ -1,7 +1,7 @@
 import React from "react";
 import "./HeaderPublic.css";
 import { NavLink } from "react-router-dom";
-import Logo from "../assets/Logo1.svg";
+import Logo from "../assets/WhiteTrans.png";
 
 const HeaderPublic = () => {
   return (

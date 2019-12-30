@@ -1,0 +1,9 @@
+.categories-list {
+  background: rgb(193, 243, 178);
+}
+
+.categories-list a {
+  background: white;
+  display: inline-block;
+  margin: 10px;
+}
