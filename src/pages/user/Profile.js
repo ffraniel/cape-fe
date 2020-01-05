@@ -18,7 +18,8 @@ const Profile = () => {
   const [currentPassword, setCurrentPassword] = useState('');
   const [password1, setPassword1] = useState('');
   const [password2, setPassword2] = useState('');
-  const [updatingPassword, setUpdatingPassword] = useState(false);
+  // change this back to false
+  const [updatingPassword, setUpdatingPassword] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
   const [updateSucess, setUpdateSuccess] = useState(null);
 
@@ -35,27 +36,29 @@ const Profile = () => {
     }
   };
 
-  const reauntheticate = async (password) => {
+  const resetPassword = async (oldPassword, newPassword) => {
     var userForPassword = firebase.auth().currentUser;
+
     const credential = firebase.auth.EmailAuthProvider.credential(
       userForPassword.email, 
-      password1
+      oldPassword
     );
-    try {
-      await user.reauthenticateWithCredential(credential);
-      try {
-        await user.updatePassword(password);
+
+    userForPassword.reauthenticateWithCredential(credential)
+      .then(function() {
+        // User re-authenticated.
+        console.log("oh yeah! reaunthenticated")
+        return user.updatePassword(newPassword);
+      })
+      .then(function () {
+        console.log("yes friend, reset that password")
         setUpdateSuccess(true);
         setUpdatingPassword(false);
-      } catch (e2) {
-        console.log(e2);
-        setErrorMessage('Sorry, there appears to have been an error setting your new password. Please try again or contact an admin about this issue.');
-      }
-    }
-    catch(e) {
-      console.log(e);
-      setErrorMessage('Sorry, your current password was incorrect. Please try again.');
-    }
+      })
+      .catch(function(error) {
+        console.log("damn, it messed up pal")
+        console.log(error)
+      });
   }
 
   const handlePasswordUpdate = (e) => {
@@ -63,7 +66,7 @@ const Profile = () => {
     if (password1 !== password2) {
       setErrorMessage('Sorry, the passwords provided did not match. Please try again.');
     } else {
-      reauntheticate(password1);
+      resetPassword(currentPassword, password1);
     }
       
       
@@ -98,6 +101,7 @@ const Profile = () => {
 
         }>Update Password</button>
       }
+      {updateSucess && <h3 className="password-reset-success-message">Password Successfully Updated</h3>}
       {updatingPassword && 
         <>
           {errorMessage && <h3 className="password-reset-error-message">{errorMessage}</h3>}
@@ -114,7 +118,6 @@ const Profile = () => {
           </form>
         </>
       }
-      {updateSucess && <h3 className="password-reset-success-message">Password Successfully Updated</h3>}
     </div>
   );
 };
