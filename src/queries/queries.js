@@ -8,26 +8,30 @@ const getArticles = gql`
         category {
           title
         }
+        event
+        membersOnly
         text {
-          html
+          text
         }
       }
     }
   `;
 
 const getArticlesPreview = gql`
-  {
-    articles {
+  query articles ($first: Int, $skip: Int) {
+    articles (first: $first, skip: $skip) {
       title
       id
       category {
         title
       }
+      event
+      membersOnly
       text {
         text
       }
     }
-  }
+  }  
 `;
 
 const getArticle = gql`
@@ -38,6 +42,8 @@ query ($id: ID) {
     category {
       title
     }
+    event
+    membersOnly
     text {
       text
     }
@@ -53,6 +59,34 @@ query ($category: String) {
     category {
       title
     }
+    event
+    membersOnly
+    text {
+      text
+    }
+  }
+}
+`;
+
+const getConference = gql`
+query ($membersOnly: Boolean) {
+  articles (
+    where: {
+      AND: [
+        { category_some: { title: "events" } },
+        { event: true },
+        { membersOnly: $membersOnly}
+      ]
+    }
+  ) 
+  {
+    id
+    title
+    category {
+      title
+    }
+      event
+      membersOnly
     text {
       text
     }
@@ -61,19 +95,29 @@ query ($category: String) {
 `;
 
 const getConstitution = gql`
-  {
-    permanents {
-      title
-      text {
-        html
-      }
+{
+  permanents {
+    title
+    text {
+      html
     }
-  }`;
+  }
+}`;
+  
+const idsForLength = gql`
+{
+  articles {
+    id
+  }
+}
+  `;
 
   export {
     getArticles,
     getArticlesPreview,
     getArticle,
     getArticlesByTheme,
-    getConstitution
+    getConstitution,
+    idsForLength,
+    getConference
   };

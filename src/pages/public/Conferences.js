@@ -1,10 +1,25 @@
 import React from 'react';
 import './Conferences.css';
+import { useQuery } from '@apollo/react-hooks';
+import { getConference } from '../../queries/queries';
+import PublicList from './PublicList';
 
 const Conferences = () => {
 
+  const { loading, error, data } = useQuery(getConference, {
+    variables: {
+      membersOnly: false
+    }
+  });
+
   return (
-    <h3>Conferences Page</h3>
+    <div className="container conferences">
+      <h1>Conferences and Events</h1>
+      {loading && <h1>Loading</h1>}
+      {error && <h1>ERROR{console.log("error: ", error)}</h1>}
+      {data && data.articles.length === 0 && <h3>Currently there are no upcoming events.</h3>}
+      {data && <PublicList data={data} />}
+    </div>
   );
 };
 

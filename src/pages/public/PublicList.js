@@ -1,21 +1,9 @@
 import React from "react";
-import "./List.css";
+import "./PublicList.css";
 import { Link } from "react-router-dom";
 
-const List = (props) => {
+const PublicList = (props) => {
   const { data } = props;
-
-  if (data.articles.length === 0) {
-    return (
-      <div className="list">
-          <article >
-            <h1>NO ARTICLE</h1>
-            <p>No articles alas</p>
-          </article>
-      </div>
-    );
-  }
-
   return (
     <div className="list">
       {data.articles.map(article => {
@@ -36,4 +24,4 @@ const List = (props) => {
   );
 };
 
-export default List;
+export default PublicList;

@@ -1,0 +1,14 @@
+.paginator {
+  margin: 40px auto;
+  text-align: center;
+}
+
+.pagination-link {
+  border: solid black 1px;
+  margin: 0 5px;
+  padding: 5px;
+}
+
+.pagination-link--active { 
+  background-color: white;
+}

@@ -27,6 +27,9 @@ const Dashboard = () => {
             <Route exact path="/">
               <Feed />
             </Route>
+            <Route path="/articles/:pagination">
+              <Feed />
+            </Route>
             <Route path="/constitution">
               <Constitution />
             </Route>
