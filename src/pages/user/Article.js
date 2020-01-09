@@ -9,7 +9,6 @@ import { getArticle } from '../../queries/queries';
 
 const Article = () => {
   const { articleID } = useParams();
-  console.log("props", articleID);
 
   const { loading, error, data } = useQuery(getArticle, {
     variables: {

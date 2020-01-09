@@ -1,9 +1,20 @@
 import React from "react";
 import "./List.css";
 import { Link } from "react-router-dom";
+import {useSpring, animated} from 'react-spring';
 
 const List = (props) => {
   const { data } = props;
+
+  const animationProps = useSpring({
+    opacity: 1, 
+    transform: 'translate(0, 0)',
+    from: {opacity: 0, transform: 'translate(0, 20px)'},
+    config: {
+      mass: 2,
+      friction: 28
+    }
+  });
 
   if (data.articles.length === 0) {
     return (
@@ -17,7 +28,7 @@ const List = (props) => {
   }
 
   return (
-    <div className="list">
+    <animated.div style={animationProps} className="list">
       {data.articles.map(article => {
         return (
           <article key={article.id}>
@@ -32,7 +43,7 @@ const List = (props) => {
             </div>
           </article>
         )})}
-    </div>
+    </animated.div>
   );
 };
 

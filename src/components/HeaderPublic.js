@@ -19,7 +19,7 @@ const HeaderPublic = () => {
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/about">What We Do</NavLink>
           </li>
           <li>
             <NavLink to="/join">Join</NavLink>
