@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Login.css';
 import fire from '../config/fire';
 
@@ -7,8 +7,14 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loginError, setLoginError] = useState(null);
-  
 
+  useEffect(() => {
+    let storedEmail = window.localStorage.getItem('email-login');
+    if (storedEmail) {
+      setEmail(storedEmail);
+    }
+  }, [])
+  
   const handleInput = (e) => {
     e.preventDefault();
     if (e.target.name === 'email') {
@@ -23,6 +29,7 @@ const Login = () => {
     fire.auth().signInWithEmailAndPassword(email, password)
     .then(()=>{
       setLoginError(false);
+      window.localStorage.setItem('email-login', email);
     })
     .catch(function(error) {
       // setLoginError(error.message);

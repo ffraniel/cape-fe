@@ -45,7 +45,7 @@ query ($id: ID) {
     event
     membersOnly
     text {
-      text
+      html
     }
   }
 }
@@ -89,6 +89,7 @@ query ($membersOnly: Boolean) {
       membersOnly
     text {
       text
+      html
     }
   }
 }
