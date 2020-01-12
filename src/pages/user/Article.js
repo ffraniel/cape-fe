@@ -16,10 +16,22 @@ const Article = () => {
     }
   });
 
+  if (data && (data.article === null || data.article.length === 0)) {
+
+    return (
+      <div className="category">
+        <article className="container">
+          <h3>There are no articles for the category "{articleID}".</h3>
+        </article>
+      </div>
+    );
+  }
+
   return (
     <div className="category">
       {loading && <h1>Loading</h1>}
       {error && <h1>ERROR{console.log("error: ", error)}</h1>}
+      {data && console.log(data)}
       {data && 
         <article className="container" key={data.article.id}>
           <h1>{data.article.title}</h1>
@@ -31,7 +43,6 @@ const Article = () => {
           </div>
         </article>
       }
-
     </div>
   );
 };

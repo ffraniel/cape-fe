@@ -16,7 +16,7 @@ const Home = () => {
           <h2>For professionals who support child protection and 
             safeguarding activities and training across a range of ed​ucation and similar settings</h2>
           <Link className="btn primary-btn" to="/about">Learn More</Link>
-          <Link className="btn secondary-btn" to="/join">Join</Link>
+          <Link className="btn secondary-btn" to="/conferences">Conferences</Link>
         </div>
       </div>
     </section>

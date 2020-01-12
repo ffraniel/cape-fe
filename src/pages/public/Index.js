@@ -6,7 +6,6 @@ import Home from './Home';
 import About from './About';
 import Conferences from './Conferences';
 import Constitution from '../Constitution';
-import Join from "./Join";
 import LoginPage from "./LoginPage";
 import NoMatch from '../../components/NoMatch';
 
@@ -24,9 +23,6 @@ const Index = () => {
               </Route>
               <Route path="/about">
                 <About />
-              </Route>
-              <Route path="/join">
-                <Join />
               </Route>
               <Route path="/conferences">
                 <Conferences />

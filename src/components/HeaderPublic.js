@@ -22,9 +22,6 @@ const HeaderPublic = () => {
             <NavLink to="/about">What We Do</NavLink>
           </li>
           <li>
-            <NavLink to="/join">Join</NavLink>
-          </li>
-          <li>
             <NavLink to="/conferences">Conferences</NavLink>
           </li>
           <li>

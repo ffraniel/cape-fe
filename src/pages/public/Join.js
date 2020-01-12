@@ -4,7 +4,10 @@ import './Join.css';
 const Join = () => {
 
   return (
-    <h3>Join Page</h3>
+    <div className="join container">
+      <h3>Join</h3>
+      <p>Please submit a join request below........</p>
+    </div>
   );
 };
 
