@@ -16,15 +16,28 @@
 
 .header nav {
   width: 100%;
-  display: flex;
+  display: block;
 }
 
-.header nav ul {
-  display: inline;
-  list-style: none;
-  padding: 0;
-  margin: 25px 15px 0 auto;
-} 
+@media only screen and (min-width: 800px) {
+  .header nav {
+    width: 100%;
+    display: flex;
+  }
+}
+
+.desktop-menu {
+  display: none;
+}
+
+@media only screen and (min-width: 800px) {
+  .header nav .desktop-menu {
+    display: inline;
+    list-style: none;
+    padding: 0;
+    margin: 25px 15px 0 auto;
+  } 
+}
 
 .header nav ul li {
   display: inline;
@@ -42,4 +55,33 @@
 
 .header nav ul li a:hover {
   color: var(--white-text-hover);
+}
+
+.menu-btn {
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .menu-btn {
+    display: block;
+    top: 10px;
+    right: 5px;
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    position: absolute;
+  }
+}
+
+.menu-line {
+  width: 90%;
+  margin: 8px auto;
+  background-color: var(--white-text);
+  transition: background-color 0.25s;
+  border-radius: 10px;
+  height: 4px;
+}
+
+.menu-btn:hover .menu-line {
+  background-color: var(--white-text-hover);
 }

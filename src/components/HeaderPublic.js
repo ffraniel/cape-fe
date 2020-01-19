@@ -14,7 +14,7 @@ const HeaderPublic = () => {
             alt="CAPE logo - child figure holding two adult hands"
           />
         </NavLink>
-        <ul>
+        <ul className="desktop-menu">
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
@@ -31,6 +31,11 @@ const HeaderPublic = () => {
             <NavLink to="/login">Log In</NavLink>
           </li>
         </ul>
+        <NavLink to="/navigation" className="menu-btn">
+          <div className="menu-line"></div>
+          <div className="menu-line"></div>
+          <div className="menu-line"></div>
+        </NavLink>
       </nav>
     </section>
   );

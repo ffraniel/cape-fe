@@ -8,6 +8,7 @@ import Conferences from './Conferences';
 import Constitution from '../Constitution';
 import LoginPage from "./LoginPage";
 import NoMatch from '../../components/NoMatch';
+import PublicMobNav from '../../components/PublicMobNav';
 
 const Index = () => {
   // all the frontend goes here
@@ -29,6 +30,9 @@ const Index = () => {
               </Route>
               <Route path="/constitution">
                 <Constitution />
+              </Route>
+              <Route path="/navigation">
+                <PublicMobNav />
               </Route>
               <Route path="/login">
                 <LoginPage />
