@@ -14,9 +14,11 @@
   width: 180px;
 }
 
-.header nav {
+.header {
   width: 100%;
   display: block;
+  /* background-color: green;
+  box-shadow: 0 1px 3px 0px black; */
 }
 
 @media only screen and (min-width: 800px) {
@@ -64,8 +66,8 @@
 @media only screen and (max-width: 800px) {
   .menu-btn {
     display: block;
-    top: 10px;
-    right: 5px;
+    top: 25px;
+    right: 10px;
     height: 40px;
     width: 40px;
     border-radius: 5px;
@@ -74,12 +76,12 @@
 }
 
 .menu-line {
-  width: 90%;
-  margin: 8px auto;
+  width: 96%;
+  margin: 7px auto;
   background-color: var(--white-text);
   transition: background-color 0.25s;
   border-radius: 10px;
-  height: 4px;
+  height: 3px;
 }
 
 .menu-btn:hover .menu-line {

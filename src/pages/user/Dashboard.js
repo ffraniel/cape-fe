@@ -13,6 +13,7 @@ import Constitution from '../Constitution';
 import Category from './Category';
 import NoMatch from '../../components/NoMatch';
 import Article from './Article';
+import UserMobNav from '../../components/UserMobNav';
 
 const Dashboard = () => {
 
@@ -41,6 +42,9 @@ const Dashboard = () => {
             </Route>
             <Route path="/category/:category">
               <Category />
+            </Route>
+            <Route path="/navigation">
+              <UserMobNav />
             </Route>
             <Route exact path="/login">
               <Redirect to="/" />

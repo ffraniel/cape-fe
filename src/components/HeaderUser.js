@@ -31,7 +31,7 @@ const HeaderUser = () => {
             alt="CAPE logo - child figure holding two adult hands"
               />
         </NavLink>
-        <ul>
+        <ul className="desktop-menu">
           <li>
             <NavLink to="/">News Feed</NavLink>
           </li>
@@ -48,6 +48,11 @@ const HeaderUser = () => {
             <button className="btn sign-out-btn" onClick={signOut}>SIGN OUT</button>
           </li>
         </ul>
+        <NavLink to="/navigation" className="menu-btn">
+          <div className="menu-line"></div>
+          <div className="menu-line"></div>
+          <div className="menu-line"></div>
+        </NavLink>
       </nav>
     </section>
   )
