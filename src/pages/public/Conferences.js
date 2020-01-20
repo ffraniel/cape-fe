@@ -3,6 +3,7 @@ import './Conferences.css';
 import { useQuery } from '@apollo/react-hooks';
 import { getConference } from '../../queries/queries';
 import PublicList from './PublicList';
+import Loading from '../../components/Loading';
 
 const Conferences = () => {
 
@@ -15,7 +16,7 @@ const Conferences = () => {
   return (
     <div className="container conferences">
       <h1>Conferences and Events</h1>
-      {loading && <h1>Loading</h1>}
+      {loading && <Loading />}
       {error && <h1>ERROR{console.log("error: ", error)}</h1>}
       {data && data.articles.length === 0 && <h3>Currently there are no upcoming events.</h3>}
       {data && <PublicList data={data} />}

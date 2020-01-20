@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Profile.css';
 import fire from '../../config/fire';
 import firebase from 'firebase';
+import Loading from '../../components/Loading';
 
 const Profile = () => {
 
@@ -11,7 +12,7 @@ const Profile = () => {
   if (user) {
     welcome = `Hello ${user.email}`;
   } else {
-    welcome = 'There appears to have been an error. Try refreshing the page.'
+    welcome = 'There appears to have been an error. Try refreshing the page.';
   }
 
   const [email, setEmail] = useState('');
@@ -19,9 +20,9 @@ const Profile = () => {
   const [password1, setPassword1] = useState('');
   const [password2, setPassword2] = useState('');
   // change this back to false
-  const [updatingPassword, setUpdatingPassword] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
   const [updateSucess, setUpdateSuccess] = useState(null);
+  const [loadingPassword, setLoadingPassword] = useState(false);
 
   const handleInput = (e) => {
     e.preventDefault();
@@ -43,21 +44,23 @@ const Profile = () => {
       userForPassword.email, 
       oldPassword
     );
+    setLoadingPassword(true);
 
     userForPassword.reauthenticateWithCredential(credential)
       .then(function() {
         // User re-authenticated.
-        console.log("oh yeah! reaunthenticated")
+        console.log("oh yeah! reaunthenticated");
         return user.updatePassword(newPassword);
       })
       .then(function () {
-        console.log("yes friend, reset that password")
+        console.log("yes friend, reset that password");
+        setLoadingPassword(false);
         setUpdateSuccess(true);
-        setUpdatingPassword(false);
       })
       .catch(function(error) {
-        console.log("damn, it messed up pal")
-        console.log(error)
+        setLoadingPassword(false);
+        console.log("damn, it messed up pal");
+        console.log(error);
       });
   }
 
@@ -69,8 +72,6 @@ const Profile = () => {
       resetPassword(currentPassword, password1);
     }
       
-      
-
       // user.reauthenticateWithCredential(credential)
       //   .then(() => {
       //   // send off new password to firebase
@@ -95,14 +96,9 @@ const Profile = () => {
   return (
     <div className="profile-page container">
       <h2>{welcome}</h2>
-      {!updatingPassword && 
-        <button onClick={()=>{
-          setUpdatingPassword(!updatingPassword)}
-
-        }>Update Password</button>
-      }
+      <p>Manage your password.</p>
+      {loadingPassword && <Loading />}
       {updateSucess && <h3 className="password-reset-success-message">Password Successfully Updated</h3>}
-      {updatingPassword && 
         <>
           {errorMessage && <h3 className="password-reset-error-message">{errorMessage}</h3>}
           <form className="update-password" onSubmit={handlePasswordUpdate} >
@@ -117,7 +113,6 @@ const Profile = () => {
             <input type="submit" />
           </form>
         </>
-      }
     </div>
   );
 };

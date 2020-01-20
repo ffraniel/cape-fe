@@ -2,6 +2,7 @@ import React, { useState, useEffect, lazy, Suspense } from 'react';
 import './App.css';
 import fire from './config/fire';
 import Index from './pages/public/Index';
+import Loading from './components/Loading';
 const Dashboard = lazy(() => import('./pages/user/Dashboard'));
 
 function App() {  
@@ -24,7 +25,7 @@ function App() {
 
   return (
       <div className="App">
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Loading />}>
           {user ? <Dashboard /> : <Index />}
         </Suspense>
       </div>

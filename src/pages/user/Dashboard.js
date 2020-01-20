@@ -40,7 +40,7 @@ const Dashboard = () => {
             <Route path="/article/:articleID">
               <Article />
             </Route>
-            <Route path="/category/:category">
+            <Route path="/category/:category/:pagination?">
               <Category />
             </Route>
             <Route path="/navigation">

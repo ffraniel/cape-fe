@@ -7,6 +7,7 @@ import {
 } from '../../queries/queries';
 import List from './List';
 import Paginator from '../../components/Paginator';
+import Loading from '../../components/Loading';
 
 const Feed = () => {
   const { pagination } = useParams();
@@ -45,11 +46,17 @@ const Feed = () => {
 
   return (
     <div className="container">
-      <h2>The Feed</h2>
-      {error && console.log(error) }
-      {loading && <h1>Loading</h1>}
+      <h3>CAPE Feed</h3>
+      {error && <h3>ERROR{console.log("error: ", error)}</h3>}
+      {loading && <Loading />}
       {data && <List data={data} />}
-      <Paginator pageNumber={Number(pageNumber)} />
+      {data && console.log(data)}
+      {data && 
+        <Paginator 
+          pageNumber={Number(pageNumber)} 
+          length={data.articles.length} 
+          isCategory={false} 
+        />}
     </div>
   );
 };

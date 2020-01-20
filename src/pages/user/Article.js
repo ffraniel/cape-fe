@@ -6,9 +6,21 @@ import {
   useParams
 } from 'react-router-dom';
 import { getArticle } from '../../queries/queries';
+import {useSpring, animated} from 'react-spring';
+import Loading from '../../components/Loading';
 
 const Article = () => {
   const { articleID } = useParams();
+
+  const animationProps = useSpring({
+    opacity: 1, 
+    transform: 'translate(0, 0)',
+    from: {opacity: 0, transform: 'translate(0, 20px)'},
+    config: {
+      mass: 2,
+      friction: 28
+    }
+  });
 
   const { loading, error, data } = useQuery(getArticle, {
     variables: {
@@ -19,17 +31,17 @@ const Article = () => {
   if (data && (data.article === null || data.article.length === 0)) {
 
     return (
-      <div className="category">
+      <animated.div style={animationProps} className="category">
         <article className="container">
-          <h3>There are no articles for the category "{articleID}".</h3>
+          <h3>There are no articles for the category '{articleID}'.</h3>
         </article>
-      </div>
+      </animated.div>
     );
   }
 
   return (
-    <div className="category">
-      {loading && <h1>Loading</h1>}
+    <animated.div style={animationProps} className="category">
+      {loading && <Loading />}
       {error && <h1>ERROR{console.log("error: ", error)}</h1>}
       {data && console.log(data)}
       {data && 
@@ -43,7 +55,7 @@ const Article = () => {
           </div>
         </article>
       }
-    </div>
+    </animated.div>
   );
 };
 

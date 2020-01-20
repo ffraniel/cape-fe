@@ -18,12 +18,11 @@ const List = (props) => {
 
   if (data.articles.length === 0) {
     return (
-      <div className="list">
-          <article >
-            <h1>NO ARTICLE</h1>
-            <p>No articles alas</p>
-          </article>
-      </div>
+      <animated.div style={animationProps} className="list">
+        <article >
+          <h3>No articles to show</h3>
+        </article>
+      </animated.div>
     );
   }
 
