@@ -46,16 +46,48 @@
 }
 
 .news-background .three-panel {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 35px;
   margin: 0 auto;
   width: 75%;
-  transform: translate(0, -40px);
+  transform: translate(0, -20px);
 }
 
-.news-background .three-panel div {
+.news-background .three-panel .three-panel--panel {
   background-color: white;
-  height: 300px;
   border-radius: 10px;
+  padding: 30px;
+  font-family: var(--text-font);
+  text-align: center;
+}
+
+.news-background .three-panel .three-panel--panel h3{
+  text-align: center;
+  font-family: var(--text-font);
+}
+
+.news-background .three-panel .three-panel--panel .panel-link-button {
+  border: solid rgb(20, 20, 20) 2px;
+  padding: 8px;
+  border-radius: 3px;
+  color: rgb(20, 20, 20); 
+  text-align: center;
+  display: inline-block;
+  width: 200px;
+  height: auto;
+  margin: 0 auto;
+  text-decoration: none;
+  font-family: var(--text-font);
+}
+
+.more-info {
+  padding: 30px;  
+}
+
+.more-info .more-info--element {
+  padding: 30px;
+  
 }

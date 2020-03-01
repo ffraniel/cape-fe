@@ -9,6 +9,7 @@ import Constitution from '../Constitution';
 import LoginPage from "./LoginPage";
 import NoMatch from '../../components/NoMatch';
 import PublicMobNav from '../../components/PublicMobNav';
+import Footer from '../../components/Footer';
 
 const Index = () => {
   // all the frontend goes here
@@ -42,6 +43,7 @@ const Index = () => {
               </Route>
             </Switch>
           </div>
+          <Footer />
       </Router>
     </section>
   );

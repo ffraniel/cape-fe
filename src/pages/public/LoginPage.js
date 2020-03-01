@@ -5,7 +5,7 @@ import Login from '../../components/Login';
 const LoginPage = () => {
 
   return (
-    <div className="login-page">
+    <div className="login-page page">
       <Login />
     </div>
   );

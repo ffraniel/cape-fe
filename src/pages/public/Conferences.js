@@ -18,7 +18,11 @@ const Conferences = () => {
       <h1>Conferences and Events</h1>
       {loading && <Loading />}
       {error && <h1>ERROR{console.log("error: ", error)}</h1>}
-      {data && data.articles.length === 0 && <h3>Currently there are no upcoming events.</h3>}
+      {data && data.articles.length === 0 && 
+        <div>
+          <h3>Currently there are no public events upcoming. Members please sign in to see if there are any members-only events.</h3>
+        </div>
+      }
       {data && <PublicList data={data} />}
     </div>
   );

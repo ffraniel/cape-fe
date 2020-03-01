@@ -14,6 +14,7 @@ import Category from './Category';
 import NoMatch from '../../components/NoMatch';
 import Article from './Article';
 import UserMobNav from '../../components/UserMobNav';
+import Footer from '../../components/Footer';
 
 const Dashboard = () => {
 
@@ -54,6 +55,7 @@ const Dashboard = () => {
             </Route>
           </Switch>
         </div>
+        <Footer />
       </Router>
     </section>
   );

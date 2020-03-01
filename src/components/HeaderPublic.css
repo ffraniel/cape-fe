@@ -17,6 +17,8 @@
 .header {
   width: 100%;
   display: block;
+  transition: background-color 0.3s;
+  z-index: 1;
   /* background-color: green;
   box-shadow: 0 1px 3px 0px black; */
 }
@@ -86,4 +88,8 @@
 
 .menu-btn:hover .menu-line {
   background-color: var(--white-text-hover);
+}
+
+.headerBackgroundColour {
+  background-color:rgb(49, 104, 53);
 }

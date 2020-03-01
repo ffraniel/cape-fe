@@ -1,0 +1,23 @@
+.footer {
+  background-color: grey;
+  height: 200px;
+  display: flex;
+}
+
+.footer-logo {
+  width: 200px;
+}
+
+.footer-details p {
+  margin: 0;
+}
+
+.footer-lists {
+  display: inline-block;
+  margin: 0;
+}
+
+.footer-details {
+  display: inline-block;
+  margin: 0;
+}
