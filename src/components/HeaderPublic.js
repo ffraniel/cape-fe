@@ -3,8 +3,17 @@ import "./HeaderPublic.css";
 import { NavLink } from "react-router-dom";
 import Logo from "../assets/WhiteTrans.png";
 import { debounce } from '../utility/debounce';
+import PublicMobNav from './PublicMobNav';
 
 const HeaderPublic = () => {
+
+  const [isMobNavOpen, setIsMobNavOpen] = useState(false);
+  console.log(isMobNavOpen);
+
+  const handleMenuClick = (e) => {
+    e.stopPropagation();
+    setIsMobNavOpen(prevState => !prevState);
+  }
 
   const [ colourHeader, setColourHeader ] = useState(false);
 
@@ -45,6 +54,7 @@ const HeaderPublic = () => {
 
   return (
     <section className={colourHeader ? 'header headerBackgroundColour' : 'header'}>
+      <PublicMobNav isMobNavOpen={isMobNavOpen} setIsMobNavOpen={setIsMobNavOpen} />
       <nav>
         <NavLink className="logo" to="/">
           <img
@@ -70,11 +80,11 @@ const HeaderPublic = () => {
             <NavLink to="/login">Log In</NavLink>
           </li>
         </ul>
-        <NavLink to="/navigation" className="menu-btn">
+        <button onClick={handleMenuClick} className="menu-btn">
           <div className="menu-line"></div>
           <div className="menu-line"></div>
           <div className="menu-line"></div>
-        </NavLink>
+        </button>
       </nav>
     </section>
   );

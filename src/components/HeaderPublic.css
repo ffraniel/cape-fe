@@ -43,12 +43,12 @@
   } 
 }
 
-.header nav ul li {
+.header nav .desktop-menu li {
   display: inline;
   margin: 0 15px;
 }
 
-.header nav ul li a {
+.header nav .desktop-menu li a {
   text-decoration: none;
   font-size: var(--link-text-size);
   color: var(--white-text);
@@ -57,7 +57,7 @@
   transition: color 0.25s;
 }
 
-.header nav ul li a:hover {
+.header nav .desktop-menu li a:hover {
   color: var(--white-text-hover);
 }
 

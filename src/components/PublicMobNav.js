@@ -1,33 +1,34 @@
 import React from "react";
 import "./PublicMobNav.css";
 import { NavLink } from "react-router-dom";
-import { useHistory } from "react-router-dom";
 
+const PublicMobNav = ({isMobNavOpen, setIsMobNavOpen}) => {
+  console.log(isMobNavOpen)
 
-const PublicMobNav = () => {
-
-  let history = useHistory();
+  const closeNav = () => {
+    setIsMobNavOpen(false);
+  };
 
   return (
-    <nav className="mob-nav">
-      <ul>
+    <nav className={isMobNavOpen ? 'mob-nav open' : 'mob-nav'} >
+      <ul className="mobile-menu">
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink onClick={closeNav} exact={true} to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/about">What We Do</NavLink>
+          <NavLink onClick={closeNav} to="/about">What We Do</NavLink>
         </li>
         <li>
-          <NavLink to="/conferences">Conferences</NavLink>
+          <NavLink onClick={closeNav} to="/conferences">Conferences</NavLink>
         </li>
         <li>
-          <NavLink to="/constitution">Constitution</NavLink>
+          <NavLink onClick={closeNav} to="/constitution">Constitution</NavLink>
         </li>
         <li>
-          <NavLink to="/login">Log In</NavLink>
+          <NavLink onClick={closeNav} to="/login">Log In</NavLink>
         </li>
         <li>
-          <button onClick={()=>{history.goBack()}}>x</button>
+        <button onClick={closeNav}>x</button>
         </li>
       </ul>
     </nav>
