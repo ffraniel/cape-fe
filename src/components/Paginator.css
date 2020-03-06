@@ -1,6 +1,7 @@
 .paginator {
   margin: 40px auto;
   text-align: center;
+  font-family: var(--text-font);
 }
 
 .pagination-link {

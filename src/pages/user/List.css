@@ -1,3 +1,7 @@
+.list {
+  font-family: var(--text-font);
+}
+
 .categories-list {
   background: rgb(193, 243, 178);
 }
