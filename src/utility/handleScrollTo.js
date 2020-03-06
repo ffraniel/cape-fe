@@ -4,13 +4,13 @@ const handleScrollTo = (e) => {
     e.preventDefault();
     //get coordinates
     let href = hrefAll.split('#')[1];
-    console.log(href)
+    // console.log(href)
     let intendedY = document.querySelector(`#${href}`).getBoundingClientRect().top;
-    console.log(intendedY)
-    // window.scrollTo({
-    //   top: intendedY,
-    //   behavior: 'smooth'
-    // });
+    // console.log(intendedY)
+    window.scrollTo({
+      top: intendedY,
+      behavior: 'smooth'
+    });
   }
 };
 
