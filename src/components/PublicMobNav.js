@@ -3,7 +3,6 @@ import "./PublicMobNav.css";
 import { NavLink } from "react-router-dom";
 
 const PublicMobNav = ({isMobNavOpen, setIsMobNavOpen}) => {
-  console.log(isMobNavOpen)
 
   const closeNav = () => {
     setIsMobNavOpen(false);

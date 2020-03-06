@@ -8,7 +8,6 @@ import PublicMobNav from './PublicMobNav';
 const HeaderPublic = () => {
 
   const [isMobNavOpen, setIsMobNavOpen] = useState(false);
-  console.log(isMobNavOpen);
 
   const handleMenuClick = (e) => {
     e.stopPropagation();

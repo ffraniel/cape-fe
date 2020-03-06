@@ -5,10 +5,16 @@ import { useHistory } from "react-router-dom";
 import fire from "../config/fire";
 
 
-const UserMobNav = () => {
+const UserMobNav = ({isMobNavOpen, setIsMobNavOpen}) => {
 
   let history = useHistory();
+
+  const closeNav = () => {
+    setIsMobNavOpen(false);
+  };
+
   const signOut = () => {
+    closeNav();
     fire
       .auth()
       .signOut()
@@ -22,25 +28,25 @@ const UserMobNav = () => {
   };
 
   return (
-    <nav className="mob-nav">
+    <nav className={isMobNavOpen ? 'mob-nav open' : 'mob-nav'} >
       <ul>
         <li>
-          <NavLink to="/">News Feed</NavLink>
+          <NavLink onClick={closeNav} exact to="/">News Feed</NavLink>
         </li>
         <li>
-          <NavLink to="/category/events">Events</NavLink>
+          <NavLink onClick={closeNav} to="/category/events">Events</NavLink>
         </li>
         <li>
-          <NavLink to="/constitution">Constitution</NavLink>
+          <NavLink onClick={closeNav} to="/constitution">Constitution</NavLink>
         </li>
         <li>
-          <NavLink to="/profile">Profile</NavLink>
+          <NavLink onClick={closeNav} to="/profile">Profile</NavLink>
         </li>
         <li>
           <button className="btn sign-out-btn" onClick={signOut}>SIGN OUT</button>
         </li>
         <li>
-          <button onClick={()=>{history.goBack()}}>x</button>
+          <button onClick={closeNav} >x</button>
         </li>
       </ul>
     </nav>

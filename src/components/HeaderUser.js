@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink, useHistory } from "react-router-dom";
 import './HeaderUser.css';
 import Logo from "../assets/WhiteTrans.png";
 import fire from "../config/fire";
+import UserMobNav from './UserMobNav';
 
 const HeaderUser = () => {
+
+  const [isMobNavOpen, setIsMobNavOpen] = useState(false);
+
+  const handleMenuClick = (e) => {
+    e.stopPropagation();
+    setIsMobNavOpen(prevState => !prevState);
+  }
 
   let history = useHistory();
 
@@ -23,6 +31,7 @@ const HeaderUser = () => {
 
   return (
     <section className="header">
+      <UserMobNav isMobNavOpen={isMobNavOpen} setIsMobNavOpen={setIsMobNavOpen} />
       <nav>
         <NavLink className="logo" to="/">
           <img
@@ -48,11 +57,11 @@ const HeaderUser = () => {
             <button className="btn sign-out-btn" onClick={signOut}>SIGN OUT</button>
           </li>
         </ul>
-        <NavLink to="/navigation" className="menu-btn">
+        <button onClick={handleMenuClick} className="menu-btn">
           <div className="menu-line"></div>
           <div className="menu-line"></div>
           <div className="menu-line"></div>
-        </NavLink>
+        </button>
       </nav>
     </section>
   )

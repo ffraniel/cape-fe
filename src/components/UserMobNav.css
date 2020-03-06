@@ -1,0 +1,27 @@
+.mob-nav {
+  background-color: white;
+  color: black;
+  position: absolute;
+  right: 0;
+  height: 100%; 
+  height: 100vh;
+  width: 75%;
+  width: 75vw;
+  transform: translate(100%);
+  transition: transform 0.3s;
+}
+
+.mob-nav.open {
+  transform: translate(0);
+}
+
+.mob-nav ul li {
+  display: block;
+  font-size: 2rem;
+  padding: 2rem;
+  display: flex;
+}
+
+.mob-nav ul li a.active {
+  border: green solid 3px;
+}
