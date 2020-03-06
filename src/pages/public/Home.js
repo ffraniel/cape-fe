@@ -2,8 +2,10 @@ import React from 'react';
 import './Home.css';
 import { Link } from "react-router-dom";
 import conversationImage from '../../assets/conversation.svg';
+import handleScrollTo from '../../utility/handleScrollTo';
 
 const Home = () => {
+
   return (
     <>
     <section className="jumbotron">
@@ -24,15 +26,15 @@ const Home = () => {
       <div className="three-panel">
         <div className="three-panel--panel">
           <h3>CAPE Supports it's members</h3>
-          <a className="panel-link-button" href="#support">See How CAPE support their members</a>
+          <a className="panel-link-button" onClick={handleScrollTo} href="#support">See How CAPE support their members</a>
         </div>
         <div className="three-panel--panel">
           <h3>CAPE Provides development opportunities</h3>
-          <a className="panel-link-button" href="#opportunities">Learn more about opportunities</a>
+          <a className="panel-link-button" onClick={handleScrollTo} href="#opportunities">Learn more about opportunities</a>
         </div>
         <div className="three-panel--panel">
           <h3>CAPE Informs professional practice</h3>
-          <a className="panel-link-button" href="#practices">Informing professional practices</a>
+          <a className="panel-link-button" onClick={handleScrollTo} href="#practices">Informing professional practices</a>
         </div>
       </div>
       <div className="container">
@@ -45,7 +47,7 @@ const Home = () => {
         <h3>Support</h3>
         <p>CAPE supports members by coming together for meetings to discuss their own work and the issues they are facing. Professionals whose role is to provide advice and support to Designated leads in Schools are often doing so without supervision for themselves. Child protection work is difficult, complex and sensitive and CAPE aims to support members by meeting on a regular basis and through the member's forum.</p>
       </div>
-      <div className="more-info--element container" id="#opportunities">
+      <div className="more-info--element container" id="opportunities">
         <h3>Development Opportunities</h3>
         <p>CAPE members are professionals who provide training and consultancy to Designated Leads in schools. Cape recognises that CAPE members need to continuously update their own knowledge and development opportunities are offered to CAPE members.</p>
       </div>
