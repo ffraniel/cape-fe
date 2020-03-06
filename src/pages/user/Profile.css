@@ -1,0 +1,23 @@
+.profile-page {
+  font-family: var(--text-font);
+}
+
+.update-password {
+  padding: 60px 40px;
+  margin: 20px auto  60px;
+}
+
+.update-password input {
+  margin: 5px 0 30px;
+  font-size: 1.15rem;
+  width: 75%;
+  padding: 10px;
+}
+
+.update-password .submit-btn {
+  background: rgb(17, 214, 122);
+  width: 100%;
+  padding: 10px;
+  font-size: 1.25rem;
+  color: white;
+}

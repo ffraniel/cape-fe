@@ -96,21 +96,27 @@ const Profile = () => {
   return (
     <div className="profile-page container">
       <h2>{welcome}</h2>
-      <p>Manage your password.</p>
+      <h3>Managing Your Password</h3>
+      <p>To change your passport use the form below.</p>
       {loadingPassword && <Loading />}
       {updateSucess && <h3 className="password-reset-success-message">Password Successfully Updated</h3>}
         <>
           {errorMessage && <h3 className="password-reset-error-message">{errorMessage}</h3>}
           <form className="update-password" onSubmit={handlePasswordUpdate} >
+
             <label htmlFor="email">Please enter your email address associated with your CAPE account.</label>
             <input type="text" name="email" placeholder="email@address.org" onChange={handleInput} value={email} />
+
             <label htmlFor="current-password">Please enter your current password.</label>
             <input type="password" name="current-password" placeholder="Old Password" onChange={handleInput} value={currentPassword} />
+            
             <label htmlFor="password1">Please enter your new password. Passwords must be at least 6 characters long.</label>
             <input type="password" name="password1" placeholder="password" onChange={handleInput} value={password1} />
+            
             <label htmlFor="password2">Please enter the new password again</label>
             <input type="password" name="password2" placeholder="password" onChange={handleInput} value={password2} />
-            <input type="submit" />
+            
+            <input className="submit-btn" type="submit" />
           </form>
         </>
     </div>
