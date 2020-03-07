@@ -31,7 +31,7 @@ const Footer = () => {
             </ul>
           </div>
         <div className="footer-details">
-          <p>Website by <a href="www.franthedev.uk">Francis Whitehead</a></p>
+          <p>Website by <a href="https://franwebdev.uk/">Francis Whitehead</a></p>
           <Link onClick={toTopOfPage} to="/" >
             <img className="footer-logo" src={logo} alt="logo" />
           </Link>

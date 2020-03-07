@@ -30,14 +30,15 @@ const HeaderPublic = () => {
 
   const triggerFunction = debounce(function (e) {
 
-    var jumbotron = document.querySelector(".jumbotron");
+    // var jumbotron = document.querySelector(".jumbotron");
+    var jumboText = document.querySelector(".jumbo-text h1");
     var headerElem = document.querySelector('.header');
 
-    if (jumbotron) {
+    if (jumboText) {
       var headerHeight = headerElem.getBoundingClientRect().height;
-      var bottomJumbotron = jumbotron.getBoundingClientRect().bottom;
+      var bottomJumbotron = jumboText.getBoundingClientRect().top;
   
-      if (window.scrollY > ((bottomJumbotron + jumbotron.offsetHeight) - headerHeight)) {
+      if (window.scrollY > ((bottomJumbotron + jumboText.offsetHeight) - headerHeight)) {
         if (!colourHeader) {
           setColourHeader(true);
         }

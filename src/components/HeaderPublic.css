@@ -23,7 +23,7 @@
   box-shadow: 0 1px 3px 0px black; */
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 900px) {
   .header nav {
     width: 100%;
     display: flex;
@@ -34,7 +34,7 @@
   display: none;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 900px) {
   .header nav .desktop-menu {
     display: inline;
     list-style: none;
@@ -65,7 +65,7 @@
   display: none;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
   .menu-btn {
     display: block;
     top: 25px;
