@@ -84,13 +84,17 @@
   font-family: var(--text-font);
 }
 
+.news-background .more-info {
+  font-family: var(--text-font);
+}
+
 .more-info {
   padding: 30px;  
 }
 
 .more-info .more-info--element {
   padding: 30px;
-  
+  font-family: var(--text-font);
 }
 
 @media (max-width: 480px) {

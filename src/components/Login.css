@@ -1,6 +1,7 @@
 .form-element {
   max-width: 400px;
   margin: auto;
+  font-family: var(--text-font);
 }
 
 form {
@@ -15,4 +16,5 @@ form {
 input {
   display: block;
   margin: 5px auto;
+  font-family: var(--text-font);
 }

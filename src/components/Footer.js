@@ -23,6 +23,12 @@ const Footer = () => {
                 <Link onClick={toTopOfPage} to="/about">About</Link>
               </li>
               <li>
+                <Link onClick={toTopOfPage} to="/conferences">Conferences</Link>
+              </li>
+              <li>
+                <Link onClick={toTopOfPage} to="/constitution">Constitution</Link>
+              </li>
+              <li>
                 <Link onClick={toTopOfPage} to="/login">Log In</Link>
               </li>
             </ul>
