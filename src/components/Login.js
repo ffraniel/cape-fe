@@ -39,10 +39,12 @@ const Login = () => {
 
   return (
     <section className="form-element">
-      <p>Sign In</p>
+      <h3>Log In</h3>
       {loginError && <h3>Incorrect Username and/or Password. Please try again.</h3>}
       <form onSubmit={handleSubmit}>
+        <label for="email">Email</label>
         <input type="text" name="email" placeholder="Email" onChange={handleInput} value={email} />
+        <label for="password">Password</label>
         <input type="password" name="password" placeholder="Password" onChange={handleInput} value={password} />
         <input type="submit" value="Sign In" />
       </form>

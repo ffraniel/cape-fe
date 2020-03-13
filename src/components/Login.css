@@ -4,17 +4,26 @@
   font-family: var(--text-font);
 }
 
-form {
+
+.form-element h3 {
+  font-family: var(--text-font);
+}
+
+.form-element form {
   background: #e6e6e6;
   box-shadow: 0 2px 5px 1px #a49b9b;
   border-radius: 5px;
-  padding: 10px;
-  padding-top: 15px;
-
+  padding: 15px;
 }
 
-input {
+.form-element input {
   display: block;
   margin: 5px auto;
   font-family: var(--text-font);
+  padding: 0 5px;
+  margin: 10px auto;
+}
+
+.form-element input[type="submit"] {
+  margin: 10px auto;
 }

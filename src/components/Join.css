@@ -1,0 +1,49 @@
+.join-form-container {
+  background-color: white;
+  font-family: var(--text-font);
+  padding: 60px 0;
+}
+
+.join-form-container .red-text {
+  color: red;
+  font-size: 1.5rem;
+}
+
+.join-form--text {
+  display: none;
+}
+
+.join-form--checkbox {
+  display: none;
+}
+
+.join-form label {
+  display: block;
+}
+
+
+.join-form input[type="checkbox"] {
+  height: 40px;
+  width: 40px;
+  margin: 0 20px;
+}
+
+.join-form input[type="text"] {
+  display: block;
+  margin: 5px auto;
+  font-family: var(--text-font);
+  padding: 0 5px;
+  margin: 10px auto;
+}
+
+.join-form input[type="submit"] {
+  margin: 10px auto;
+}
+
+.join-form .inline-elem {
+  display: inline-block;
+}
+
+.join-form--reason-text {
+  font-size: 0.9rem;
+}

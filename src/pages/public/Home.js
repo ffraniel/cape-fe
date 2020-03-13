@@ -3,6 +3,7 @@ import './Home.css';
 import { Link } from "react-router-dom";
 import conversationImage from '../../assets/conversation.svg';
 import handleScrollTo from '../../utility/handleScrollTo';
+import Join from '../../components/Join';
 
 const Home = () => {
 
@@ -46,16 +47,20 @@ const Home = () => {
       <div className="more-info--element container" id="support">
         <h3>Support</h3>
         <p>CAPE supports members by coming together for meetings to discuss their own work and the issues they are facing. Professionals whose role is to provide advice and support to Designated leads in Schools are often doing so without supervision for themselves. Child protection work is difficult, complex and sensitive and CAPE aims to support members by meeting on a regular basis and through the member's forum.</p>
+        <a className="btn secondary-btn basic-box-shadow" href="#joining-cape">Joining CAPE</a>
       </div>
       <div className="more-info--element container" id="opportunities">
         <h3>Development Opportunities</h3>
         <p>CAPE members are professionals who provide training and consultancy to Designated Leads in schools. Cape recognises that CAPE members need to continuously update their own knowledge and development opportunities are offered to CAPE members.</p>
+        <a className="btn secondary-btn basic-box-shadow" href="#joining-cape">Joining CAPE</a>
       </div>
       <div className="more-info--element container" id="practices">
         <h3>Professional Partners</h3>
         <p>CAPE is a long standing organisation and recognised as useful partners in developing practice. CAPE regularly responds to Government consultations and CAPE has representation on a number of national development groups set up to inform and improve professional practice.</p>
+        <a className="btn secondary-btn basic-box-shadow" href="#joining-cape">Joining CAPE</a>
       </div>
     </section>
+    <Join id="joining-cape" />
     </>
   )
 };
