@@ -83,3 +83,11 @@ body {
 .basic-box-shadow {
   box-shadow: 0px 1px 4px 0px #00000091;
 }
+
+.red-text {
+  color: rgb(255, 38, 30);
+}
+
+.green-text {
+  color: rgb(35, 218, 35);
+}

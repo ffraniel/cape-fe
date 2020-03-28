@@ -18,12 +18,38 @@
 
 .form-element input {
   display: block;
-  margin: 5px auto;
   font-family: var(--text-font);
-  padding: 0 5px;
+  font-size: 1rem;
   margin: 10px auto;
+  padding: 5px;
+}
+
+.form-element input[type="text"] {
+  display: block;
+  margin: 5px auto;
+  margin: 10px auto;
+  width: 90%;
+}
+
+.form-element input[type="password"] {
+  display: block;
+  margin: 5px auto;
+  margin: 10px auto;
+  width: 90%;
 }
 
 .form-element input[type="submit"] {
-  margin: 10px auto;
+  margin: 20px auto;
+  font-weight: 900;
+
+}
+
+.form-element form label {
+  font-weight: 900;
+  display: block;
+  text-align: center;
+}
+
+.login-error-animation {
+  animation: formNotice 0.5s ease;
 }

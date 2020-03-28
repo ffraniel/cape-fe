@@ -27,6 +27,13 @@ const Join = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    let formEntries = [firstName, lastName, email, address, telephone, yourRole, whyJoin, moreInfo, memberAgreement];
+    formEntries.forEach(entry => {
+      if (!entry) {
+
+      }
+    })
+
       //send data//
       //handle success//
         //delete data field
@@ -49,7 +56,7 @@ const Join = () => {
   }
 
   return (
-    <section className="join-form-container">
+    <section className="join-form-container" id="joining-cape">
       <div className="container">
         <div className="join-title">
           <h3>CAPE Membership</h3>
@@ -64,48 +71,48 @@ const Join = () => {
           <p><span className="red-text">*</span>indicates response required</p>
         </div>
         {success && 
-        <div className="success-form">
-          <h3>Thanks! We will look at your request to join and let you know our decision.</h3>
+        <div className="success-form animated-form-notice">
+          <h3 className="green-text">Thanks! We will look at your request to join and let you know our decision.</h3>
         </div>}
         {error && 
-        <div className="failure-form">
-          <h3>Sorry! There has been an error with the form! Refresh the page and try again, or contact CAPE directly.</h3>
+        <div className="failure-form animated-form-notice">
+          <h3 className="red-text">Sorry! There has been an error with the form! Refresh the page and try again, or contact CAPE directly.</h3>
         </div>}
         {!success && !error &&
         <form onSubmit={handleSubmit} className="join-form">
           <p className="join-form--text-label"><span className="red-text">*</span>Name</p>
-          <label for="firstName" className="label-hidden">First Name</label>
+          <label htmlFor="firstName" className="label-hidden">First Name</label>
           <input name="firstName" type="text" value={firstName} onChange={(e)=>{setFirstName(e.target.value)}} />
-          <label for="secondName" className="label-hidden">Second Name</label>        
+          <label htmlFor="secondName" className="label-hidden">Second Name</label>        
           <input name="secondName" type="text" value={lastName} onChange={(e)=>{setLastName(e.target.value)}} />
           <p className="join-form--text-label"><span className="red-text">*</span>Email</p>
-          <label for="email" className="label-hidden">Email</label>
+          <label htmlFor="email" className="label-hidden">Email</label>
           <input name="email" type="text" value={email} onChange={(e)=>{setEmail(e.target.value)}} />
 
           <p className="join-form--text"><span className="red-text">*</span>Address</p>
-          <label className="label-hidden" for="address">Address</label>
+          <label className="label-hidden" htmlFor="address">Address</label>
           <input name="address" type="text" value={address} onChange={(e)=>{setAddress(e.target.value)}} />
 
           <p className="join-form--text">Telephone</p>
-          <label className="label-hidden" for="telephone">Telephone</label>
+          <label className="label-hidden" htmlFor="telephone">Telephone</label>
           <input type="text" name="telephone" value={telephone} onChange={(e)=>{setTelephone(e.target.value)}} />
 
           <p className="join-form--reason-text">We welcome new members and would like to know a little about you.  For example, how will membership be of benefit to you; and how would you like to contribute to CAPE activities (specialist knowledge or expertise, events organisation, facilities to host meetings, particular interests etc)?</p>
 
           <p className="join-form--text"><span className="red-text">*</span>What is your work role?</p>
-          <label className="label-hidden" for="yourRole">What is your work role?</label>
+          <label className="label-hidden" htmlFor="yourRole">What is your work role?</label>
           <input type="text" name="yourRole" value={yourRole} onChange={(e)=>{setYourRole(e.target.value)}} />
 
           <p className="join-form--text"><span className="red-text">*</span>Why are you interested in joining CAPE?</p>
-          <label className="label-hidden" for="whyJoin">Why are you interested in joining CAPE?</label>
+          <label className="label-hidden" htmlFor="whyJoin">Why are you interested in joining CAPE?</label>
           <input type="text" name="whyJoin" value={whyJoin} onChange={(e)=>{setWhyJoin(e.target.value)}} />
 
           <p className="join-form--text">Please provide any further information here</p>
-          <label className="label-hidden" for="moreInfo">Please provide any further information here</label>
+          <label className="label-hidden" htmlFor="moreInfo">Please provide any further information here</label>
           <input type="text" name="moreInfo" value={moreInfo} onChange={(e)=>{setMoreInfo(e.target.value)}} />
 
           <p className="join-form--checkbox"><span className="red-text">*</span>Condition of membership</p>
-          <label className="label-hidden" for="memberAgreement">Condition of membership</label>
+          <label className="label-hidden" htmlFor="memberAgreement">Condition of membership</label>
           <p className="join-form--checkbox inline-elem"><span className="red-text">*</span>I agree to abide by the principles in the Constitution</p>
           <input className="inline-elem" type="checkbox" name="memberAgreement" value={memberAgreement} onChange={()=>{setMemberAgreement(prevState => !prevState)}} />
 

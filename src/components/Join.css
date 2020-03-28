@@ -47,3 +47,33 @@
 .join-form--reason-text {
   font-size: 0.9rem;
 }
+
+.animated-form-notice {
+  animation-name: formNotice;
+  animation-duration:0.5s;
+  animation-timing-function: ease;
+
+}
+
+@keyframes formNotice {
+  0% {
+    opacity: 0;
+    transform: translate(0, 30px);
+  }
+  13% {
+    opacity: 1;
+    transform: translate(0, -30px);
+  }
+  36% {
+    transform: translate(0, 15px);
+  }
+  65% {
+    transform: translate(0, -15px);
+  }
+  84% {
+    transform: translate(0, 5px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}
