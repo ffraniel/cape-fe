@@ -1,11 +1,17 @@
 import React from "react";
+import { useSpring, animated } from 'react-spring';
+import { animationConfig } from '../../animations';
 import "./PublicList.css";
 import { Link } from "react-router-dom";
 
 const PublicList = (props) => {
+
   const { data } = props;
+  
+  const animationProps = useSpring(animationConfig);
+
   return (
-    <div className="list">
+    <animated.div className="list" style={animationProps}>
       {data.articles.map(article => {
         return (
           <article key={article.id}>
@@ -20,7 +26,7 @@ const PublicList = (props) => {
             </div>
           </article>
         )})}
-    </div>
+    </animated.div>
   );
 };
 

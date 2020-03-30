@@ -31,14 +31,14 @@ const HeaderPublic = () => {
   const triggerFunction = debounce(function (e) {
 
     // var jumbotron = document.querySelector(".jumbotron");
-    var jumboText = document.querySelector(".jumbo-text h1");
+    var headerTrigger = document.querySelector(".header-trigger");
     var headerElem = document.querySelector('.header');
 
-    if (jumboText) {
+    if (headerTrigger) {
       var headerHeight = headerElem.getBoundingClientRect().height;
-      var bottomJumbotron = jumboText.getBoundingClientRect().top;
+      var bottomJumbotron = headerTrigger.getBoundingClientRect().top;
   
-      if (window.scrollY > ((bottomJumbotron + jumboText.offsetHeight) - headerHeight)) {
+      if (window.scrollY > ((bottomJumbotron + headerTrigger.offsetHeight) - headerHeight)) {
         if (!colourHeader) {
           setColourHeader(true);
         }
@@ -48,9 +48,7 @@ const HeaderPublic = () => {
         }
       }
     }
-
-
-  }, 100)
+  }, 100);
 
   return (
     <section className={colourHeader ? 'header headerBackgroundColour' : 'header'}>

@@ -1,13 +1,19 @@
 import React from 'react';
 import './LoginPage.css';
+import { animationConfig } from '../../animations';
+import { useSpring, animated } from 'react-spring';
 import Login from '../../components/Login';
 
 const LoginPage = () => {
 
+  const animationProps = useSpring(animationConfig);
+
   return (
-    <div className="login-page page">
-      <Login />
-    </div>
+    <animated.div className="login-page page" style={animationProps}>
+      <div className="header-trigger">
+        <Login />
+      </div>
+    </animated.div>
   );
 };
 

@@ -9,6 +9,7 @@ import Constitution from '../Constitution';
 import LoginPage from "./LoginPage";
 import NoMatch from '../../components/NoMatch';
 import Footer from '../../components/Footer';
+import ScrollToTop from '../../components/ScrollToTop';
 
 const Index = () => {
   // all the frontend goes here
@@ -16,6 +17,7 @@ const Index = () => {
   return (
     <section className="index">
       <Router>
+        <ScrollToTop />
         <HeaderPublic />
           <div >
             <Switch>

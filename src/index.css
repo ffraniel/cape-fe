@@ -91,3 +91,7 @@ body {
 .green-text {
   color: rgb(35, 218, 35);
 }
+
+.medium-vertical-padding {
+  padding: 60px 0;
+}

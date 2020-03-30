@@ -1,3 +1,22 @@
-.category {
+.article-container {
   font-family: var(--text-font);
+
+}
+
+.article-container .article-item {
+
+}
+
+.article-container .article-item .article-title {
+  font-size: 2.5rem;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.article-container .article-item .categories-list {
+  max-width: 75%;
+}
+
+.article-container .article-item .categories-list .category-list-link {
+  margin-right: 15px;
 }

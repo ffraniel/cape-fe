@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, useHistory } from "react-router-dom";
 import './HeaderUser.css';
 import Logo from "../assets/WhiteTrans.png";
 import fire from "../config/fire";
 import UserMobNav from './UserMobNav';
+import { debounce } from '../utility/debounce';
 
 const HeaderUser = () => {
 
@@ -29,8 +30,45 @@ const HeaderUser = () => {
       });
   };
 
+
+  const [ colourHeader, setColourHeader ] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', scrollHandler)
+
+    return () => {
+      window.removeEventListener('scroll', scrollHandler)
+    };
+  });
+
+  const scrollHandler = (e) => {
+    triggerFunction(e);
+  };
+
+  const triggerFunction = debounce(function (e) {
+
+    // var jumbotron = document.querySelector(".jumbotron");
+    var headerTrigger = document.querySelector(".header-trigger");
+    var headerElem = document.querySelector('.header');
+
+    if (headerTrigger) {
+      var headerHeight = headerElem.getBoundingClientRect().height;
+      var bottomJumbotron = headerTrigger.getBoundingClientRect().top;
+  
+      if (window.scrollY > ((bottomJumbotron + headerTrigger.offsetHeight) - headerHeight)) {
+        if (!colourHeader) {
+          setColourHeader(true);
+        }
+      } else {
+        if (colourHeader) {
+          setColourHeader(false);
+        }
+      }
+    }
+  }, 100);
+
   return (
-    <section className="header">
+    <section className={colourHeader ? 'header headerBackgroundColour' : 'header'}>
       <UserMobNav isMobNavOpen={isMobNavOpen} setIsMobNavOpen={setIsMobNavOpen} />
       <nav>
         <NavLink className="logo" to="/">

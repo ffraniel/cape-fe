@@ -45,9 +45,9 @@ const Feed = () => {
 
 
   return (
-    <div className="container">
+    <div className="container feed">
       <h3>CAPE Feed</h3>
-      {error && <h3>ERROR{console.log("error: ", error)}</h3>}
+      {error && <h3>ERROR{console.log("error: ", JSON.stringify(error))}</h3>}
       {loading && <Loading />}
       {data && <List data={data} />}
       {data && console.log(data)}

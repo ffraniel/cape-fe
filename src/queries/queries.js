@@ -5,7 +5,7 @@ const getArticles = gql`
       articles {
         title
         id
-        category {
+        categories {
           title
         }
         event
@@ -22,7 +22,7 @@ const getArticlesPreview = gql`
     articles (first: $first, skip: $skip) {
       title
       id
-      category {
+      categories {
         title
       }
       event
@@ -39,7 +39,7 @@ query ($id: ID) {
   article (where: {id: $id}) {
     id
     title
-    category {
+    categories {
       title
     }
     event
@@ -53,10 +53,10 @@ query ($id: ID) {
 
 const getArticlesByTheme = gql`
 query ($category: String) {
-  articles(where: { category_some: { title: $category } }) {
+  articles(where: { categories_some: { title: $category } }) {
     id
     title
-    category {
+    categories {
       title
     }
     event
@@ -73,7 +73,7 @@ query ($membersOnly: Boolean) {
   articles (
     where: {
       AND: [
-        { category_some: { title: "events" } },
+        { categories_some: { title: "events" } },
         { event: true },
         { membersOnly: $membersOnly}
       ]
@@ -82,7 +82,7 @@ query ($membersOnly: Boolean) {
   {
     id
     title
-    category {
+    categories {
       title
     }
       event

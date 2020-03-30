@@ -1,13 +1,17 @@
 import React from 'react';
+import { useSpring, animated } from 'react-spring';
+import { animationConfig } from '../../animations';
 import './About.css';
 import Join from '../../components/Join';
 
 const About = () => {
 
+  const animationProps = useSpring(animationConfig);
+
   return (
-    <div className="about-component">
+    <animated.div className="about-component" style={animationProps}>
       <div className="about container" >
-        <h3>CAPE - What We Do</h3>
+        <h3 className="header-trigger">CAPE - What We Do</h3>
         <p>CAPE is a professional network of people who support education establishments in their safeguarding responsibilities. 
   CAPE provides support, networking opportunities and an independent voice for a range of safeguarding professionals. Membership includes trainers and consultants, officers in local authorities, voluntary organisations and independent consultants.</p>
         <p>Members work individually and in groups to share good practice, update and develop materials, respond to consultations, influence the development of current policies and practice, or organise national conferences and training events as the need arises.</p>
@@ -23,7 +27,7 @@ const About = () => {
         <p>CAPE's geographical base remains in the north however, as CAPE has grown we have welcomed members from further afield and membership now stretches the full length of the country.</p>
       </div>
       <Join />
-    </div>
+    </animated.div>
   );
 };
 

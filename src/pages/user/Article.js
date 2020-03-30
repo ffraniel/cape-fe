@@ -40,17 +40,17 @@ const Article = () => {
   }
 
   return (
-    <animated.div style={animationProps} className="category">
+    <animated.div style={animationProps} className="article-container medium-vertical-padding">
       {loading && <Loading />}
       {error && <h1>ERROR{console.log("error: ", error)}</h1>}
       {data && console.log(data)}
       {data && 
-        <article className="container" key={data.article.id}>
-          <h1>{data.article.title}</h1>
+        <article className="article-item container" key={data.article.id}>
+          <h1 className="article-title header-trigger">{data.article.title}</h1>
           <div dangerouslySetInnerHTML={{__html: data.article.text.html}}></div>
           <div className="categories-list">
-            {data.article.category.map(category => {
-              return <Link key={category.title} to={`/category/${category.title.toLowerCase()}`}>{category.title}</Link>;
+            {data.article.categories.map(category => {
+              return <Link className="category-list-link" key={category.title} to={`/category/${category.title.toLowerCase()}`}>{category.title}</Link>;
             })}
           </div>
         </article>

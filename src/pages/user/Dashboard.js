@@ -15,6 +15,7 @@ import NoMatch from '../../components/NoMatch';
 import Article from './Article';
 import UserMobNav from '../../components/UserMobNav';
 import UserFooter from '../../components/UserFooter';
+import ScrollToTop from '../../components/ScrollToTop';
 
 const Dashboard = () => {
 
@@ -23,6 +24,7 @@ const Dashboard = () => {
   return (
     <section className="dashboard">
       <Router>
+        <ScrollToTop />
         <HeaderUser />
         <div className="margin-top">          
           <Switch>

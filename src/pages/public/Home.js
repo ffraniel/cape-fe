@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import './Home.css';
 import { Link } from "react-router-dom";
+import { useSpring, animated } from 'react-spring';
+import { fadeInConfig } from '../../animations';
 import conversationImage from '../../assets/conversation.svg';
 import handleScrollTo from '../../utility/handleScrollTo';
 import handleScrollToRef from '../../utility/handleScrollToRef';
@@ -35,22 +37,24 @@ const Home = () => {
     handleScrollToRef(supportRef);
   }
 
+  const animationProps = useSpring(fadeInConfig);
+
   return (
     <>
-    <section className="jumbotron">
+    <animated.section className="jumbotron" style={animationProps}>
       <div className="jumbo-image-container">
         <img src={conversationImage} alt="drawing of two adults talking" />
       </div>
       <div className="jumbo-text-container">
         <div className="jumbo-text">
-          <h1>CAPE</h1>
+          <h1 className="header-trigger">CAPE</h1>
           <h2>For professionals who support child protection and 
             safeguarding activities and training across a range of ed​ucation and similar settings</h2>
           <Link className="btn primary-btn" to="/about">Learn More</Link>
           <Link className="btn secondary-btn" to="/conferences">Conferences</Link>
         </div>
       </div>
-    </section>
+    </animated.section>
     <section className="news-background">
       <div className="three-panel">
         <div className="three-panel--panel">

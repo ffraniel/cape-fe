@@ -20,7 +20,7 @@ const List = (props) => {
     return (
       <animated.div style={animationProps} className="list">
         <article >
-          <h3>No articles to show</h3>
+          <h3 className="header-trigger">No articles to show</h3>
         </article>
       </animated.div>
     );
@@ -30,14 +30,16 @@ const List = (props) => {
     <animated.div style={animationProps} className="list">
       {data.articles.map(article => {
         return (
-          <article key={article.id}>
-            <Link to={`/article/${article.id}`}>
-              <h1>{article.title}</h1>
+          <article className="list-article-block" key={article.id}>
+            <Link className="list-title-link header-trigger" to={`/article/${article.id}`}>
+              <h1 className="list-title">{article.title}</h1>
             </Link>
-            <p>{article.text.text.split(" ").slice(0, 30).join(" ")}...</p>
-            <div className="categories-list">
-              {article.category.map(category => {
-                return <Link key={category.title} to={`/category/${category.title.toLowerCase()}`}>{category.title}</Link>;
+            {article.author ? <h3 className="list-author">{article.author}</h3> : <h3 className="list-author">Editor</h3>}
+            <p className="list-preview">{article.text.text.split(" ").slice(0, 30).join(" ")}...</p>
+            <div className="list-categories-list">
+              {console.log("Article categories: ", console.log(article))}
+              {article.categories.map(category => {
+                return <Link className="list-category-list-item" key={category.title} to={`/category/${category.title.toLowerCase()}`}>{category.title}</Link>;
               })}
             </div>
           </article>

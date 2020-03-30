@@ -2,11 +2,23 @@
   font-family: var(--text-font);
 }
 
-.categories-list {
+.list-article-block .list-title-link .list-title {
+  font-size: 2.5rem;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.list-article-block .list-author {
+  margin: 0;
+  padding: 0;
+  color: rgb(255, 255, 255);
+}
+
+.list-categories-list {
   background: rgb(193, 243, 178);
 }
 
-.categories-list a {
+.list-categories-list a {
   background: white;
   display: inline-block;
   margin: 10px;

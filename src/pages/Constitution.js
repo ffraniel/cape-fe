@@ -1,11 +1,15 @@
 import React from 'react';
+import { useSpring, animated } from 'react-spring';
+import { animationConfig } from '../animations';
 import './Constitution.css';
 
 const Constitution = () => {
 
+  const animationProps = useSpring(animationConfig);
+
   return (
-    <div className="container constitution-page">
-      <h2>CAPE Constitution</h2>
+    <animated.div className="container constitution-page" style={animationProps}>
+      <h2 className="header-trigger">CAPE Constitution</h2>
       <p>​CAPE is an independent group that enables networking between professionals who support child protection and safeguarding activities across a range of education settings and services, and others with similar responsibilities. Its geographical base is in the north of England, but membership is not limited by this.</p>
       <h3>Aims</h3>
       <p>To promote and develop good child protection and safeguarding practice in education.  A central principle to its work is the need to safeguard children and promote their welfare.</p>
@@ -71,7 +75,7 @@ It is contrary to the collaborative nature of CAPE for membership to be used for
       </ul>
       <h3>Ongoing review of CAPE arrangements</h3>
       <p>The last meeting of each calendar year will review this constitution, membership fee and other matters as required.</p>
-    </div>
+    </animated.div>
   );
 };
 

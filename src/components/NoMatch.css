@@ -1,0 +1,23 @@
+.no-match {
+  height: 600px;
+  background-color: rgb(225, 247, 189);
+  height: 100vh;
+  font-family: var(--text-font);
+}
+
+.no-match .container .center-text {
+  text-align: center;
+}
+
+.no-match .container .red-text {
+  color: red;
+}
+
+.no-match .container .large-text{
+  font-size: 5.5rem;
+  margin: 20px auto;
+}
+
+.no-match .container .no-match-text{
+  font-size: 3rem;
+}

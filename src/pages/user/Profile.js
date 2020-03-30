@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useSpring, animated } from 'react-spring';
+import { animationConfig } from '../../animations';
 import './Profile.css';
 import fire from '../../config/fire';
 import firebase from 'firebase';
@@ -93,9 +95,11 @@ const Profile = () => {
     setPassword2('');
   };  
 
+  const animationProps = useSpring(animationConfig);
+
   return (
-    <div className="profile-page container">
-      <h2>{welcome}</h2>
+    <animated.div className="profile-page container" style={animationProps}>
+      <h2 className="header-trigger">{welcome}</h2>
       <h3>Managing Your Password</h3>
       <p>To change your passport use the form below.</p>
       {loadingPassword && <Loading />}
@@ -119,7 +123,7 @@ const Profile = () => {
             <input className="submit-btn" type="submit" />
           </form>
         </>
-    </div>
+    </animated.div>
   );
 };
 
