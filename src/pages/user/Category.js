@@ -43,7 +43,7 @@ const Category = () => {
   let categoryText = category[0].toUpperCase().concat(category.slice(1))
 
   return (
-    <div className="container category">
+    <div className="category">
       {data && data.articles.length > 0 && <h3>{categoryText}</h3>}
       {loading && <Loading />}
       {error && <h3>ERROR{console.log("error: ", error)}</h3>}

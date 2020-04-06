@@ -95,3 +95,11 @@ body {
 .medium-vertical-padding {
   padding: 60px 0;
 }
+
+.medium-padding {
+  padding: 60px;
+}
+
+.large-padding {
+  padding: 90px;
+}

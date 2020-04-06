@@ -13,7 +13,7 @@ const Feed = () => {
   const { pagination } = useParams();
   const [pageNumber, setPageNumber] = useState(pagination === undefined ? 0 : pagination);
   
-  const skipValue = 2;
+  const skipValue = 6;
 
   const { loading, error, data, fetchMore } = useQuery(getArticlesPreview, {
     variables: {
@@ -45,7 +45,7 @@ const Feed = () => {
 
 
   return (
-    <div className="container feed">
+    <div className="feed">
       <h3>CAPE Feed</h3>
       {error && <h3>ERROR{console.log("error: ", JSON.stringify(error))}</h3>}
       {loading && <Loading />}

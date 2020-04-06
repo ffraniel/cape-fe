@@ -66,16 +66,16 @@ const HeaderPublic = () => {
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/about">What We Do</NavLink>
+            <NavLink className="show-nav-location" to="/about">What We Do</NavLink>
           </li>
           <li>
-            <NavLink to="/conferences">Conferences</NavLink>
+            <NavLink className="show-nav-location" to="/conferences">Conferences</NavLink>
           </li>
           <li>
-            <NavLink to="/constitution">Constitution</NavLink>
+            <NavLink className="show-nav-location" to="/constitution">Constitution</NavLink>
           </li>
           <li>
-            <NavLink to="/login">Log In</NavLink>
+            <NavLink className="show-nav-location" to="/login">Log In</NavLink>
           </li>
         </ul>
         <button onClick={handleMenuClick} className="menu-btn">

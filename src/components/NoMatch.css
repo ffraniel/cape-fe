@@ -1,6 +1,6 @@
 .no-match {
   height: 600px;
-  background-color: rgb(225, 247, 189);
+  /* background-color: rgb(225, 247, 189); */
   height: 100vh;
   font-family: var(--text-font);
 }

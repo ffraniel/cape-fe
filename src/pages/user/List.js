@@ -28,19 +28,22 @@ const List = (props) => {
 
   return (
     <animated.div style={animationProps} className="list">
-      {data.articles.map(article => {
+      {data.articles.map((article, i) => {
+        let articleClass = i % 2 === 0 ? 'list-article-block medium-vertical-padding list-background-A' : 'list-article-block medium-vertical-padding list-background-B';
         return (
-          <article className="list-article-block" key={article.id}>
-            <Link className="list-title-link header-trigger" to={`/article/${article.id}`}>
-              <h1 className="list-title">{article.title}</h1>
-            </Link>
-            {article.author ? <h3 className="list-author">{article.author}</h3> : <h3 className="list-author">Editor</h3>}
-            <p className="list-preview">{article.text.text.split(" ").slice(0, 30).join(" ")}...</p>
-            <div className="list-categories-list">
-              {console.log("Article categories: ", console.log(article))}
-              {article.categories.map(category => {
-                return <Link className="list-category-list-item" key={category.title} to={`/category/${category.title.toLowerCase()}`}>{category.title}</Link>;
-              })}
+          <article className={articleClass} key={article.id}>
+            <div className="container">
+              <h6 className="article-list-date header-trigger">May 12 2020</h6>
+              <Link className="list-title-link" to={`/article/${article.id}`}>
+                <h1 className="list-title">{article.title}</h1>
+              </Link>
+              {article.author ? <h3 className="list-author">{article.author}</h3> : <h3 className="list-author">Editor</h3>}
+              <div className="list-categories-list">
+                {article.categories.map(category => {
+                  return <Link className="list-category-list-item" key={category.title} to={`/category/${category.title.toLowerCase()}`}>{category.title}</Link>;
+                })}
+              </div>
+              <p className="list-preview">{article.text.text.split(" ").slice(0, 30).join(" ")}...</p>
             </div>
           </article>
         )})}

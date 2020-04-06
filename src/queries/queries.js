@@ -73,7 +73,7 @@ query ($membersOnly: Boolean) {
   articles (
     where: {
       AND: [
-        { categories_some: { title: "events" } },
+        { categories_some: { title: "Events" } },
         { event: true },
         { membersOnly: $membersOnly}
       ]

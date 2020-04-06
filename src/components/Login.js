@@ -49,9 +49,9 @@ const Login = () => {
       <h3>Log In</h3>
       {loginError && <h3 className="red-text login-error-animation">Incorrect Username and/or Password. Please try again.</h3>}
       <form onSubmit={handleSubmit}>
-        <label for="email">Email</label>
+        <label htmlFor="email">Email</label>
         <input type="text" name="email" placeholder="Email" onChange={handleInput} value={email} />
-        <label for="password">Password</label>
+        <label htmlFor="password">Password</label>
         <input type="password" name="password" placeholder="Password" onChange={handleInput} value={password} />
         <input className="btn primary-btn" type="submit" value="LOG IN" />
       </form>

@@ -83,13 +83,13 @@ const HeaderUser = () => {
             <NavLink to="/">News Feed</NavLink>
           </li>
           <li>
-            <NavLink to="/category/events">Events</NavLink>
+            <NavLink className="show-nav-location" to="/category/events">Events</NavLink>
           </li>
           <li>
-            <NavLink to="/constitution">Constitution</NavLink>
+            <NavLink className="show-nav-location" to="/constitution">Constitution</NavLink>
           </li>
           <li>
-            <NavLink to="/profile">Profile</NavLink>
+            <NavLink className="show-nav-location" to="/profile">Profile</NavLink>
           </li>
           <li>
             <button className="btn sign-out-btn" onClick={signOut}>SIGN OUT</button>

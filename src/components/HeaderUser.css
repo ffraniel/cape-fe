@@ -1,0 +1,8 @@
+.desktop-menu li .show-nav-location {
+  transition: border-bottom 1s;
+  border-bottom: solid rgba(255, 255, 255, 0) 2px;
+}
+.desktop-menu li .show-nav-location.active {
+  transition: border-bottom 1s;
+  border-bottom: solid blue 2px;
+}
