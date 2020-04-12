@@ -21,6 +21,7 @@ const Profile = () => {
   const [currentPassword, setCurrentPassword] = useState('');
   const [password1, setPassword1] = useState('');
   const [password2, setPassword2] = useState('');
+  const [accessGranted, setAccessGranted] = useState(false);
   // change this back to false
   const [errorMessage, setErrorMessage] = useState(null);
   const [updateSucess, setUpdateSuccess] = useState(null);
@@ -40,80 +41,96 @@ const Profile = () => {
   };
 
   const resetPassword = async (oldPassword, newPassword) => {
-    var userForPassword = firebase.auth().currentUser;
-
-    const credential = firebase.auth.EmailAuthProvider.credential(
-      userForPassword.email, 
-      oldPassword
-    );
+  
     setLoadingPassword(true);
-
-    userForPassword.reauthenticateWithCredential(credential)
-      .then(function() {
-        // User re-authenticated.
-        console.log("oh yeah! reaunthenticated");
-        return user.updatePassword(newPassword);
-      })
+   
+    return user.updatePassword(newPassword)
       .then(function () {
         console.log("yes friend, reset that password");
         setLoadingPassword(false);
         setUpdateSuccess(true);
+        setEmail('');
+        setCurrentPassword('');
+        setPassword1('');
+        setPassword2('');
       })
       .catch(function(error) {
         setLoadingPassword(false);
-        console.log("damn, it messed up pal");
+        setCurrentPassword('');
+        setPassword1('');
+        setPassword2('');
+        console.log("Reset Failed");
+        if (error.code === "auth/weak-password") {
+          setErrorMessage('Sorry, unacceptable password. Passwords must be at least 6 charecters long.');
+        } else {
+          setErrorMessage("Unknown error, contact your site admin");
+          console.log("it messed up in a weird way pal");
+        }
         console.log(error);
       });
   }
+
+  const handleAccessUpdate = (e) => {
+    e.preventDefault();
+    setLoadingPassword(true);
+
+    var userForPassword = firebase.auth().currentUser;
+    const credential = firebase.auth.EmailAuthProvider.credential(
+      userForPassword.email, 
+      currentPassword
+    );
+
+    userForPassword.reauthenticateWithCredential(credential)
+      .then(function () {
+        setLoadingPassword(false);
+        setAccessGranted(true);
+        setErrorMessage(null);
+        console.log("oh yeah! reaunthenticated");
+      })
+      .catch(function (error) {
+        setLoadingPassword(false);
+        setErrorMessage('Sorry, incorrect email or password');
+
+        console.log("error reauntheticating: this person doesn't have access ", error);
+      })    
+  };
 
   const handlePasswordUpdate = (e) => {
     e.preventDefault();
     if (password1 !== password2) {
       setErrorMessage('Sorry, the passwords provided did not match. Please try again.');
+      setPassword1('');
+      setPassword2('');
     } else {
+      setErrorMessage(null);
       resetPassword(currentPassword, password1);
-    }
-      
-      // user.reauthenticateWithCredential(credential)
-      //   .then(() => {
-      //   // send off new password to firebase
-      //     user.updatePassword(password1).then(() => {
-      //     })
-      //   .catch(function(error) {
-      //     console.log(error)
-      //     setErrorMessage('Sorry, there appears to have been an error setting your new password. Please try again or contact an admin about this issue.');
-      //   });
-      // })
-      // .catch(function(error) {
-      //   console.log(error)
-      //   setErrorMessage('Sorry, your current password was inccorrect. Please try again.');
-      // });
-    
-    setEmail('');
-    setCurrentPassword('');
-    setPassword1('');
-    setPassword2('');
-  };  
+    }  
+  }
 
   const animationProps = useSpring(animationConfig);
 
   return (
-    <animated.div className="profile-page container" style={animationProps}>
+    <animated.div className="profile-page" style={animationProps}>
       <h2 className="header-trigger">{welcome}</h2>
       <h3>Managing Your Password</h3>
       <p>To change your passport use the form below.</p>
       {loadingPassword && <Loading />}
+      {errorMessage && <h3 className="password-reset-error-message">{errorMessage}</h3>}
       {updateSucess && <h3 className="password-reset-success-message">Password Successfully Updated</h3>}
+      {!updateSucess && 
         <>
-          {errorMessage && <h3 className="password-reset-error-message">{errorMessage}</h3>}
-          <form className="update-password" onSubmit={handlePasswordUpdate} >
-
+          {!accessGranted &&
+          <form className="update-password container" onSubmit={handleAccessUpdate} >
             <label htmlFor="email">Please enter your email address associated with your CAPE account.</label>
             <input type="text" name="email" placeholder="email@address.org" onChange={handleInput} value={email} />
-
             <label htmlFor="current-password">Please enter your current password.</label>
             <input type="password" name="current-password" placeholder="Old Password" onChange={handleInput} value={currentPassword} />
-            
+              
+            <input className="submit-btn" type="submit" />
+          </form>
+          }
+          {accessGranted && 
+          <form className="update-password container" onSubmit={handlePasswordUpdate} >
             <label htmlFor="password1">Please enter your new password. Passwords must be at least 6 characters long.</label>
             <input type="password" name="password1" placeholder="password" onChange={handleInput} value={password1} />
             
@@ -122,7 +139,9 @@ const Profile = () => {
             
             <input className="submit-btn" type="submit" />
           </form>
+          }
         </>
+      }
     </animated.div>
   );
 };

@@ -1,5 +1,18 @@
 .profile-page {
   font-family: var(--text-font);
+  margin: 50px; 
+}
+
+.profile-page h2 {
+  margin: 10px 0;
+}
+
+.profile-page h3 {
+  margin: 5px 0;
+}
+
+.profile-page p {
+  margin: 0;
 }
 
 .update-password {
@@ -20,4 +33,13 @@
   padding: 10px;
   font-size: 1.25rem;
   color: white;
+}
+
+.password-reset-success-message {
+  color: green;
+  padding-bottom: 90vh;
+}
+
+.password-reset-error-message {
+  color: red;
 }
