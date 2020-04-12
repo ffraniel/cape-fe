@@ -26,12 +26,13 @@ const List = (props) => {
     );
   }
 
+  const backgroundsList = ['background-0', 'background-1', 'background-2', 'background-3', 'background-4', 'background-0', 'background-1', 'background-2', 'background-3', 'background-4'];
+
   return (
     <animated.div style={animationProps} className="list">
       {data.articles.map((article, i) => {
-        let articleClass = i % 2 === 0 ? 'list-article-block medium-vertical-padding list-background-A' : 'list-article-block medium-vertical-padding list-background-B';
         return (
-          <article className={articleClass} key={article.id}>
+          <article className={`list-article-block medium-vertical-padding ${backgroundsList[i]}`} key={article.id}>
             <div className="container">
               <h6 className="article-list-date header-trigger">May 12 2020</h6>
               <Link className="list-title-link" to={`/article/${article.id}`}>
