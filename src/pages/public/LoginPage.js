@@ -9,7 +9,7 @@ const LoginPage = () => {
   const animationProps = useSpring(animationConfig);
 
   return (
-    <animated.div className="login-page page" style={animationProps}>
+    <animated.div className="login-page page small-vertical-padding " style={animationProps}>
       <div className="header-trigger">
         <Login />
       </div>

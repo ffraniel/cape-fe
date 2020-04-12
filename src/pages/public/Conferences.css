@@ -1,4 +1,11 @@
 .conferences {
   margin-top: 90px;
   font-family: var(--text-font);
+  color: #2D3748;
+  background-color: #E2E8F0;
+  line-height: 1.8;
+}
+
+.conferences h1 {
+  color: #1A202C;
 }

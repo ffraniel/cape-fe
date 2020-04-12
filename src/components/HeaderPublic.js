@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./HeaderPublic.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import Logo from "../assets/WhiteTrans.png";
 import { debounce } from '../utility/debounce';
 import PublicMobNav from './PublicMobNav';
@@ -14,13 +14,19 @@ const HeaderPublic = () => {
     setIsMobNavOpen(prevState => !prevState);
   }
 
+  const location = useLocation();
+  console.log("location: ", location.pathname)
+
   const [ colourHeader, setColourHeader ] = useState(false);
 
   useEffect(() => {
-    window.addEventListener('scroll', scrollHandler)
+    window.addEventListener('scroll', scrollHandler);
+    if (location.pathname !== "/") {
+      setColourHeader(true);
+    }
 
     return () => {
-      window.removeEventListener('scroll', scrollHandler)
+      window.removeEventListener('scroll', scrollHandler);
     };
   });
 

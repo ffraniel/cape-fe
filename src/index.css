@@ -15,7 +15,7 @@ code {
 }
 
 body {
-  background-color: #96CB99;
+  background-color: #F0FFF4;
 }
 
 .container {
@@ -93,8 +93,20 @@ body {
   color: rgb(35, 218, 35);
 }
 
+.small-vertical-padding {
+  padding: 40px 0;
+}
+
 .medium-vertical-padding {
   padding: 60px 0;
+}
+
+.large-vertical-padding {
+  padding: 90px 0;
+}
+
+.small-padding {
+  padding: 40px;
 }
 
 .medium-padding {

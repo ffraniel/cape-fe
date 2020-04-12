@@ -1,4 +1,9 @@
 .about {
   margin: 100px auto;
   font-family: var(--text-font);
+  line-height: 1.8;
+}
+
+.about-component {
+  background-color: #E2E8F0;
 }

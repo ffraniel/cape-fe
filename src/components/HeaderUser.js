@@ -31,44 +31,44 @@ const HeaderUser = () => {
   };
 
 
-  const [ colourHeader, setColourHeader ] = useState(false);
+  // const [ colourHeader, setColourHeader ] = useState(false);
 
   useEffect(() => {
-    window.addEventListener('scroll', scrollHandler)
+    // window.addEventListener('scroll', scrollHandler)
 
-    return () => {
-      window.removeEventListener('scroll', scrollHandler)
-    };
+    // return () => {
+    //   window.removeEventListener('scroll', scrollHandler)
+    // };
   });
 
-  const scrollHandler = (e) => {
-    triggerFunction(e);
-  };
+  // const scrollHandler = (e) => {
+  //   triggerFunction(e);
+  // };
 
-  const triggerFunction = debounce(function (e) {
+  // const triggerFunction = debounce(function (e) {
 
-    // var jumbotron = document.querySelector(".jumbotron");
-    var headerTrigger = document.querySelector(".header-trigger");
-    var headerElem = document.querySelector('.header');
+  //   // var jumbotron = document.querySelector(".jumbotron");
+  //   var headerTrigger = document.querySelector(".header-trigger");
+  //   var headerElem = document.querySelector('.header');
 
-    if (headerTrigger) {
-      var headerHeight = headerElem.getBoundingClientRect().height;
-      var bottomJumbotron = headerTrigger.getBoundingClientRect().top;
+  //   if (headerTrigger) {
+  //     var headerHeight = headerElem.getBoundingClientRect().height;
+  //     var bottomJumbotron = headerTrigger.getBoundingClientRect().top;
   
-      if (window.scrollY > ((bottomJumbotron + headerTrigger.offsetHeight) - headerHeight)) {
-        if (!colourHeader) {
-          setColourHeader(true);
-        }
-      } else {
-        if (colourHeader) {
-          setColourHeader(false);
-        }
-      }
-    }
-  }, 100);
+  //     if (window.scrollY > ((bottomJumbotron + headerTrigger.offsetHeight) - headerHeight)) {
+  //       if (!colourHeader) {
+  //         setColourHeader(true);
+  //       }
+  //     } else {
+  //       if (colourHeader) {
+  //         setColourHeader(false);
+  //       }
+  //     }
+  //   }
+  // }, 100);
 
   return (
-    <section className={colourHeader ? 'header headerBackgroundColour' : 'header'}>
+    <section className="header headerBackgroundColour" >
       <UserMobNav isMobNavOpen={isMobNavOpen} setIsMobNavOpen={setIsMobNavOpen} />
       <nav>
         <NavLink className="logo" to="/">

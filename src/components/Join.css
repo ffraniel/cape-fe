@@ -1,12 +1,27 @@
 .join-form-container {
-  background-color: white;
+  background-color: #F7FAFC;
   font-family: var(--text-font);
   padding: 60px 0;
+  line-height: 1.7;
 }
 
 .join-form-container .red-text {
   color: red;
   font-size: 1.5rem;
+}
+
+.join-form {
+  box-shadow: 0 2px 9px 0 #232c2566;
+  padding: 30px;
+  background: white;
+}
+
+.join-form .form-row {
+  display: flex;
+}
+
+.join-form .label {
+  font-size: 16px;
 }
 
 .join-form--text {
@@ -17,11 +32,6 @@
   display: none;
 }
 
-.join-form label {
-  display: block;
-}
-
-
 .join-form input[type="checkbox"] {
   height: 40px;
   width: 40px;
@@ -29,7 +39,6 @@
 }
 
 .join-form input[type="text"] {
-  display: block;
   margin: 5px auto;
   font-family: var(--text-font);
   padding: 0 5px;

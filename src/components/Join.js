@@ -81,42 +81,58 @@ const Join = () => {
         {!success && !error &&
         <form onSubmit={handleSubmit} className="join-form">
           <p className="join-form--text-label"><span className="red-text">*</span>Name</p>
-          <label htmlFor="firstName" className="label-hidden">First Name</label>
-          <input name="firstName" type="text" value={firstName} onChange={(e)=>{setFirstName(e.target.value)}} />
-          <label htmlFor="secondName" className="label-hidden">Second Name</label>        
-          <input name="secondName" type="text" value={lastName} onChange={(e)=>{setLastName(e.target.value)}} />
+          <div className="form-row">
+            <label htmlFor="firstName" className="label">First Name</label>
+            <input name="firstName" type="text" value={firstName} onChange={(e)=>{setFirstName(e.target.value)}} />
+          </div>
+          <div className="form-row">
+            <label htmlFor="secondName" className="label">Surname</label>        
+            <input name="secondName" type="text" value={lastName} onChange={(e)=>{setLastName(e.target.value)}} />
+          </div>
           <p className="join-form--text-label"><span className="red-text">*</span>Email</p>
-          <label htmlFor="email" className="label-hidden">Email</label>
-          <input name="email" type="text" value={email} onChange={(e)=>{setEmail(e.target.value)}} />
-
+          <div className="form-row">
+            <label htmlFor="email" className="label-hidden">Email</label>
+            <input name="email" type="text" value={email} onChange={(e)=>{setEmail(e.target.value)}} />
+          </div>  
           <p className="join-form--text"><span className="red-text">*</span>Address</p>
-          <label className="label-hidden" htmlFor="address">Address</label>
-          <input name="address" type="text" value={address} onChange={(e)=>{setAddress(e.target.value)}} />
-
+          <div className="form-row">
+            <label className="label-hidden" htmlFor="address">Address</label>
+            <input name="address" type="text" value={address} onChange={(e)=>{setAddress(e.target.value)}} />
+          </div>
           <p className="join-form--text">Telephone</p>
-          <label className="label-hidden" htmlFor="telephone">Telephone</label>
-          <input type="text" name="telephone" value={telephone} onChange={(e)=>{setTelephone(e.target.value)}} />
+          <div className="form-row">
+            <label className="label-hidden" htmlFor="telephone">Telephone</label>
+            <input type="text" name="telephone" value={telephone} onChange={(e)=>{setTelephone(e.target.value)}} />
+          </div>
 
           <p className="join-form--reason-text">We welcome new members and would like to know a little about you.  For example, how will membership be of benefit to you; and how would you like to contribute to CAPE activities (specialist knowledge or expertise, events organisation, facilities to host meetings, particular interests etc)?</p>
 
           <p className="join-form--text"><span className="red-text">*</span>What is your work role?</p>
-          <label className="label-hidden" htmlFor="yourRole">What is your work role?</label>
-          <input type="text" name="yourRole" value={yourRole} onChange={(e)=>{setYourRole(e.target.value)}} />
-
+          <div className="form-row">
+            <label className="label-hidden" htmlFor="yourRole">What is your work role?</label>
+            <input type="text" name="yourRole" value={yourRole} onChange={(e)=>{setYourRole(e.target.value)}} />
+          </div>
           <p className="join-form--text"><span className="red-text">*</span>Why are you interested in joining CAPE?</p>
-          <label className="label-hidden" htmlFor="whyJoin">Why are you interested in joining CAPE?</label>
-          <input type="text" name="whyJoin" value={whyJoin} onChange={(e)=>{setWhyJoin(e.target.value)}} />
+          <div className="form-row">
+            <label className="label-hidden" htmlFor="whyJoin">Why are you interested in joining CAPE?</label>
+            <input type="text" name="whyJoin" value={whyJoin} onChange={(e)=>{setWhyJoin(e.target.value)}} />
+          </div>
 
           <p className="join-form--text">Please provide any further information here</p>
-          <label className="label-hidden" htmlFor="moreInfo">Please provide any further information here</label>
-          <input type="text" name="moreInfo" value={moreInfo} onChange={(e)=>{setMoreInfo(e.target.value)}} />
+          
+          <div className="form-row">
+            <label className="label-hidden" htmlFor="moreInfo">Please provide any further information here</label>
+            <input type="text" name="moreInfo" value={moreInfo} onChange={(e)=>{setMoreInfo(e.target.value)}} />
+          </div>
 
           <p className="join-form--checkbox"><span className="red-text">*</span>Condition of membership</p>
-          <label className="label-hidden" htmlFor="memberAgreement">Condition of membership</label>
+          
           <p className="join-form--checkbox inline-elem"><span className="red-text">*</span>I agree to abide by the principles in the Constitution</p>
-          <input className="inline-elem" type="checkbox" name="memberAgreement" value={memberAgreement} onChange={()=>{setMemberAgreement(prevState => !prevState)}} />
-
-          <input type="submit" />
+          <div className="form-row">
+            <label className="label-hidden" htmlFor="memberAgreement">Condition of membership</label>
+            <input className="inline-elem" type="checkbox" name="memberAgreement" value={memberAgreement} onChange={()=>{setMemberAgreement(prevState => !prevState)}} />
+          </div>
+          <input className="btn primary-btn" type="submit" />
         </form>}
       </div>
     </section>

@@ -1,4 +1,18 @@
 .constitution-page {
   margin-top: 100px;
   font-family: var(--text-font);
+  background-color: #E2E8F0;
+  line-height: 1.8;
+}
+
+.constitution-page {
+  color: #2D3748;
+}
+
+.constitution-page h2 {
+  color: #1A202C;
+}
+
+.constitution-page h3 {
+  color: #1A202C
 }

@@ -9,7 +9,7 @@ const About = () => {
   const animationProps = useSpring(animationConfig);
 
   return (
-    <animated.div className="about-component" style={animationProps}>
+    <animated.div className="about-component medium-vertical-padding" style={animationProps}>
       <div className="about container" >
         <h3 className="header-trigger">CAPE - What We Do</h3>
         <p>CAPE is a professional network of people who support education establishments in their safeguarding responsibilities. 

@@ -4,7 +4,7 @@ import './NoMatch.css';
 
 const NoMatch = () => {
   return (
-    <div className="no-match">
+    <div className="no-match large-vertical-padding">
       <div className="container">
         <h1 className="center-text large-text header-trigger">404</h1>
         <h1 className="red-text no-match-text">Oh no, this is embarassing </h1>
