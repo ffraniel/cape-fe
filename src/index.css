@@ -30,6 +30,7 @@ body {
   --link-text-size: 20px;
   --text-font: 'Poppins', sans-serif;
   --white-text-hover: rgb(255, 255, 255);
+  --text-grey: #1A202C;
 }
 
 .btn {
@@ -102,4 +103,8 @@ body {
 
 .large-padding {
   padding: 90px;
+}
+
+.center {
+  text-align: center;
 }

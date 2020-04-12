@@ -2,6 +2,7 @@ import React from "react";
 import "./List.css";
 import { Link } from "react-router-dom";
 import {useSpring, animated} from 'react-spring';
+import shuffle from '../../utility/shuffle';
 
 const List = (props) => {
   const { data } = props;
@@ -26,7 +27,8 @@ const List = (props) => {
     );
   }
 
-  const backgroundsList = ['background-0', 'background-1', 'background-2', 'background-3', 'background-4', 'background-0', 'background-1', 'background-2', 'background-3', 'background-4'];
+  const backgroundsListInitial = ['background-0', 'background-1', 'background-2', 'background-3', 'background-4', 'background-0', 'background-1', 'background-2', 'background-3', 'background-4'];
+  const backgroundsList = shuffle(backgroundsListInitial);
 
   return (
     <animated.div style={animationProps} className="list">

@@ -29,6 +29,11 @@ const Profile = () => {
 
   const handleInput = (e) => {
     e.preventDefault();
+    console.log("input here")
+    if (errorMessage) {
+      console.log("if error here")
+      setErrorMessage(false);
+    }
     if (e.target.name === 'email') {
       setEmail(e.target.value);
     } else if (e.target.name === 'current-password') {
@@ -90,6 +95,7 @@ const Profile = () => {
       .catch(function (error) {
         setLoadingPassword(false);
         setErrorMessage('Sorry, incorrect email or password');
+        setCurrentPassword('');
 
         console.log("error reauntheticating: this person doesn't have access ", error);
       })    
@@ -107,37 +113,53 @@ const Profile = () => {
     }  
   }
 
+  const cancelProcess = () => {
+    setErrorMessage(null);
+    setLoadingPassword(false);
+    setUpdateSuccess(null);
+    setAccessGranted(false);
+    setEmail('');
+    setCurrentPassword('');
+    setPassword1('');
+    setPassword2('');
+  };
+
   const animationProps = useSpring(animationConfig);
 
   return (
     <animated.div className="profile-page" style={animationProps}>
+      {loadingPassword && <Loading />}
       <h2 className="header-trigger">{welcome}</h2>
       <h3>Managing Your Password</h3>
-      <p>To change your passport use the form below.</p>
-      {loadingPassword && <Loading />}
       {errorMessage && <h3 className="password-reset-error-message">{errorMessage}</h3>}
       {updateSucess && <h3 className="password-reset-success-message">Password Successfully Updated</h3>}
       {!updateSucess && 
         <>
           {!accessGranted &&
           <form className="update-password container" onSubmit={handleAccessUpdate} >
-            <label htmlFor="email">Please enter your email address associated with your CAPE account.</label>
-            <input type="text" name="email" placeholder="email@address.org" onChange={handleInput} value={email} />
-            <label htmlFor="current-password">Please enter your current password.</label>
-            <input type="password" name="current-password" placeholder="Old Password" onChange={handleInput} value={currentPassword} />
+            <p className="form-text-label">If you wish to change your account password use the form below.</p>
+            <h5 className="form-text-label">Confirm your current account details</h5>
+            <label htmlFor="email">Email</label>
+            <input className={errorMessage ? 'input-error input-text' : 'input-text'} type="text" name="email" placeholder="email@address.org" onChange={handleInput} value={email} />
+            <label htmlFor="current-password">Password</label>
+            <input className={errorMessage ? 'input-error input-text' : 'input-text'} type="password" name="current-password" placeholder="Password" onChange={handleInput} value={currentPassword} />
               
-            <input className="submit-btn" type="submit" />
+            <input className="btn submit-btn" type="submit" value="Confirm your password" />
           </form>
           }
           {accessGranted && 
           <form className="update-password container" onSubmit={handlePasswordUpdate} >
-            <label htmlFor="password1">Please enter your new password. Passwords must be at least 6 characters long.</label>
-            <input type="password" name="password1" placeholder="password" onChange={handleInput} value={password1} />
+            <p className="form-text-label">Set a new password</p>
+            <label htmlFor="password1">Password</label>
+            <input className={errorMessage ? 'input-error input-text' : 'input-text'} type="password" name="password1" placeholder="Password" onChange={handleInput} value={password1} />
             
-            <label htmlFor="password2">Please enter the new password again</label>
-            <input type="password" name="password2" placeholder="password" onChange={handleInput} value={password2} />
-            
-            <input className="submit-btn" type="submit" />
+            <p className="form-text-label">Confirm your new password</p>
+            <label htmlFor="password2">Please confirm your new password.</label>
+            <input className={errorMessage ? 'input-error input-text' : 'input-text'} type="password" name="password2" placeholder="Password" onChange={handleInput} value={password2} />
+            <div className="center container">
+              <button className="btn cancel-btn" onClick={cancelProcess}>Cancel</button>
+              <input className="btn submit-password-btn" type="submit" value="Change Password" />
+            </div>
           </form>
           }
         </>

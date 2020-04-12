@@ -5,26 +5,68 @@
 
 .profile-page h2 {
   margin: 10px 0;
+  color: var(--text-grey);
 }
 
 .profile-page h3 {
   margin: 5px 0;
+  color: var(--text-grey);
 }
 
 .profile-page p {
   margin: 0;
 }
 
+.profile-page h5 {
+  color: var(--text-grey);
+}
+
 .update-password {
-  padding: 60px 40px;
+  padding: 20px 0;
   margin: 20px auto  60px;
+  background: #EDF2F7;
+  box-shadow: 0px 3px 12px 1px #00000033;
+}
+
+.update-password .form-text-label {
+  margin: 8px 30px;
+  text-align: center;
+  color: var(--text-grey);
 }
 
 .update-password input {
-  margin: 5px 0 30px;
-  font-size: 1.15rem;
+  margin: 5px auto 15px;
+  font-size: 16px;
   width: 75%;
-  padding: 10px;
+  max-width: 320px; 
+  padding: 16px;
+  display: block;
+}
+
+.update-password .input-text {
+  border-radius: 4px;
+  border: solid rgba(0, 0, 0 ,0) 2px;
+  font-family: var(--text-font);
+  background-color: #CBD5E0;
+}
+
+.update-password .input-text.input-error {
+  border: solid red 2px;
+}
+
+.update-password label {
+    position: absolute !important;
+    height: 1px; 
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; /* added line */
+}
+
+.update-password .center {
+  margin-top: 0;
+  display: flex;
 }
 
 .update-password .submit-btn {
@@ -33,6 +75,33 @@
   padding: 10px;
   font-size: 1.25rem;
   color: white;
+  height: auto;
+}
+
+.update-password .cancel-btn {
+  margin: 5px auto 15px;
+  max-width: 320px;
+  display: block;
+  background: rgb(34, 111, 183);
+  width: 100%;
+  padding: 10px;
+  font-size: 1.25rem;
+  color: white;
+  height: auto;
+  margin-right: 10px;
+}
+
+.update-password .submit-password-btn {
+  margin: 5px auto 15px;
+  max-width: 320px;
+  display: block;
+  background: rgb(17, 214, 122);
+  width: 100%;
+  padding: 10px;
+  font-size: 1.25rem;
+  color: white;
+  height: auto;
+  margin-left: 10px;
 }
 
 .password-reset-success-message {
