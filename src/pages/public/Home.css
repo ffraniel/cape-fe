@@ -97,13 +97,13 @@
 .more-info .more-info--element {
   padding: 60px;
   font-family: var(--text-font);
-
   box-shadow: 0 2px 9px 0 #232c2566;
   border-radius: 4px;
   margin: 60px auto;
   background-color: #EDF2F7;
   color: #1A202C;
   line-height: 2;
+  max-width: 42em;
 }
 
 .more-info .more-info--element p {
@@ -140,6 +140,10 @@
     display: none;
   }
 
+  .jumbo-text-container {
+    padding-top: 95px;
+  }
+
 }
 
 @media (max-width: 900px) {
@@ -149,7 +153,7 @@
   }
 
   .jumbo-text {
-    margin: 80px auto;
+    margin: 0px auto;
     padding: 60px;
   }
 
@@ -169,9 +173,13 @@
     max-width: 300px;   
   }
 
+  .jumbo-image-container {
+    
+  }
+
   .jumbo-image-container img {
-    margin: 120px auto 60px;
-    width: 80%;
+    margin: 0 auto;
+    padding: 60px;
   }
 
   .news-background {

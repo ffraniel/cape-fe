@@ -18,9 +18,15 @@
   width: 100%;
   display: block;
   transition: background-color 0.3s;
-  z-index: 1;
+  z-index: 1;  
   /* background-color: green;
   box-shadow: 0 1px 3px 0px black; */
+}
+
+@media (max-width: 900px) {
+  .header {
+    background-color:rgb(49, 104, 53);
+  }
 }
 
 @media only screen and (min-width: 900px) {

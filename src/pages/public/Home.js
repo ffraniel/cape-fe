@@ -48,8 +48,7 @@ const Home = () => {
       <div className="jumbo-text-container">
         <div className="jumbo-text">
           <h1 className="header-trigger">CAPE</h1>
-          <h2>For professionals who support child protection and 
-            safeguarding activities and training across a range of ed​ucation and similar settings</h2>
+          <h2>For professionals who support child protection and safeguarding activities and training across a range of education and similar settings</h2>
           <Link className="btn primary-btn" to="/about">Learn More</Link>
           <Link className="btn secondary-btn" to="/conferences">Conferences</Link>
         </div>
@@ -78,17 +77,17 @@ const Home = () => {
       </div>
     </section>
     <section className="more-info">
-      <div className="more-info--element container" id="support">
+      <div className="more-info--element" id="support">
         <h3>Support</h3>
         <p>CAPE supports members by coming together for meetings to discuss their own work and the issues they are facing. Professionals whose role is to provide advice and support to Designated leads in Schools are often doing so without supervision for themselves. Child protection work is difficult, complex and sensitive and CAPE aims to support members by meeting on a regular basis and through the member's forum.</p>
         <a className="btn secondary-btn basic-box-shadow" href="#joining-cape" onClick={scrollToJoin} >Joining CAPE</a>
       </div>
-      <div className="more-info--element container" id="opportunities">
+      <div className="more-info--element" id="opportunities">
         <h3>Development Opportunities</h3>
         <p>CAPE members are professionals who provide training and consultancy to Designated Leads in schools. Cape recognises that CAPE members need to continuously update their own knowledge and development opportunities are offered to CAPE members.</p>
         <a className="btn secondary-btn basic-box-shadow" href="#joining-cape" onClick={scrollToJoin} >Joining CAPE</a>
       </div>
-      <div className="more-info--element container" id="practices">
+      <div className="more-info--element" id="practices">
         <h3>Professional Partners</h3>
         <p>CAPE is a long standing organisation and recognised as useful partners in developing practice. CAPE regularly responds to Government consultations and CAPE has representation on a number of national development groups set up to inform and improve professional practice.</p>
         <a className="btn secondary-btn basic-box-shadow" href="#joining-cape" onClick={scrollToJoin} >Joining CAPE</a>
