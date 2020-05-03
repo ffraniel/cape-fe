@@ -1,9 +1,14 @@
 .about {
   margin: 100px auto;
   font-family: var(--text-font);
+  color: #2D3748;
   line-height: 1.8;
 }
 
 .about-component {
   background-color: #E2E8F0;
+}
+
+.about-component h3 {
+  color: #1A202C;
 }

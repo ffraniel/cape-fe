@@ -31,6 +31,9 @@ const Dashboard = () => {
             <Route exact path="/">
               <Feed />
             </Route>
+            <Route path="/articles/0">
+              <Redirect to="/" />
+            </Route>
             <Route path="/articles/:pagination">
               <Feed />
             </Route>
@@ -43,6 +46,17 @@ const Dashboard = () => {
             <Route path="/article/:articleID">
               <Article />
             </Route>
+            <Route
+              path="/category/:category/0"
+              component={({ location }) => (
+                <Redirect
+                  to={{
+                    ...location,
+                    pathname: location.pathname.replace("/0", "/"),
+                  }}
+                />
+              )}
+            />
             <Route path="/category/:category/:pagination?">
               <Category />
             </Route>

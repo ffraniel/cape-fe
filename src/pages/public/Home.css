@@ -13,6 +13,7 @@
   font-family: var(--text-font);
   margin: 200px auto;
   padding: 20px;
+  word-wrap: break-word;
 }
 
 .jumbo-text h1 {
@@ -101,7 +102,7 @@
   border-radius: 4px;
   margin: 60px auto;
   background-color: #EDF2F7;
-  font-color: #1A202C;
+  color: #1A202C;
   line-height: 2;
 }
 

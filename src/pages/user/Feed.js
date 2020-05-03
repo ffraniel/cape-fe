@@ -13,7 +13,7 @@ const Feed = () => {
   const { pagination } = useParams();
   const [pageNumber, setPageNumber] = useState(pagination === undefined ? 0 : pagination);
   
-  const skipValue = 6;
+  const skipValue = 2;
 
   const { loading, error, data, fetchMore } = useQuery(getArticlesPreview, {
     variables: {

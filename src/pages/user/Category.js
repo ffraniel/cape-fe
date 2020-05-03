@@ -34,8 +34,12 @@ const Category = () => {
         if (!fetchMoreResult) { 
           return previousResult;
         }
-        console.log("always this; ", fetchMoreResult)
-        return fetchMoreResult;
+        // console.log("always this; ", fetchMoreResult)
+        // return {previousResult, ...fetchMoreResult};
+        
+        return Object.assign({}, previousResult, {
+          articles: [...previousResult.articles, ...fetchMoreResult.articles],
+        });
       }
     });
   }, [pagination, fetchMore, pageNumber, category]);

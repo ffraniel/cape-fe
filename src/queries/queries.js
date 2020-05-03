@@ -52,8 +52,8 @@ query ($id: ID) {
 `
 
 const getArticlesByTheme = gql`
-query ($category: String) {
-  articles(where: { categories_some: { title: $category } }) {
+query ($category: String, $first: Int, $skip: Int) {
+  articles(where: { categories_some: { title: $category } }, first: $first, skip: $skip) {
     id
     title
     categories {
