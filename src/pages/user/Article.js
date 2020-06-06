@@ -8,6 +8,7 @@ import {
 import { getArticle } from '../../queries/queries';
 import {useSpring, animated} from 'react-spring';
 import Loading from '../../components/Loading';
+import Breadcrumb from '../../components/Breadcrumb';
 
 const Article = () => {
   const { articleID } = useParams();
@@ -28,6 +29,7 @@ const Article = () => {
     }
   });
 
+
   if (data && (data.article === null || data.article.length === 0)) {
 
     return (
@@ -40,7 +42,8 @@ const Article = () => {
   }
 
   return (
-    <animated.div style={animationProps} className="article-container medium-vertical-padding">
+    <animated.div style={animationProps} className="article-container ">
+      <Breadcrumb />
       {loading && <Loading />}
       {error && <h1>ERROR{console.log("error: ", error)}</h1>}
       {data && console.log(data)}

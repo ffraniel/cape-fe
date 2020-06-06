@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { 
   BrowserRouter as Router, 
   Switch, 
@@ -18,9 +18,7 @@ import UserFooter from '../../components/UserFooter';
 import ScrollToTop from '../../components/ScrollToTop';
 
 const Dashboard = () => {
-
   // all the logged in aceessible area goes here
-
   return (
     <section className="dashboard">
       <Router>
