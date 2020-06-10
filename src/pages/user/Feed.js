@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
 import "./Feed.css";
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from "@apollo/react-hooks";
 import { useParams } from "react-router-dom";
-import { 
-  getArticlesPreview
-} from '../../queries/queries';
-import List from './List';
-import Paginator from '../../components/Paginator';
-import Loading from '../../components/Loading';
+import { getArticlesPreview } from "../../queries/queries";
+import List from "./List";
+import Paginator from "../../components/Paginator";
+import Loading from "../../components/Loading";
 
 const Feed = () => {
   const { pagination } = useParams();
-  const [pageNumber, setPageNumber] = useState(pagination === undefined ? 0 : pagination);
-  
+  const [pageNumber, setPageNumber] = useState(
+    pagination === undefined ? 0 : pagination
+  );
+
   const skipValue = 2;
 
   const { loading, error, data, fetchMore } = useQuery(getArticlesPreview, {
@@ -22,7 +22,7 @@ const Feed = () => {
       skip: 0
     }
   });
-  
+
   useEffect(() => {
     setPageNumber(pagination === undefined ? 0 : pagination);
     fetchMore({
@@ -30,9 +30,9 @@ const Feed = () => {
         category: "News",
         first: skipValue,
         skip: skipValue * Number(pagination === undefined ? 0 : pagination)
-      }, 
-      updateQuery: (previousResult, {fetchMoreResult}) => {
-        if (!fetchMoreResult) { 
+      },
+      updateQuery: (previousResult, { fetchMoreResult }) => {
+        if (!fetchMoreResult) {
           return previousResult;
         }
         // return Object.assign({}, previousResult, {
@@ -43,7 +43,6 @@ const Feed = () => {
     });
   }, [pagination, fetchMore, pageNumber]);
 
-
   return (
     <div className="feed">
       <h3>CAPE Feed</h3>
@@ -51,12 +50,13 @@ const Feed = () => {
       {loading && <Loading />}
       {data && <List data={data} />}
       {data && console.log(data)}
-      {data && 
-        <Paginator 
-          pageNumber={Number(pageNumber)} 
-          length={data.articles.length} 
-          isCategory={false} 
-        />}
+      {data && (
+        <Paginator
+          pageNumber={Number(pageNumber)}
+          length={data.articles.length}
+          isCategory={false}
+        />
+      )}
     </div>
   );
 };
