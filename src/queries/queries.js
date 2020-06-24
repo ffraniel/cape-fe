@@ -1,25 +1,8 @@
 import { gql } from "apollo-boost";
 
 const getArticles = gql`
-    {
-      articles {
-        title
-        id
-        categories {
-          title
-        }
-        event
-        membersOnly
-        text {
-          text
-        }
-      }
-    }
-  `;
-
-const getArticlesPreview = gql`
-  query articles ($first: Int, $skip: Int) {
-    articles (first: $first, skip: $skip) {
+  {
+    articles {
       title
       id
       categories {
@@ -31,94 +14,133 @@ const getArticlesPreview = gql`
         text
       }
     }
-  }  
+  }
+`;
+
+const getArticlesPreview = gql`
+  query articles($first: Int, $skip: Int) {
+    articles(first: $first, skip: $skip) {
+      title
+      id
+      categories {
+        title
+      }
+      event
+      membersOnly
+      text {
+        text
+      }
+    }
+  }
+`;
+
+const getArticlesPreviewB = gql`
+  query articles($first: Int, $after: String) {
+    articles(first: $first, after: $after) {
+      title
+      id
+      categories {
+        title
+      }
+      event
+      membersOnly
+      text {
+        text
+      }
+    }
+  }
 `;
 
 const getArticle = gql`
-query ($id: ID) {
-  article (where: {id: $id}) {
-    id
-    title
-    categories {
+  query($id: ID) {
+    article(where: { id: $id }) {
+      id
       title
-    }
-    event
-    membersOnly
-    text {
-      html
+      categories {
+        title
+      }
+      event
+      membersOnly
+      text {
+        html
+      }
     }
   }
-}
-`
+`;
 
 const getArticlesByTheme = gql`
-query ($category: String, $first: Int, $skip: Int) {
-  articles(where: { categories_some: { title: $category } }, first: $first, skip: $skip) {
-    id
-    title
-    categories {
+  query($category: String, $first: Int, $skip: Int) {
+    articles(
+      where: { categories_some: { title: $category } }
+      first: $first
+      skip: $skip
+    ) {
+      id
       title
-    }
-    event
-    membersOnly
-    text {
-      text
+      categories {
+        title
+      }
+      event
+      membersOnly
+      text {
+        text
+      }
     }
   }
-}
 `;
 
 const getConference = gql`
-query ($membersOnly: Boolean) {
-  articles (
-    where: {
-      AND: [
-        { categories_some: { title: "Events" } },
-        { event: true },
-        { membersOnly: $membersOnly}
-      ]
-    }
-  ) 
-  {
-    id
-    title
-    categories {
+  query($membersOnly: Boolean) {
+    articles(
+      where: {
+        AND: [
+          { categories_some: { title: "Events" } }
+          { event: true }
+          { membersOnly: $membersOnly }
+        ]
+      }
+    ) {
+      id
       title
-    }
+      categories {
+        title
+      }
       event
       membersOnly
-    text {
-      text
-      html
+      text {
+        text
+        html
+      }
     }
   }
-}
 `;
 
 const getConstitution = gql`
-{
-  permanents {
-    title
-    text {
-      html
+  {
+    permanents {
+      title
+      text {
+        html
+      }
     }
   }
-}`;
-  
-const idsForLength = gql`
-{
-  articles {
-    id
-  }
-}
-  `;
+`;
 
-  export {
-    getArticles,
-    getArticlesPreview,
-    getArticle,
-    getArticlesByTheme,
-    getConstitution,
-    idsForLength,
-    getConference
-  };
+const idsForLength = gql`
+  {
+    articles {
+      id
+    }
+  }
+`;
+
+export {
+  getArticles,
+  getArticlesPreview,
+  getArticle,
+  getArticlesByTheme,
+  getConstitution,
+  idsForLength,
+  getConference,
+  getArticlesPreviewB,
+};

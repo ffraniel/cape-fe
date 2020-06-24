@@ -1,47 +1,52 @@
 import React, { useState, useEffect } from "react";
 import "./Feed.css";
 import { useQuery } from "@apollo/react-hooks";
-import { useParams } from "react-router-dom";
-import { getArticlesPreview } from "../../queries/queries";
+import { getArticlesPreviewB } from "../../queries/queries";
 import List from "./List";
-import Paginator from "../../components/Paginator";
 import Loading from "../../components/Loading";
 
 const Feed = () => {
-  const { pagination } = useParams();
-  const [pageNumber, setPageNumber] = useState(
-    pagination === undefined ? 0 : pagination
-  );
-
+  const [lastEntry, setLastEntry] = useState("");
+  const [noMoreArticles, setNoMoreArticles] = useState(false);
   const skipValue = 2;
 
-  const { loading, error, data, fetchMore } = useQuery(getArticlesPreview, {
+  const { loading, error, data, fetchMore } = useQuery(getArticlesPreviewB, {
     variables: {
       category: "News",
       first: skipValue,
-      skip: 0
-    }
+    },
   });
 
   useEffect(() => {
-    setPageNumber(pagination === undefined ? 0 : pagination);
+    if (data && data.articles.length) {
+      setLastEntry(data.articles.slice(-1)[0].id);
+    }
+  }, [data]);
+
+  const loadMoreArticles = () => {
     fetchMore({
+      query: getArticlesPreviewB,
       variables: {
         category: "News",
         first: skipValue,
-        skip: skipValue * Number(pagination === undefined ? 0 : pagination)
+        after: lastEntry,
       },
-      updateQuery: (previousResult, { fetchMoreResult }) => {
-        if (!fetchMoreResult) {
-          return previousResult;
+
+      updateQuery: (prev, { fetchMoreResult }) => {
+        if (!fetchMoreResult || fetchMoreResult.articles.length === 0) {
+          setNoMoreArticles(true);
+          return prev;
         }
-        // return Object.assign({}, previousResult, {
-        //   articles: [...previousResult.articles, ...fetchMoreResult.articles],
-        // });
-        return fetchMoreResult;
-      }
+        if (fetchMoreResult.articles.length < 2) {
+          setNoMoreArticles(true);
+        }
+        return Object.assign({}, prev, {
+          articles: [...prev.articles, ...fetchMoreResult.articles],
+        });
+      },
     });
-  }, [pagination, fetchMore, pageNumber]);
+    setLastEntry(data.articles.slice(-1)[0].id);
+  };
 
   return (
     <div className="feed">
@@ -49,13 +54,14 @@ const Feed = () => {
       {error && <h3>ERROR{console.log("error: ", JSON.stringify(error))}</h3>}
       {loading && <Loading />}
       {data && <List data={data} />}
-      {data && console.log(data)}
-      {data && (
-        <Paginator
-          pageNumber={Number(pageNumber)}
-          length={data.articles.length}
-          isCategory={false}
-        />
+      {data && console.log(lastEntry)}
+      {data && !noMoreArticles && (
+        <button onClick={loadMoreArticles}>GET MORE </button>
+      )}
+      {data && noMoreArticles && (
+        <div className="no-more-results">
+          <h3>No more results</h3>
+        </div>
       )}
     </div>
   );
