@@ -51,6 +51,27 @@ const getArticlesPreviewB = gql`
   }
 `;
 
+const getArticlesByThemeB = gql`
+  query($category: String, $first: Int, $after: String) {
+    articles(
+      where: { categories_some: { title: $category } }
+      first: $first
+      after: $after
+    ) {
+      id
+      title
+      categories {
+        title
+      }
+      event
+      membersOnly
+      text {
+        text
+      }
+    }
+  }
+`;
+
 const getArticle = gql`
   query($id: ID) {
     article(where: { id: $id }) {
@@ -143,4 +164,5 @@ export {
   idsForLength,
   getConference,
   getArticlesPreviewB,
+  getArticlesByThemeB,
 };

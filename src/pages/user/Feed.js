@@ -20,6 +20,10 @@ const Feed = () => {
   useEffect(() => {
     if (data && data.articles.length) {
       setLastEntry(data.articles.slice(-1)[0].id);
+
+      if (data.articles.length % skipValue !== 0) {
+        setNoMoreArticles(true);
+      }
     }
   }, [data]);
 
@@ -33,11 +37,13 @@ const Feed = () => {
       },
 
       updateQuery: (prev, { fetchMoreResult }) => {
-        if (!fetchMoreResult || fetchMoreResult.articles.length === 0) {
-          setNoMoreArticles(true);
+        if (!fetchMoreResult) {
           return prev;
         }
-        if (fetchMoreResult.articles.length < 2) {
+        if (
+          fetchMoreResult.articles.length < 2 ||
+          fetchMoreResult.articles.length === 0
+        ) {
           setNoMoreArticles(true);
         }
         return Object.assign({}, prev, {

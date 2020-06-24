@@ -1,21 +1,21 @@
-import React, { useEffect } from "react";
-import { 
-  BrowserRouter as Router, 
-  Switch, 
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
   Route,
-  Redirect
- } from "react-router-dom";
+  Redirect,
+} from "react-router-dom";
 import "./Dashboard.css";
 import HeaderUser from "../../components/HeaderUser";
-import Feed from './Feed';
-import Profile from './Profile';
-import Constitution from '../Constitution';
-import Category from './Category';
-import NoMatch from '../../components/NoMatch';
-import Article from './Article';
-import UserMobNav from '../../components/UserMobNav';
-import UserFooter from '../../components/UserFooter';
-import ScrollToTop from '../../components/ScrollToTop';
+import Feed from "./Feed";
+import Profile from "./Profile";
+import Constitution from "../Constitution";
+import Category from "./Category";
+import NoMatch from "../../components/NoMatch";
+import Article from "./Article";
+import UserMobNav from "../../components/UserMobNav";
+import UserFooter from "../../components/UserFooter";
+import ScrollToTop from "../../components/ScrollToTop";
 
 const Dashboard = () => {
   // all the logged in aceessible area goes here
@@ -24,15 +24,9 @@ const Dashboard = () => {
       <Router>
         <ScrollToTop />
         <HeaderUser />
-        <div className="margin-top">          
+        <div className="margin-top">
           <Switch>
             <Route exact path="/">
-              <Feed />
-            </Route>
-            <Route path="/articles/0">
-              <Redirect to="/" />
-            </Route>
-            <Route path="/articles/:pagination">
               <Feed />
             </Route>
             <Route path="/constitution">
@@ -44,18 +38,7 @@ const Dashboard = () => {
             <Route path="/article/:articleID">
               <Article />
             </Route>
-            <Route
-              path="/category/:category/0"
-              component={({ location }) => (
-                <Redirect
-                  to={{
-                    ...location,
-                    pathname: location.pathname.replace("/0", "/"),
-                  }}
-                />
-              )}
-            />
-            <Route path="/category/:category/:pagination?">
+            <Route path="/category/:category">
               <Category />
             </Route>
             <Route path="/navigation">
