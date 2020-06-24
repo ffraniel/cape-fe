@@ -64,7 +64,7 @@ const Category = () => {
       {loading && <Loading />}
       {error && <h3>ERROR{console.log("error: ", error)}</h3>}
       {data && <List data={data} />}
-      {data && !noMoreArticles && (
+      {data && !noMoreArticles && data.articles.length > 0 && (
         <button onClick={loadMoreArticles}>GET MORE </button>
       )}
       {data && noMoreArticles && (

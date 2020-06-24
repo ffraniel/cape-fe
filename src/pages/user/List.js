@@ -35,7 +35,9 @@ const List = (props) => {
             key={article.id}
           >
             <div className="container">
-              <h6 className="article-list-date header-trigger">May 12 2020</h6>
+              <h6 className="article-list-date header-trigger">
+                May 12 2020 - (fake date)
+              </h6>
               <Link className="list-title-link" to={`/article/${article.id}`}>
                 <h1 className="list-title">{article.title}</h1>
               </Link>

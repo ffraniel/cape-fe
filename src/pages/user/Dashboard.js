@@ -8,6 +8,7 @@ import {
 import "./Dashboard.css";
 import HeaderUser from "../../components/HeaderUser";
 import Feed from "./Feed";
+import Dash from "./Dash";
 import Profile from "./Profile";
 import Constitution from "../Constitution";
 import Category from "./Category";
@@ -27,6 +28,9 @@ const Dashboard = () => {
         <div className="margin-top">
           <Switch>
             <Route exact path="/">
+              <Dash />
+            </Route>
+            <Route path="/articles">
               <Feed />
             </Route>
             <Route path="/constitution">
@@ -35,14 +39,14 @@ const Dashboard = () => {
             <Route path="/profile">
               <Profile />
             </Route>
-            <Route path="/article/:articleID">
-              <Article />
+            <Route exact path="/category/news">
+              <Redirect to="/articles" />
             </Route>
             <Route path="/category/:category">
               <Category />
             </Route>
-            <Route path="/navigation">
-              <UserMobNav />
+            <Route path="/article/:articleID">
+              <Article />
             </Route>
             <Route exact path="/login">
               <Redirect to="/" />
