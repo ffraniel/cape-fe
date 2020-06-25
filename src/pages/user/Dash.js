@@ -8,8 +8,8 @@ import MiniFeed from "../../components/MiniFeed";
 import EventsPreview from "../../components/EventsPreview";
 import ResourcesPreview from "../../components/ResourcesPreview";
 import GuidancePreview from "../../components/GuidancePreview";
+import MinutesPreview from "../../components/MinutesPreview";
 import Loading from "../../components/Loading";
-import Sidebar from "../../components/Sidebar";
 
 const Dash = () => {
   const skipValue = 4;
@@ -23,7 +23,6 @@ const Dash = () => {
 
   return (
     <div className="dash">
-      <Sidebar />
       {loading && <Loading />}
       {data && (
         <>
@@ -38,6 +37,7 @@ const Dash = () => {
       <EventsPreview />
       <ResourcesPreview />
       <GuidancePreview />
+      <MinutesPreview />
       {error && <h3>ERROR</h3>}
       {error && console.log("ERROR: ", error.toString())}
     </div>

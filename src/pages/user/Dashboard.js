@@ -17,6 +17,7 @@ import Article from "./Article";
 import UserMobNav from "../../components/UserMobNav";
 import UserFooter from "../../components/UserFooter";
 import ScrollToTop from "../../components/ScrollToTop";
+import Sidebar from "../../components/Sidebar";
 
 const Dashboard = () => {
   // all the logged in aceessible area goes here
@@ -26,6 +27,7 @@ const Dashboard = () => {
         <ScrollToTop />
         <HeaderUser />
         <div className="margin-top">
+          <Sidebar />
           <Switch>
             <Route exact path="/">
               <Dash />

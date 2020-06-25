@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { useParams } from "react-router-dom";
 import { getArticlesByThemeB } from "../../queries/queries";
 import List from "./List";
+import SubjectHeading from "../../components/SubjectHeading";
 import Loading from "../../components/Loading";
 
 const Category = () => {
@@ -60,7 +61,7 @@ const Category = () => {
 
   return (
     <div className="category">
-      {data && data.articles.length > 0 && <h3>{categoryText}</h3>}
+      <SubjectHeading categoryText={categoryText} />
       {loading && <Loading />}
       {error && <h3>ERROR{console.log("error: ", error)}</h3>}
       {data && <List data={data} />}

@@ -3,6 +3,7 @@ import "./Feed.css";
 import { useQuery } from "@apollo/react-hooks";
 import { getArticlesPreviewB } from "../../queries/queries";
 import List from "./List";
+import SubjectHeading from "../../components/SubjectHeading";
 import Loading from "../../components/Loading";
 
 const Feed = () => {
@@ -54,9 +55,11 @@ const Feed = () => {
     setLastEntry(data.articles.slice(-1)[0].id);
   };
 
+  let categoryText = "News";
+
   return (
     <div className="feed">
-      <h3>CAPE Feed</h3>
+      <SubjectHeading categoryText={categoryText} />
       {error && <h3>ERROR{console.log("error: ", JSON.stringify(error))}</h3>}
       {loading && <Loading />}
       {data && <List data={data} />}
