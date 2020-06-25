@@ -1,19 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { NavLink, useHistory } from "react-router-dom";
-import './HeaderUser.css';
+import "./HeaderUser.css";
 import Logo from "../assets/WhiteTrans.png";
 import fire from "../config/fire";
-import UserMobNav from './UserMobNav';
-import { debounce } from '../utility/debounce';
+import UserMobNav from "./UserMobNav";
+import { debounce } from "../utility/debounce";
 
 const HeaderUser = () => {
-
   const [isMobNavOpen, setIsMobNavOpen] = useState(false);
 
   const handleMenuClick = (e) => {
     e.stopPropagation();
-    setIsMobNavOpen(prevState => !prevState);
-  }
+    setIsMobNavOpen((prevState) => !prevState);
+  };
 
   let history = useHistory();
 
@@ -21,21 +20,19 @@ const HeaderUser = () => {
     fire
       .auth()
       .signOut()
-      .then(function() {
+      .then(function () {
         console.log("sign-out successful.");
-        history.push('/');
+        history.push("/");
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
   };
-
 
   // const [ colourHeader, setColourHeader ] = useState(false);
 
   useEffect(() => {
     // window.addEventListener('scroll', scrollHandler)
-
     // return () => {
     //   window.removeEventListener('scroll', scrollHandler)
     // };
@@ -54,7 +51,7 @@ const HeaderUser = () => {
   //   if (headerTrigger) {
   //     var headerHeight = headerElem.getBoundingClientRect().height;
   //     var bottomJumbotron = headerTrigger.getBoundingClientRect().top;
-  
+
   //     if (window.scrollY > ((bottomJumbotron + headerTrigger.offsetHeight) - headerHeight)) {
   //       if (!colourHeader) {
   //         setColourHeader(true);
@@ -68,31 +65,62 @@ const HeaderUser = () => {
   // }, 100);
 
   return (
-    <section className="header headerBackgroundColour" >
-      <UserMobNav isMobNavOpen={isMobNavOpen} setIsMobNavOpen={setIsMobNavOpen} />
+    <section className="header headerBackgroundColour">
+      <UserMobNav
+        isMobNavOpen={isMobNavOpen}
+        setIsMobNavOpen={setIsMobNavOpen}
+      />
       <nav>
         <NavLink className="logo" to="/">
           <img
             className="logo-img"
             src={Logo}
             alt="CAPE logo - child figure holding two adult hands"
-              />
+          />
         </NavLink>
         <ul className="desktop-menu">
           <li>
             <NavLink to="/">News Feed</NavLink>
           </li>
+
+          <li className="filter-trigger">
+            <button className="show-nav-location category-btn">
+              Categories
+            </button>
+
+            <ul className="filter-container">
+              <li>
+                <NavLink to={"/articles"}>News</NavLink>
+              </li>
+              <li>
+                <NavLink to={"/category/events"}>Events</NavLink>
+              </li>
+              <li>
+                <NavLink to={"/category/resources"}>Resources</NavLink>
+              </li>
+              <li>
+                <NavLink to={"/category/guidance"}>Guidance</NavLink>
+              </li>
+            </ul>
+          </li>
+
           <li>
-            <NavLink className="show-nav-location" to="/category/events">Events</NavLink>
+            <a href="#forum">Forum</a>
           </li>
           <li>
-            <NavLink className="show-nav-location" to="/constitution">Constitution</NavLink>
+            <NavLink className="show-nav-location" to="/constitution">
+              Constitution
+            </NavLink>
           </li>
           <li>
-            <NavLink className="show-nav-location" to="/profile">Profile</NavLink>
+            <NavLink className="show-nav-location" to="/profile">
+              Profile
+            </NavLink>
           </li>
           <li>
-            <button className="btn sign-out-btn" onClick={signOut}>SIGN OUT</button>
+            <button className="btn sign-out-btn" onClick={signOut}>
+              SIGN OUT
+            </button>
           </li>
         </ul>
         <button onClick={handleMenuClick} className="menu-btn">
@@ -102,7 +130,7 @@ const HeaderUser = () => {
         </button>
       </nav>
     </section>
-  )
-}
+  );
+};
 
 export default HeaderUser;

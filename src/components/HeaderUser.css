@@ -2,7 +2,48 @@
   transition: border-bottom 1s;
   border-bottom: solid rgba(255, 255, 255, 0) 2px;
 }
+
 .desktop-menu li .show-nav-location.active {
   transition: border-bottom 1s;
   border-bottom: solid blue 2px;
+}
+
+.filter-container {
+  display: none;
+}
+
+.filter-trigger {
+  color: var(--white-text);
+  font-size: var(--link-text-size);
+  display: inline-block;
+  z-index: 2;
+}
+
+.filter-trigger:hover .filter-container {
+  display: flex;
+  position: fixed;
+  padding: 45px;
+  background-color: #264f2f;
+}
+
+.filter-container li {
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+  transition: border-bottom 0.5s;
+}
+
+.filter-container li:hover {
+  border-bottom: 2px solid blue;
+}
+
+.show-nav-location {
+  display: inline;
+  margin: 0 15px;
+}
+
+.category-btn {
+  background-color: transparent;
+  color: var(--white-text);
+  border: none;
+  font-size: var(--link-text-size);
+  padding: 10px 15px;
 }
