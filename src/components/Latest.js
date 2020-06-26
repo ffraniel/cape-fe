@@ -8,6 +8,7 @@ const Latest = ({ article }) => {
       className={`list-article-block medium-vertical-padding`}
       key={article.id}
     >
+      <h3>Latest</h3>
       <div className="container">
         <h6 className="article-list-date header-trigger">May 12 2020</h6>
         <Link className="list-title-link" to={`/article/${article.id}`}>

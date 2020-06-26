@@ -1,30 +1,30 @@
 import React from "react";
+import "./SubjectPreview.css";
 import MiniFeed from "./MiniFeed";
 import { getArticlesByThemeB } from "../queries/queries";
 import { useQuery } from "@apollo/react-hooks";
 
-const MinutesPreview = () => {
-  //make query for guidance
+const SubjectPreview = ({ previewSubject }) => {
   const { loading, error, data } = useQuery(getArticlesByThemeB, {
     variables: {
-      category: "minutes",
+      category: previewSubject,
       first: 4,
     },
   });
 
-  // if (data && data.articles.length === 0) {
-  //   return [];
-  // }
+  const capitalisedSubject = previewSubject[0]
+    .toUpperCase()
+    .concat(previewSubject.slice(1));
 
   return (
-    <div className="recent-article-preview">
-      <h3>Minutes</h3>
+    <div className={`${previewSubject}-preview subject-preview`}>
+      <h3>{capitalisedSubject}</h3>
       {loading && <h5>Loading</h5>}
-      {data && <MiniFeed articles={data.articles} category={"minutes"} />}
+      {data && <MiniFeed articles={data.articles} category={previewSubject} />}
       {error && <h5>Error</h5>}
       {error && console.log("ERROR: ", error)}
     </div>
   );
 };
 
-export default MinutesPreview;
+export default SubjectPreview;

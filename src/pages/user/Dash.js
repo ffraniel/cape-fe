@@ -5,10 +5,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { getArticlesPreviewB } from "../../queries/queries";
 import Latest from "../../components/Latest";
 import MiniFeed from "../../components/MiniFeed";
-import EventsPreview from "../../components/EventsPreview";
-import ResourcesPreview from "../../components/ResourcesPreview";
-import GuidancePreview from "../../components/GuidancePreview";
-import MinutesPreview from "../../components/MinutesPreview";
+import SubjectPreview from "../../components/SubjectPreview";
 import Loading from "../../components/Loading";
 
 const Dash = () => {
@@ -34,10 +31,11 @@ const Dash = () => {
           </div>
         </>
       )}
-      <EventsPreview />
-      <ResourcesPreview />
-      <GuidancePreview />
-      <MinutesPreview />
+      <SubjectPreview previewSubject={"events"} />
+      <SubjectPreview previewSubject={"resources"} />
+      <SubjectPreview previewSubject={"guidance"} />
+      <SubjectPreview previewSubject={"consultation"} />
+      <SubjectPreview previewSubject={"minutes"} />
       {error && <h3>ERROR</h3>}
       {error && console.log("ERROR: ", error.toString())}
     </div>

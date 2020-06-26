@@ -8,6 +8,20 @@
   list-style: none;
 }
 
+.mini-feed--article-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.mini-feed--grid-preview {
+  display: inline-block;
+  border: solid green 1px;
+  background: rgb(245, 239, 239);
+  text-align: center;
+
+}
+
 
 .news {}
 
