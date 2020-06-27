@@ -4,9 +4,7 @@ import { NavLink } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import fire from "../config/fire";
 
-
-const UserMobNav = ({isMobNavOpen, setIsMobNavOpen}) => {
-
+const UserMobNav = ({ isMobNavOpen, setIsMobNavOpen }) => {
   let history = useHistory();
 
   const closeNav = () => {
@@ -18,39 +16,74 @@ const UserMobNav = ({isMobNavOpen, setIsMobNavOpen}) => {
     fire
       .auth()
       .signOut()
-      .then(function() {
+      .then(function () {
         console.log("sign-out successful.");
-        history.push('/');
+        history.push("/");
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
   };
 
   return (
-    <nav className={isMobNavOpen ? 'mob-nav open' : 'mob-nav'} >
+    <nav className={isMobNavOpen ? "mob-nav open" : "mob-nav"}>
       <ul>
         <li>
-          <NavLink onClick={closeNav} exact to="/">News Feed</NavLink>
+          <NavLink onClick={closeNav} exact to="/">
+            News Feed
+          </NavLink>
         </li>
         <li>
-          <NavLink onClick={closeNav} to="/category/events">Events</NavLink>
+          <NavLink onClick={closeNav} to="/category/events">
+            Events
+          </NavLink>
         </li>
         <li>
-          <NavLink onClick={closeNav} to="/constitution">Constitution</NavLink>
+          <NavLink onClick={closeNav} to={"/category/resources"}>
+            Resources
+          </NavLink>
         </li>
         <li>
-          <NavLink onClick={closeNav} to="/profile">Profile</NavLink>
+          <NavLink onClick={closeNav} to={"/category/guidance"}>
+            Guidance
+          </NavLink>
         </li>
         <li>
-          <button className="btn sign-out-btn" onClick={signOut}>SIGN OUT</button>
+          <NavLink onClick={closeNav} to={"/category/consultations"}>
+            Consultations
+          </NavLink>
         </li>
         <li>
-          <button onClick={closeNav} >x</button>
+          <NavLink onClick={closeNav} to={"/category/minutes"}>
+            Minutes
+          </NavLink>
         </li>
+        <li>
+          <a onClick={closeNav} href="#forum">
+            Forum
+          </a>
+        </li>
+        <li>
+          <NavLink onClick={closeNav} className="" to="/constitution">
+            Constitution
+          </NavLink>
+        </li>
+        <li>
+          <NavLink className="" onClick={closeNav} to="/profile">
+            Profile
+          </NavLink>
+        </li>
+
+        <li>
+          <button className="btn sign-out-btn" onClick={signOut}>
+            SIGN OUT
+          </button>
+        </li>
+        {/* <li className="mob-close-btn">
+          <button onClick={closeNav}>x</button>
+        </li> */}
       </ul>
     </nav>
-
   );
 };
 

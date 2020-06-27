@@ -1,3 +1,15 @@
 .dash {
-  padding: 4rem;
+  padding: 0rem 2rem 2rem;
+}
+
+.recent-article-preview .mini-feed {
+  background-color: var(--first-alternating-colour);
+  padding-top: 40px;
+
+}
+
+@media (max-width: 500px) {
+  .recent-article-preview .mini-feed {
+    padding-top: 20px;
+  }
 }

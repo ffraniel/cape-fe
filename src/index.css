@@ -31,6 +31,8 @@ body {
   --text-font: 'Poppins', sans-serif;
   --white-text-hover: rgb(255, 255, 255);
   --text-grey: #1A202C;
+  --first-alternating-colour: rgba(161, 161, 161, 0.5);
+  --second-alternating-colour: rgba(201, 201, 241, 0.5);
 }
 
 .btn {
@@ -54,6 +56,7 @@ body {
 .primary-btn {
   background-color: #60B74A;
 }
+
 .primary-btn:hover {
   background-color: rgb(63, 148, 42);
 }
@@ -70,6 +73,8 @@ body {
   border: none;
   background-color: #226FB7;
   color: var(--white-text);
+  width: 140px;
+  margin: 0 5px;
 }
 
 .sign-out-btn:hover {

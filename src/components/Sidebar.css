@@ -1,3 +1,37 @@
+.dash--aside {
+  position: fixed;
+  height: 100vh;
+  width: 220px;
+  background-color: var(--white-text);
+}
+
+.dash--aside ul {
+  padding-top: 10px;
+  padding-left: 0;
+
+}
+
 .dash--aside ul li {
   list-style: none;
+  margin: 15px auto 15px 5px;
+  padding-left: 15px;
+
+}
+
+.dash--aside ul li a {
+  text-decoration: none;
+  color: var(--text-grey);
+  font-family: var(--text-font);
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+  transition: border-bottom 0.5s;
+}
+
+.dash--aside ul li a:hover {
+  border-bottom: blue 2px solid;
+}
+
+@media (max-width: 900px) {
+  .dash--aside {
+    display: none;
+  }
 }

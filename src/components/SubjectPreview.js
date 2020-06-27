@@ -18,7 +18,7 @@ const SubjectPreview = ({ previewSubject }) => {
 
   return (
     <div className={`${previewSubject}-preview subject-preview`}>
-      <h3>{capitalisedSubject}</h3>
+      <h3 className="heading">{capitalisedSubject}</h3>
       {loading && <h5>Loading</h5>}
       {data && <MiniFeed articles={data.articles} category={previewSubject} />}
       {error && <h5>Error</h5>}

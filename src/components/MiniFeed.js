@@ -11,24 +11,37 @@ const MiniFeed = ({ articles, category }) => {
         {articles.map((article) => (
           <li className="mini-feed--grid-preview" key={article.id}>
             <Link to={`article/${article.id}`}>
-              <h3>{article.title}</h3>
-              <h5>{article.author ? article.author : "Editor"}</h5>
-              <p>17th May 2020 (Fake date)</p>
-              <div className="tiny-preview-container">
-                <p className="tiny-preview">
-                  {article.text.text.split(" ").slice(0, 12).join(" ")}...
-                </p>
-              </div>
+              <h3 className="mini-feed--grid-preview--title">
+                {article.title}
+              </h3>
             </Link>
+            <h5 className="mini-feed--grid-preview--author">
+              {article.author ? article.author : "Editor"}
+            </h5>
+            <p className="mini-feed--grid-preview--date">
+              17th May 2020 (Fake date)
+            </p>
+            <div className="tiny-preview-container">
+              <p className="tiny-preview">
+                {article.text.text.split(" ").slice(0, 12).join(" ")}...
+              </p>
+            </div>
           </li>
         ))}
       </ul>
       {isCategory && (
-        <Link to={`/category/${category}`}>
+        <Link
+          className="minifeed-article-list-link"
+          to={`/category/${category}`}
+        >
           See more in {category[0].toUpperCase().concat(category.slice(1))}
         </Link>
       )}
-      {!isCategory && <Link to={`/articles`}>See More Articles</Link>}
+      {!isCategory && (
+        <Link className="minifeed-article-list-link" to={`/articles`}>
+          See More Articles
+        </Link>
+      )}
     </div>
   );
 };

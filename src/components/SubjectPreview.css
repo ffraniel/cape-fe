@@ -1,0 +1,18 @@
+.subject-preview:nth-of-type(even) {
+  background-color: var(--first-alternating-colour);
+}
+
+.subject-preview:nth-of-type(odd) {
+  background-color: var(--second-alternating-colour);
+}
+
+.subject-preview {
+  margin: 40px auto;
+}
+
+.subject-preview .heading {
+  padding: 15px 5px 5px 30px;
+  margin: 5px auto 0;
+  font-family: var(--text-font);
+  color: var(--text-grey)
+}

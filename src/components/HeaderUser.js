@@ -65,7 +65,7 @@ const HeaderUser = () => {
   // }, 100);
 
   return (
-    <section className="header headerBackgroundColour">
+    <section className="header user-header headerBackgroundColour">
       <UserMobNav
         isMobNavOpen={isMobNavOpen}
         setIsMobNavOpen={setIsMobNavOpen}
@@ -80,7 +80,9 @@ const HeaderUser = () => {
         </NavLink>
         <ul className="desktop-menu">
           <li>
-            <NavLink to="/">News Feed</NavLink>
+            <NavLink className="user-desktop-link" to="/">
+              News Feed
+            </NavLink>
           </li>
 
           <li className="filter-trigger">
@@ -111,15 +113,23 @@ const HeaderUser = () => {
           </li>
 
           <li>
-            <a href="#forum">Forum</a>
+            <a className="user-desktop-link" href="#forum">
+              Forum
+            </a>
           </li>
           <li>
-            <NavLink className="show-nav-location" to="/constitution">
+            <NavLink
+              className="show-nav-location user-desktop-link"
+              to="/constitution"
+            >
               Constitution
             </NavLink>
           </li>
           <li>
-            <NavLink className="show-nav-location" to="/profile">
+            <NavLink
+              className="show-nav-location user-desktop-link"
+              to="/profile"
+            >
               Profile
             </NavLink>
           </li>
@@ -130,9 +140,14 @@ const HeaderUser = () => {
           </li>
         </ul>
         <button onClick={handleMenuClick} className="menu-btn">
-          <div className="menu-line"></div>
-          <div className="menu-line"></div>
-          <div className="menu-line"></div>
+          {isMobNavOpen && <span className="close-mob-nav-cross">x</span>}
+          {!isMobNavOpen && (
+            <>
+              <div className="menu-line"></div>
+              <div className="menu-line"></div>
+              <div className="menu-line"></div>
+            </>
+          )}
         </button>
       </nav>
     </section>

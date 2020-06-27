@@ -1,49 +1,84 @@
-.desktop-menu li .show-nav-location {
+.user-header .desktop-menu li .show-nav-location {
   transition: border-bottom 1s;
   border-bottom: solid rgba(255, 255, 255, 0) 2px;
 }
 
-.desktop-menu li .show-nav-location.active {
+.user-header .desktop-menu li .show-nav-location.active {
   transition: border-bottom 1s;
   border-bottom: solid blue 2px;
 }
 
-.filter-container {
+.user-header .desktop-menu li .user-desktop-link {
+  border-bottom: 2px solid rgba(255, 0, 0, 0);
+  padding: 0 5px;
+}
+
+.user-header .desktop-menu li a:hover {
+  border-bottom: 2px solid blue;
+}
+
+.user-header .filter-container {
   display: none;
 }
 
-.filter-trigger {
+.user-header .filter-trigger {
   color: var(--white-text);
   font-size: var(--link-text-size);
   display: inline-block;
   z-index: 2;
 }
 
-.filter-trigger:hover .filter-container {
-  display: flex;
+.user-header .filter-trigger:hover .filter-container {
+  display: block;
   position: fixed;
   padding: 45px;
   background-color: #264f2f;
 }
 
-.filter-container li {
+.user-header .desktop-menu .filter-container li {
   border-bottom: 2px solid rgba(0, 0, 0, 0);
   transition: border-bottom 0.5s;
+  padding: 0 5px;
 }
 
-.filter-container li:hover {
+.user-header .filter-container li:hover {
   border-bottom: 2px solid blue;
 }
 
-.show-nav-location {
-  display: inline;
-  margin: 0 15px;
-}
-
-.category-btn {
+.user-header .category-btn {
   background-color: transparent;
   color: var(--white-text);
   border: none;
   font-size: var(--link-text-size);
-  padding: 10px 15px;
+  padding: 3px 5px;
+}
+
+.user-header .close-mob-nav-cross {
+  color: white;
+  font-size: 40px;
+  line-height: 20px;
+}
+
+@media (min-width: 1000px) {
+  .user-header .desktop-menu li .user-desktop-link {
+    padding: 0 10px;
+  }
+
+  .user-header .category-btn {
+    padding: 3px 10px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .user-header .desktop-menu li .user-desktop-link {
+    padding: 0 15px;
+  }
+
+  .user-header .category-btn {
+    padding: 3px 15px;
+  }
+
+  .user-header .desktop-menu .filter-container li {
+    padding: 0 10px;
+  }
 }

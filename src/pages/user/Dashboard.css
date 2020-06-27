@@ -1,7 +1,13 @@
-.dashboard {
-
-}
-
 .dashboard .margin-top {
   margin-top: 90px;
+}
+
+.main {
+  margin-left: 220px;
+}
+
+@media (max-width: 900px) {
+  .main {
+    margin-left: 0px;
+  }
 }

@@ -2,31 +2,30 @@ import React, { useEffect, useState } from "react";
 import "./HeaderPublic.css";
 import { NavLink, useLocation } from "react-router-dom";
 import Logo from "../assets/WhiteTrans.png";
-import { debounce } from '../utility/debounce';
-import PublicMobNav from './PublicMobNav';
+import { debounce } from "../utility/debounce";
+import PublicMobNav from "./PublicMobNav";
 
 const HeaderPublic = () => {
-
   const [isMobNavOpen, setIsMobNavOpen] = useState(false);
 
   const handleMenuClick = (e) => {
     e.stopPropagation();
-    setIsMobNavOpen(prevState => !prevState);
-  }
+    setIsMobNavOpen((prevState) => !prevState);
+  };
 
   const location = useLocation();
-  console.log("location: ", location.pathname)
+  console.log("location: ", location.pathname);
 
-  const [ colourHeader, setColourHeader ] = useState(false);
+  const [colourHeader, setColourHeader] = useState(false);
 
   useEffect(() => {
-    window.addEventListener('scroll', scrollHandler);
+    window.addEventListener("scroll", scrollHandler);
     if (location.pathname !== "/") {
       setColourHeader(true);
     }
 
     return () => {
-      window.removeEventListener('scroll', scrollHandler);
+      window.removeEventListener("scroll", scrollHandler);
     };
   });
 
@@ -35,16 +34,18 @@ const HeaderPublic = () => {
   };
 
   const triggerFunction = debounce(function (e) {
-
     // var jumbotron = document.querySelector(".jumbotron");
     var headerTrigger = document.querySelector(".header-trigger");
-    var headerElem = document.querySelector('.header');
+    var headerElem = document.querySelector(".header");
 
     if (headerTrigger) {
       var headerHeight = headerElem.getBoundingClientRect().height;
       var bottomJumbotron = headerTrigger.getBoundingClientRect().top;
-  
-      if (window.scrollY > ((bottomJumbotron + headerTrigger.offsetHeight) - headerHeight)) {
+
+      if (
+        window.scrollY >
+        bottomJumbotron + headerTrigger.offsetHeight - headerHeight
+      ) {
         if (!colourHeader) {
           setColourHeader(true);
         }
@@ -57,8 +58,17 @@ const HeaderPublic = () => {
   }, 100);
 
   return (
-    <section className={colourHeader ? 'header headerBackgroundColour' : 'header'}>
-      <PublicMobNav isMobNavOpen={isMobNavOpen} setIsMobNavOpen={setIsMobNavOpen} />
+    <section
+      className={
+        colourHeader
+          ? "header public-header headerBackgroundColour"
+          : "header public-header"
+      }
+    >
+      <PublicMobNav
+        isMobNavOpen={isMobNavOpen}
+        setIsMobNavOpen={setIsMobNavOpen}
+      />
       <nav>
         <NavLink className="logo" to="/">
           <img
@@ -72,16 +82,24 @@ const HeaderPublic = () => {
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink className="show-nav-location" to="/about">What We Do</NavLink>
+            <NavLink className="show-nav-location" to="/about">
+              What We Do
+            </NavLink>
           </li>
           <li>
-            <NavLink className="show-nav-location" to="/conferences">Conferences</NavLink>
+            <NavLink className="show-nav-location" to="/conferences">
+              Conferences
+            </NavLink>
           </li>
           <li>
-            <NavLink className="show-nav-location" to="/constitution">Constitution</NavLink>
+            <NavLink className="show-nav-location" to="/constitution">
+              Constitution
+            </NavLink>
           </li>
           <li>
-            <NavLink className="show-nav-location" to="/login">Log In</NavLink>
+            <NavLink className="show-nav-location" to="/login">
+              Log In
+            </NavLink>
           </li>
         </ul>
         <button onClick={handleMenuClick} className="menu-btn">

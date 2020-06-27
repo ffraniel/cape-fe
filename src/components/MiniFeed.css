@@ -1,6 +1,5 @@
 .mini-feed {
-  border: solid green 2px;
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 20px;
 }
 
@@ -9,22 +8,115 @@
 }
 
 .mini-feed--article-grid {
+  margin: 0;
+  padding-left: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
 }
 
-.mini-feed--grid-preview {
-  display: inline-block;
-  border: solid green 1px;
-  background: rgb(245, 239, 239);
-  text-align: center;
-
+.mini-feed--article-grid a {
+  text-decoration: none;
 }
 
+.mini-feed--grid-preview {
+  display: inline-block;
+  background: rgb(245, 239, 239);
+  border-radius: 3px;
+  text-align: center;
+  font-family: var(--text-font);
+  transform: translate(0, 0);
+  transition: transform 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
 
-.news {}
+.mini-feed--grid-preview:hover {
+  transform: translate(0, -10px);
+}
 
-.events {}
+.mini-feed--grid-preview .mini-feed--grid-preview--title {
+  font-size: 1rem;
+  margin: 15px auto;
+  color: var(--text-grey);
+  transition: color 0.2s;
+}
 
-.guidance {}
+.mini-feed--grid-preview .mini-feed--grid-preview--title:hover {
+  color: blue;
+}
+
+.mini-feed--grid-preview .mini-feed--grid-preview--date {
+  margin: 5px auto;
+  font-size: 0.75rem;
+}
+
+.mini-feed--grid-preview .mini-feed--grid-preview--author {
+  margin: 5px auto;
+}
+
+.minifeed-article-list-link {
+  margin: 25px 10px 5px;
+  display: block;
+}
+
+.mini-feed--grid-preview .tiny-preview {
+  padding: 5px 10px 15px;
+  margin: 0 auto;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .mini-feed--article-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mini-feed--article-grid :nth-of-type(3) {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .mini-feed {
+    padding: 0 20px;
+  }
+
+  .mini-feed--grid-preview {
+    padding: 20px 0;
+    margin: 20px;
+  }
+
+  .mini-feed--grid-preview:hover {
+    transform: translate(0, 0);
+  }
+
+  .mini-feed--article-grid {
+    display: block;
+    /* make 2nd and third dissappear  */
+  }
+
+  .mini-feed--article-grid :nth-of-type(3) {
+    display: block;
+  }
+
+  .mini-feed--grid-preview {
+    display: block;
+  }
+
+  .minifeed-article-list-link {
+    padding-bottom: 20px;
+  }
+
+  .tiny-preview {
+    max-width: 75%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .mini-feed--grid-preview {
+    padding: 10px 0;
+  }
+
+  .mini-feed--grid-preview .tiny-preview {
+    padding: 5px 10px 10px;
+  }
+}

@@ -5,7 +5,7 @@ import "./Latest.css";
 const Latest = ({ article }) => {
   return (
     <article
-      className={`list-article-block medium-vertical-padding`}
+      className={`latest-block list-article-block large-vertical-padding`}
       key={article.id}
     >
       <h3>Latest</h3>

@@ -26,37 +26,39 @@ const Dashboard = () => {
       <Router>
         <ScrollToTop />
         <HeaderUser />
-        <div className="margin-top">
+        <div className="margin-top dashboard-main">
           <Sidebar />
-          <Switch>
-            <Route exact path="/">
-              <Dash />
-            </Route>
-            <Route path="/articles">
-              <Feed />
-            </Route>
-            <Route path="/constitution">
-              <Constitution />
-            </Route>
-            <Route path="/profile">
-              <Profile />
-            </Route>
-            <Route exact path="/category/news">
-              <Redirect to="/articles" />
-            </Route>
-            <Route path="/category/:category">
-              <Category />
-            </Route>
-            <Route path="/article/:articleID">
-              <Article />
-            </Route>
-            <Route exact path="/login">
-              <Redirect to="/" />
-            </Route>
-            <Route>
-              <NoMatch default />
-            </Route>
-          </Switch>
+          <div className="main">
+            <Switch>
+              <Route exact path="/">
+                <Dash />
+              </Route>
+              <Route path="/articles">
+                <Feed />
+              </Route>
+              <Route path="/constitution">
+                <Constitution />
+              </Route>
+              <Route path="/profile">
+                <Profile />
+              </Route>
+              <Route exact path="/category/news">
+                <Redirect to="/articles" />
+              </Route>
+              <Route path="/category/:category">
+                <Category />
+              </Route>
+              <Route path="/article/:articleID">
+                <Article />
+              </Route>
+              <Route exact path="/login">
+                <Redirect to="/" />
+              </Route>
+              <Route>
+                <NoMatch default />
+              </Route>
+            </Switch>
+          </div>
         </div>
         <UserFooter />
       </Router>
