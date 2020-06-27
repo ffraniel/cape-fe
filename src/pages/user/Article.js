@@ -16,21 +16,22 @@ const Article = () => {
     from: { opacity: 0, transform: "translate(0, 20px)" },
     config: {
       mass: 2,
-      friction: 28
-    }
+      friction: 28,
+    },
   });
 
   const { loading, error, data } = useQuery(getArticle, {
     variables: {
-      id: articleID
-    }
+      id: articleID,
+    },
   });
 
   if (data && (data.article === null || data.article.length === 0)) {
     return (
       <animated.div style={animationProps} className="category">
-        <article className="container">
-          <h3>There are no articles for the category '{articleID}'.</h3>
+        <Breadcrumb text={"Back"} />
+        <article className="container full-height-page">
+          <h3>No article found. Something has gone wrong.</h3>
         </article>
       </animated.div>
     );
@@ -38,7 +39,7 @@ const Article = () => {
 
   return (
     <animated.div style={animationProps} className="article-container ">
-      <Breadcrumb />
+      <Breadcrumb text={"Back"} />
       {loading && <Loading />}
       {error && <h1>ERROR{console.log("error: ", error)}</h1>}
       {data && console.log(data)}
@@ -63,7 +64,7 @@ const Article = () => {
                 dangerouslySetInnerHTML={{ __html: data.article.text.html }}
               ></div>
               <div className="categories-list">
-                {data.article.categories.map(category => {
+                {data.article.categories.map((category) => {
                   return (
                     <Link
                       className="category-list-link"

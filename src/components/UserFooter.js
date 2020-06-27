@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import { Link } from "react-router-dom";
-import logo from "../assets/GreenTrans.png";
+import logo from "../assets/WhiteTrans.png";
 const Footer = () => {
   return (
     <footer className="footer">
@@ -12,6 +12,9 @@ const Footer = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
+              <Link to="/articles">News</Link>
+            </li>
+            <li>
               <Link to="/category/events">Events</Link>
             </li>
             <li>
@@ -19,6 +22,9 @@ const Footer = () => {
             </li>
             <li>
               <Link to={"/category/guidance"}>Guidance</Link>
+            </li>
+            <li>
+              <Link to="/category/consultations">Consultations</Link>
             </li>
             <li>
               <Link Link to={"/category/minutes"}>

@@ -1,10 +1,12 @@
 import React from "react";
 import "./SubjectHeading.css";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Breadcrumb from "./Breadcrumb";
 
 const SubjectHeading = ({ categoryText }) => {
   return (
     <div className="subject-heading">
+      <Breadcrumb text={"Back to Home"} />
       <h3 className="subject-heading--header">{categoryText}</h3>
       <div className="subject-heading--text-container">
         <p className="subject-heading--text">

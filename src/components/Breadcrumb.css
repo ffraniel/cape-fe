@@ -1,0 +1,18 @@
+.breadcrumb {
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.breadcrumb a {
+  color: var(--grey-text);
+  font-family: var(--text-font);
+  text-decoration: none;
+  display: inline-block;
+  border-bottom: 2px solid rgb(105, 104, 104);
+  transition: border-bottom 0.3s;
+  margin-right: 15px;
+}
+
+.breadcrumb a:hover {
+  border-bottom: 2px solid blue;
+}

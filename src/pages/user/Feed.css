@@ -1,3 +1,5 @@
-.feed {
-  
+.feed {}
+
+.feed .no-more-results {
+  margin: 10px 30px;
 }

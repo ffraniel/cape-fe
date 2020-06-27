@@ -1,4 +1,15 @@
 .subject-heading {
   padding: 20px 0;
+  /* background-color: rgb(174, 219, 174); */
+}
 
+.subject-heading .subject-heading--header {
+  margin: 20px 40px;
+  font-size: 2rem;
+  color: var(--text-grey);
+}
+
+.subject-heading .subject-heading--text-container {
+  margin: 20px 40px;
+  color: var(--text-grey);
 }

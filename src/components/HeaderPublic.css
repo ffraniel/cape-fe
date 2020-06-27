@@ -18,7 +18,7 @@
   width: 100%;
   display: block;
   transition: background-color 0.3s;
-  z-index: 1;
+  z-index: 2;
   /* background-color: green;
   box-shadow: 0 1px 3px 0px black; */
 }
@@ -65,7 +65,7 @@
 }
 
 .headerBackgroundColour {
-  background-color: rgb(49, 104, 53);
+  background-color: var(--header-colour);
 }
 
 .desktop-menu li .show-nav-location.active {
@@ -98,7 +98,7 @@
 
 @media (max-width: 900px) {
   .header {
-    background-color: rgb(49, 104, 53);
+    background-color: var(--header-colour);
   }
 
   .menu-btn {
@@ -110,7 +110,7 @@
     border-radius: 5px;
     position: absolute;
     border: none;
-    background-color: #d3d3d300;
+    background-color: var(--header-colour);
   }
 }
 

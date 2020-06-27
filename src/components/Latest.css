@@ -1,3 +1,36 @@
 .latest-block {
   font-family: var(--text-font);
+  padding: 4rem;
+  margin: 10px auto;
+}
+
+.latest-block .latest-link {
+  color: var(--header-colour);
+  transition: color 0.3s;
+}
+
+.latest-block .latest-link:hover {
+  color: rgb(0, 80, 5);
+}
+
+.latest-block .h3 {
+  margin: 5px 0;
+}
+
+.latest-block .latest-link .latest-title {
+  color: var(--text-grey);
+  font-size: 4rem;
+  margin: 10px auto 20px;
+}
+
+.latest-block .article-list-date {
+  margin: 5px auto;
+}
+
+.latest-block .latest-author {
+  margin: 5px auto;
+}
+
+.latest-block .latest-preview {
+  margin: 5px auto;
 }

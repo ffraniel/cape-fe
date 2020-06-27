@@ -33,6 +33,7 @@ body {
   --text-grey: #1A202C;
   --first-alternating-colour: rgba(161, 161, 161, 0.5);
   --second-alternating-colour: rgba(201, 201, 241, 0.5);
+  --header-colour: rgb(49, 104, 53);
 }
 
 .btn {
@@ -74,7 +75,7 @@ body {
   background-color: #226FB7;
   color: var(--white-text);
   width: 140px;
-  margin: 0 5px;
+  margin: 10px 0;
 }
 
 .sign-out-btn:hover {
@@ -124,4 +125,9 @@ body {
 
 .center {
   text-align: center;
+}
+
+.full-height-page {
+  min-height: 500px;
+  min-height: 75vh;
 }

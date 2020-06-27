@@ -1,8 +1,9 @@
 import React from "react";
 import "./Breadcrumb.css";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Breadcrumb = ({ url }) => {
+const Breadcrumb = ({ url, text }) => {
   let history = useHistory();
 
   // let location = history.location.pathname;
@@ -22,8 +23,9 @@ const Breadcrumb = ({ url }) => {
 
   return (
     <div className="breadcrumb">
+      <Link to="/">Home</Link>
       <a href="#back" onClick={goBack}>
-        Back to Articles List
+        Back
       </a>
     </div>
   );

@@ -20,7 +20,7 @@ const List = (props) => {
     return (
       <animated.div style={animationProps} className="list">
         <article>
-          <h3 className="header-trigger">No articles to show</h3>
+          <h3 className="no-more-results">No articles to show</h3>
         </article>
       </animated.div>
     );
