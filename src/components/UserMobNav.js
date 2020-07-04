@@ -79,9 +79,6 @@ const UserMobNav = ({ isMobNavOpen, setIsMobNavOpen }) => {
             SIGN OUT
           </button>
         </li>
-        {/* <li className="mob-close-btn">
-          <button onClick={closeNav}>x</button>
-        </li> */}
       </ul>
     </nav>
   );

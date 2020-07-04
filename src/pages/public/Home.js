@@ -1,101 +1,103 @@
-import React, { useRef } from 'react';
-import './Home.css';
+import React, { useRef } from "react";
+import "./Home.css";
 import { Link } from "react-router-dom";
-import { useSpring, animated } from 'react-spring';
-import { fadeInConfig } from '../../animations';
-import conversationImage from '../../assets/conversation.svg';
-import handleScrollTo from '../../utility/handleScrollTo';
-import handleScrollToRef from '../../utility/handleScrollToRef';
-import Join from '../../components/Join';
+import { useSpring, animated } from "react-spring";
+import { fadeInConfig } from "../../animations";
+import conversationImage from "../../assets/conversation.svg";
+import Join from "../../components/Join";
 
 const Home = () => {
-
-  // let joiningRef = useRef();
-  let joiningRef;
-  let opportunitiesRef = useRef();
-  let practicesRef = useRef();
-  let supportRef = useRef();
-
-  const scrollToJoin = (e) => {
-    e.preventDefault();
-    handleScrollToRef(joiningRef);
-  }
-
-  const scrollToOpportunities = (e) => {
-    e.preventDefault();
-    console.log(e)
-    handleScrollToRef(opportunitiesRef);
-  }
-
-  const scrollToPractices = (e) => {
-    e.preventDefault();
-    handleScrollToRef(practicesRef);
-  }
-
-  const scrollToSupport = (e) => {
-    e.preventDefault();
-    handleScrollToRef(supportRef);
-  }
-
   const animationProps = useSpring(fadeInConfig);
 
   return (
     <>
-    <animated.section className="jumbotron" style={animationProps}>
-      <div className="jumbo-image-container">
-        <img src={conversationImage} alt="drawing of two adults talking" />
-      </div>
-      <div className="jumbo-text-container">
-        <div className="jumbo-text">
-          <h1 className="header-trigger">CAPE</h1>
-          <h2>For professionals who support child protection and safeguarding activities and training across a range of education and similar settings</h2>
-          <Link className="btn primary-btn" to="/about">Learn More</Link>
-          <Link className="btn secondary-btn" to="/conferences">Conferences</Link>
+      <animated.section className="jumbotron" style={animationProps}>
+        <div className="jumbo-image-container">
+          <img src={conversationImage} alt="drawing of two adults talking" />
         </div>
-      </div>
-    </animated.section>
-    <section className="news-background">
-      <div className="three-panel">
-        <div className="three-panel--panel">
-          <h3>CAPE Supports it's members</h3>
-          <a className="panel-link-button" onClick={scrollToSupport} href="#support">See How CAPE support their members</a>
+        <div className="jumbo-text-container">
+          <div className="jumbo-text">
+            <h1 className="header-trigger">CAPE</h1>
+            <h2>
+              For professionals who support child protection and safeguarding
+              activities and training across a range of education and similar
+              settings
+            </h2>
+            <Link className="btn primary-btn" to="/about">
+              Learn More
+            </Link>
+            <Link className="btn secondary-btn" to="/conferences">
+              Conferences
+            </Link>
+          </div>
         </div>
-        <div className="three-panel--panel">
-          <h3>CAPE Provides development opportunities</h3>
-          <a className="panel-link-button" onClick={scrollToOpportunities} href="#opportunities">Learn more about opportunities</a>
+      </animated.section>
+      <section className="news-background">
+        <div className="three-panel">
+          <div className="three-panel--panel">
+            <h3>SUPPORT</h3>
+            <p>
+              CAPE supports members by coming together for meetings to discuss
+              their own work and the issues they are facing. Professionals whose
+              role is to provide advice and support to Designated leads in
+              Schools are often doing so without supervision for themselves.
+              Child protection work is difficult, complex and sensitive and CAPE
+              aims to support members by meeting on a regular basis and through
+              the member's forum.
+            </p>
+            <a
+              className="btn secondary-btn basic-box-shadow"
+              href="#joining-cape"
+            >
+              Joining CAPE
+            </a>
+          </div>
+          <div className="three-panel--panel">
+            <h3>DEVELOPMENT OPPORTUNITIES</h3>
+            <p>
+              CAPE members are professionals who provide training and
+              consultancy to Designated Leads in schools. Cape recognises that
+              CAPE members need to continuously update their own knowledge and
+              development opportunities are offered to CAPE members.
+            </p>
+            <a
+              className="btn secondary-btn basic-box-shadow"
+              href="#joining-cape"
+            >
+              Joining CAPE
+            </a>
+          </div>
+          <div className="three-panel--panel">
+            <h3>PROFESSIONAL PRACTICE</h3>
+            <p>
+              CAPE is a long standing organisation and recognised as useful
+              partners in developing practice. CAPE regularly responds to
+              Government consultations and CAPE has representation on a number
+              of national development groups set up to inform and improve
+              professional practice.
+            </p>
+            <a
+              className="btn secondary-btn basic-box-shadow"
+              href="#joining-cape"
+            >
+              Joining CAPE
+            </a>
+          </div>
         </div>
-        <div className="three-panel--panel">
-          <h3>CAPE Informs professional practice</h3>
-          <a className="panel-link-button" href="#practices" onClick={scrollToPractices} >Informing professional practices</a>
+        <div className="dark-background">
+          <div className="medium-vertical-padding container">
+            <h3>MORE EEEEsfjsdjgvd</h3>
+            <p>
+              So if we had more text it would go herere, weshsd dssof, CAPE
+              supports members by coming together for meetings to discuss their
+              own work and the issues they are facing. Professionals{" "}
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="dark-background">
-        <div className="medium-vertical-padding container">
-          <h3>MORE EEEEsfjsdjgvd</h3>
-          <p>So if we had more text it would go herere, weshsd dssof, CAPE supports members by coming together for meetings to discuss their own work and the issues they are facing. Professionals </p>
-        </div>
-      </div>
-    </section>
-    <section className="more-info">
-      <div className="more-info--element" id="support">
-        <h3>Support</h3>
-        <p>CAPE supports members by coming together for meetings to discuss their own work and the issues they are facing. Professionals whose role is to provide advice and support to Designated leads in Schools are often doing so without supervision for themselves. Child protection work is difficult, complex and sensitive and CAPE aims to support members by meeting on a regular basis and through the member's forum.</p>
-        <a className="btn secondary-btn basic-box-shadow" href="#joining-cape" onClick={scrollToJoin} >Joining CAPE</a>
-      </div>
-      <div className="more-info--element" id="opportunities">
-        <h3>Development Opportunities</h3>
-        <p>CAPE members are professionals who provide training and consultancy to Designated Leads in schools. Cape recognises that CAPE members need to continuously update their own knowledge and development opportunities are offered to CAPE members.</p>
-        <a className="btn secondary-btn basic-box-shadow" href="#joining-cape" onClick={scrollToJoin} >Joining CAPE</a>
-      </div>
-      <div className="more-info--element" id="practices">
-        <h3>Professional Partners</h3>
-        <p>CAPE is a long standing organisation and recognised as useful partners in developing practice. CAPE regularly responds to Government consultations and CAPE has representation on a number of national development groups set up to inform and improve professional practice.</p>
-        <a className="btn secondary-btn basic-box-shadow" href="#joining-cape" onClick={scrollToJoin} >Joining CAPE</a>
-      </div>
-    </section>
-    <Join joiningRef={joiningRef} />
+      </section>
+      <Join />
     </>
-  )
+  );
 };
 
 export default Home;

@@ -64,6 +64,12 @@
   background-color: var(--white-text-hover);
 }
 
+.public-header .close-mob-nav-cross {
+  color: white;
+  font-size: 40px;
+  line-height: 20px;
+}
+
 .headerBackgroundColour {
   background-color: var(--header-colour);
 }

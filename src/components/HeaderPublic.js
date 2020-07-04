@@ -103,9 +103,14 @@ const HeaderPublic = () => {
           </li>
         </ul>
         <button onClick={handleMenuClick} className="menu-btn">
-          <div className="menu-line"></div>
-          <div className="menu-line"></div>
-          <div className="menu-line"></div>
+          {isMobNavOpen && <span className="close-mob-nav-cross">x</span>}
+          {!isMobNavOpen && (
+            <>
+              <div className="menu-line"></div>
+              <div className="menu-line"></div>
+              <div className="menu-line"></div>
+            </>
+          )}
         </button>
       </nav>
     </section>

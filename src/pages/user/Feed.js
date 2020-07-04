@@ -65,7 +65,12 @@ const Feed = () => {
       {data && <List data={data} />}
       {data && console.log(lastEntry)}
       {data && !noMoreArticles && (
-        <button onClick={loadMoreArticles}>GET MORE </button>
+        <button
+          className="btn primary-btn get-more-btn"
+          onClick={loadMoreArticles}
+        >
+          GET MORE{" "}
+        </button>
       )}
       {data && noMoreArticles && (
         <div className="no-more-results">

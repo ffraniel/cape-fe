@@ -40,9 +40,14 @@
 }
 
 .list-categories-list .list-category-list-item {
-  background: white;
+  color: var(--text-grey);
   display: inline-block;
   margin: 5px;
+  transition: color 0.3s;
+}
+
+.list-categories-list .list-category-list-item:hover {
+  color: rgb(30, 116, 101);
 }
 
 .list article .no-more-results {

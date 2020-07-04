@@ -54,6 +54,7 @@
 }
 
 .minifeed-article-list-link {
+  font-family: var(--text-font);
   margin: 25px 10px 5px;
   display: block;
 }

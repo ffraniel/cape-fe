@@ -3,3 +3,13 @@
 .feed .no-more-results {
   margin: 10px 30px;
 }
+
+.feed .get-more-btn {
+  display: block;
+  margin: 40px auto;
+}
+
+.feed .get-more-btn:hover {
+  display: block;
+  margin: 40px auto;
+}
