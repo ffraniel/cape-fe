@@ -27,9 +27,7 @@ const Footer = () => {
               <Link to="/category/consultations">Consultations</Link>
             </li>
             <li>
-              <Link Link to={"/category/minutes"}>
-                Minutes
-              </Link>
+              <Link to={"/category/minutes"}>Minutes</Link>
             </li>
             <li>
               <a

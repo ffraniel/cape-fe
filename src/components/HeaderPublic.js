@@ -14,7 +14,6 @@ const HeaderPublic = () => {
   };
 
   const location = useLocation();
-  console.log("location: ", location.pathname);
 
   const [colourHeader, setColourHeader] = useState(false);
 
