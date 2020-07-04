@@ -14,7 +14,6 @@ import Constitution from "../Constitution";
 import Category from "./Category";
 import NoMatch from "../../components/NoMatch";
 import Article from "./Article";
-import UserMobNav from "../../components/UserMobNav";
 import UserFooter from "../../components/UserFooter";
 import ScrollToTop from "../../components/ScrollToTop";
 import Sidebar from "../../components/Sidebar";

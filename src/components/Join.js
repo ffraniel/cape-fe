@@ -1,67 +1,68 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Join.css";
-import fire from "../config/fire";
+
+// import fire from "../config/fire";
 
 const Join = () => {
-  const toTopOfPage = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+  //   const toTopOfPage = () => {
+  //     window.scrollTo({
+  //       top: 0,
+  //       behavior: "smooth",
+  //     });
+  //   };
 
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [address, setAddress] = useState("");
-  const [telephone, setTelephone] = useState("");
-  const [yourRole, setYourRole] = useState("");
-  const [whyJoin, setWhyJoin] = useState("");
-  const [moreInfo, setMoreInfo] = useState("");
-  const [memberAgreement, setMemberAgreement] = useState(false);
+  //   const [firstName, setFirstName] = useState("");
+  //   const [lastName, setLastName] = useState("");
+  //   const [email, setEmail] = useState("");
+  //   const [address, setAddress] = useState("");
+  //   const [telephone, setTelephone] = useState("");
+  //   const [yourRole, setYourRole] = useState("");
+  //   const [whyJoin, setWhyJoin] = useState("");
+  //   const [moreInfo, setMoreInfo] = useState("");
+  //   const [memberAgreement, setMemberAgreement] = useState(false);
 
-  const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(null);
+  //   const [error, setError] = useState(null);
+  //   const [success, setSuccess] = useState(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    let formEntries = [
-      firstName,
-      lastName,
-      email,
-      address,
-      telephone,
-      yourRole,
-      whyJoin,
-      moreInfo,
-      memberAgreement,
-    ];
-    formEntries.forEach((entry) => {
-      if (!entry) {
-      }
-    });
+  //   const handleSubmit = (e) => {
+  //     e.preventDefault();
+  //     let formEntries = [
+  //       firstName,
+  //       lastName,
+  //       email,
+  //       address,
+  //       telephone,
+  //       yourRole,
+  //       whyJoin,
+  //       moreInfo,
+  //       memberAgreement,
+  //     ];
+  //     formEntries.forEach((entry) => {
+  //       if (!entry) {
+  //       }
+  //     });
 
-    //send data//
-    //handle success//
-    //delete data field
+  //     //send data//
+  //     //handle success//
+  //     //delete data field
 
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setAddress("");
-    setTelephone("");
-    setYourRole("");
-    setWhyJoin("");
-    setMoreInfo("");
-    setMemberAgreement("");
+  //     setFirstName("");
+  //     setLastName("");
+  //     setEmail("");
+  //     setAddress("");
+  //     setTelephone("");
+  //     setYourRole("");
+  //     setWhyJoin("");
+  //     setMoreInfo("");
+  //     setMemberAgreement("");
 
-    setSuccess(false);
-    setError(true);
+  //     setSuccess(false);
+  //     setError(true);
 
-    //handle failure///
-    //highlight errors
-  };
+  //     //handle failure///
+  //     //highlight errors
+  //   };
 
   return (
     <section className="join-form-container" id="joining-cape">
@@ -104,7 +105,7 @@ const Join = () => {
           </p>
           <p className="join-intro-text">
             CAPE relies on the goodwill of members to provide venues for
-            meetings; support and administer CAPE business; and to develop
+            meetings, support and administer CAPE business, and to develop
             material relevant to safeguarding in education.
           </p>
           <p>

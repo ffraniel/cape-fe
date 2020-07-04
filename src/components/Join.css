@@ -59,7 +59,7 @@
 
 .animated-form-notice {
   animation-name: formNotice;
-  animation-duration:0.5s;
+  animation-duration: 0.5s;
   animation-timing-function: ease;
 
 }
@@ -69,20 +69,43 @@
     opacity: 0;
     transform: translate(0, 30px);
   }
+
   13% {
     opacity: 1;
     transform: translate(0, -30px);
   }
+
   36% {
     transform: translate(0, 15px);
   }
+
   65% {
     transform: translate(0, -15px);
   }
+
   84% {
     transform: translate(0, 5px);
   }
+
   100% {
     transform: translate(0, 0px);
   }
+}
+
+.google-form-link {
+  font-family: var(--text-font);
+  font-size: 1.3rem;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: inline-block;
+  border: solid 0.5px grey;
+  border-radius: 3px;
+  background-color: white;
+  color: var(--text-grey);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.google-form-link:hover {
+  background-color: var(--text-grey);
+  color: white;
 }

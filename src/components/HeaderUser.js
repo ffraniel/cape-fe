@@ -4,7 +4,7 @@ import "./HeaderUser.css";
 import Logo from "../assets/WhiteTrans.png";
 import fire from "../config/fire";
 import UserMobNav from "./UserMobNav";
-import { debounce } from "../utility/debounce";
+// import { debounce } from "../utility/debounce";
 
 const HeaderUser = () => {
   const [isMobNavOpen, setIsMobNavOpen] = useState(false);
@@ -113,7 +113,12 @@ const HeaderUser = () => {
           </li>
 
           <li>
-            <a className="user-desktop-link" href="#forum">
+            <a
+              className="user-desktop-link"
+              href="https://cape.flarum.cloud/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Forum
             </a>
           </li>

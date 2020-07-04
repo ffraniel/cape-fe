@@ -59,7 +59,12 @@ const UserMobNav = ({ isMobNavOpen, setIsMobNavOpen }) => {
           </NavLink>
         </li>
         <li>
-          <a onClick={closeNav} href="#forum">
+          <a
+            onClick={closeNav}
+            href="https://cape.flarum.cloud/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Forum
           </a>
         </li>

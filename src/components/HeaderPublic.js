@@ -18,21 +18,6 @@ const HeaderPublic = () => {
 
   const [colourHeader, setColourHeader] = useState(false);
 
-  useEffect(() => {
-    window.addEventListener("scroll", scrollHandler);
-    if (location.pathname !== "/") {
-      setColourHeader(true);
-    }
-
-    return () => {
-      window.removeEventListener("scroll", scrollHandler);
-    };
-  });
-
-  const scrollHandler = (e) => {
-    triggerFunction(e);
-  };
-
   const triggerFunction = debounce(function (e) {
     // var jumbotron = document.querySelector(".jumbotron");
     var headerTrigger = document.querySelector(".header-trigger");
@@ -56,6 +41,21 @@ const HeaderPublic = () => {
       }
     }
   }, 100);
+
+  useEffect(() => {
+    const scrollHandler = (e) => {
+      triggerFunction(e);
+    };
+
+    window.addEventListener("scroll", scrollHandler);
+    if (location.pathname !== "/") {
+      setColourHeader(true);
+    }
+
+    return () => {
+      window.removeEventListener("scroll", scrollHandler);
+    };
+  }, [triggerFunction, location.pathname]);
 
   return (
     <section

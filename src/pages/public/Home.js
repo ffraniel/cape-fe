@@ -1,10 +1,10 @@
-import React, { useRef } from "react";
+import React from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import { fadeInConfig } from "../../animations";
 import conversationImage from "../../assets/conversation.svg";
-import Join from "../../components/Join";
+import JoinTemp from "../../components/JoinTemp";
 
 const Home = () => {
   const animationProps = useSpring(fadeInConfig);
@@ -95,7 +95,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <Join />
+      <JoinTemp />
     </>
   );
 };

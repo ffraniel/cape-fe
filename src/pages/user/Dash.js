@@ -1,6 +1,5 @@
 import React from "react";
 import "./Dash.css";
-import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/react-hooks";
 import { getArticlesPreviewB } from "../../queries/queries";
 import Latest from "../../components/Latest";

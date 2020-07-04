@@ -1,6 +1,5 @@
 import React from "react";
 import "./SubjectHeading.css";
-import { Link } from "react-router-dom";
 import Breadcrumb from "./Breadcrumb";
 
 const SubjectHeading = ({ categoryText }) => {

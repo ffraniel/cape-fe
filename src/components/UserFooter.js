@@ -32,6 +32,15 @@ const Footer = () => {
               </Link>
             </li>
             <li>
+              <a
+                href="https://cape.flarum.cloud/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Forum
+              </a>
+            </li>
+            <li>
               <Link to="/constitution">Constitution</Link>
             </li>
             <li>
