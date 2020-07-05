@@ -37,6 +37,8 @@ const getArticlesPreview = gql`
 const getArticlesPreviewB = gql`
   query articles($first: Int, $after: String) {
     articles(first: $first, after: $after) {
+      createdAt
+      updatedAt
       title
       id
       categories {
@@ -58,6 +60,8 @@ const getArticlesByThemeB = gql`
       first: $first
       after: $after
     ) {
+      createdAt
+      updatedAt
       id
       title
       categories {
@@ -75,6 +79,8 @@ const getArticlesByThemeB = gql`
 const getArticle = gql`
   query($id: ID) {
     article(where: { id: $id }) {
+      createdAt
+      updatedAt
       id
       title
       categories {
@@ -121,6 +127,8 @@ const getConference = gql`
         ]
       }
     ) {
+      createdAt
+      updatedAt
       id
       title
       categories {

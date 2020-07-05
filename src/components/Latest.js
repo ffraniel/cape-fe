@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Latest.css";
+import DateFormatter from "../components/DateFormatter";
 
 const Latest = ({ article }) => {
   return (
@@ -11,8 +12,11 @@ const Latest = ({ article }) => {
       <h3 className="h3">Latest</h3>
       <div className="container">
         <h6 className="article-list-date header-trigger">
-          May 12 2020 (fake date)
+          <DateFormatter date={article.createdAt} />
         </h6>
+        {article.updatedAt !== article.createdAt && (
+          <h6 className="article-item-date-updated">Updated</h6>
+        )}
         <Link className="latest-link" to={`/article/${article.id}`}>
           <h1 className="latest-title">{article.title}</h1>
         </Link>

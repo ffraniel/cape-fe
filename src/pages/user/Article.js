@@ -6,6 +6,7 @@ import { getArticle } from "../../queries/queries";
 import { useSpring, animated } from "react-spring";
 import Loading from "../../components/Loading";
 import Breadcrumb from "../../components/Breadcrumb";
+import DateFormatter from "../../components/DateFormatter";
 
 const Article = () => {
   const { articleID } = useParams();
@@ -47,7 +48,12 @@ const Article = () => {
         <article className="article-item" key={data.article.id}>
           <div className="article-header medium-vertical-padding">
             <div className="container">
-              <h6 className="article-item-date">May 12 2020</h6>
+              <h6 className="article-item-date">
+                <DateFormatter date={data.article.updatedAt} />
+              </h6>
+              {data.article.updatedAt !== data.article.createdAt && (
+                <h6 className="article-item-date-updated">Updated</h6>
+              )}
               <h1 className="article-title header-trigger">
                 {data.article.title}
               </h1>

@@ -2,6 +2,7 @@ import React from "react";
 import "./List.css";
 import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
+import DateFormatter from "../../components/DateFormatter";
 
 const List = (props) => {
   const { data } = props;
@@ -36,8 +37,11 @@ const List = (props) => {
           >
             <div className="container">
               <h6 className="article-list-date header-trigger">
-                May 12 2020 - (fake date)
+                <DateFormatter date={article.updatedAt} />
               </h6>
+              {article.updatedAt !== article.createdAt && (
+                <h6 className="article-item-date-updated">Updated</h6>
+              )}
               <Link className="list-title-link" to={`/article/${article.id}`}>
                 <h1 className="list-title">{article.title}</h1>
               </Link>

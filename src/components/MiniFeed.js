@@ -1,6 +1,7 @@
 import React from "react";
 import "./MiniFeed.css";
 import { Link } from "react-router-dom";
+import DateFormatter from "../components/DateFormatter";
 
 const MiniFeed = ({ articles, category }) => {
   let isCategory = category !== undefined && category.length > 0;
@@ -19,8 +20,11 @@ const MiniFeed = ({ articles, category }) => {
               {article.author ? article.author : "Editor"}
             </h5>
             <p className="mini-feed--grid-preview--date">
-              17th May 2020 (Fake date)
+              <DateFormatter date={article.updatedAt} />
             </p>
+            {article.updatedAt !== article.createdAt && (
+              <p className="article-item-date-updated">Updated</p>
+            )}
             <div className="tiny-preview-container">
               <p className="tiny-preview">
                 {article.text.text.split(" ").slice(0, 12).join(" ")}...
