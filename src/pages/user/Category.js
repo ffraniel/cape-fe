@@ -12,7 +12,7 @@ const Category = () => {
   const [lastEntry, setLastEntry] = useState("");
   const [noMoreArticles, setNoMoreArticles] = useState(false);
 
-  const skipValue = 2;
+  const skipValue = 5;
   const { loading, error, data, fetchMore } = useQuery(getArticlesByThemeB, {
     variables: {
       category: category,

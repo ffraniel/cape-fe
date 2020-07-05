@@ -9,7 +9,7 @@ import Loading from "../../components/Loading";
 const Feed = () => {
   const [lastEntry, setLastEntry] = useState("");
   const [noMoreArticles, setNoMoreArticles] = useState(false);
-  const skipValue = 2;
+  const skipValue = 5;
 
   const { loading, error, data, fetchMore } = useQuery(getArticlesPreviewB, {
     variables: {
