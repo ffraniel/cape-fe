@@ -4,6 +4,7 @@ import "./Latest.css";
 import DateFormatter from "../components/DateFormatter";
 
 const Latest = ({ article }) => {
+  console.log(article);
   return (
     <article
       className={`latest-block list-article-block large-vertical-padding`}
