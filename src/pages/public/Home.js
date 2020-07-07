@@ -5,6 +5,7 @@ import { useSpring, animated } from "react-spring";
 import { fadeInConfig } from "../../animations";
 import conversationImage from "../../assets/conversation.svg";
 import JoinTemp from "../../components/JoinTemp";
+import downArrow from "../../assets/down-arrow.png";
 
 const Home = () => {
   const animationProps = useSpring(fadeInConfig);
@@ -42,12 +43,6 @@ const Home = () => {
               forum. CAPE Professionals provide advice, training and support to
               Designated leads in Schools a network of support for members.
             </p>
-            <a
-              className="btn secondary-btn basic-box-shadow"
-              href="#joining-cape"
-            >
-              Joining CAPE
-            </a>
           </div>
           <div className="three-panel--panel">
             <h3>DEVELOPMENT OPPORTUNITIES</h3>
@@ -57,12 +52,6 @@ const Home = () => {
               our members need to continuously update their knowledge and
               development opportunities are offered to CAPE members.
             </p>
-            <a
-              className="btn secondary-btn basic-box-shadow"
-              href="#joining-cape"
-            >
-              Joining CAPE
-            </a>
           </div>
           <div className="three-panel--panel">
             <h3>PROFESSIONAL PRACTICE</h3>
@@ -73,15 +62,18 @@ const Home = () => {
               representation on a number of national development groups set up
               to inform and improve professional practice.
             </p>
-            <a
-              className="btn secondary-btn basic-box-shadow"
-              href="#joining-cape"
-            >
-              Joining CAPE
-            </a>
           </div>
         </div>
-        <div className="dark-background">
+        <a
+          className="btn secondary-btn basic-box-shadow joining-cape-btn"
+          href="#joining-cape"
+        >
+          Joining CAPE{" "}
+          <span>
+            <img className="down-arrow" src={downArrow} alt="Down Arrow" />
+          </span>
+        </a>
+        {/* <div className="dark-background">
           <div className="medium-vertical-padding container">
             <h3>MORE EEEEsfjsdjgvd</h3>
             <p>
@@ -90,7 +82,7 @@ const Home = () => {
               own work and the issues they are facing. Professionals{" "}
             </p>
           </div>
-        </div>
+        </div> */}
       </section>
       <JoinTemp />
     </>

@@ -44,6 +44,7 @@
 .news-background {
   background-color: #EDF2F7;
   height: auto;
+  padding-bottom: 80px;
 }
 
 .news-background .three-panel {
@@ -60,7 +61,7 @@
 .news-background .three-panel .three-panel--panel {
   background-color: white;
   border-radius: 10px;
-  padding: 50px;
+  padding: 30px;
   font-family: var(--text-font);
   text-align: center;
   box-shadow: 0px 6px 12px 0px #00000029;
@@ -69,6 +70,11 @@
 .news-background .three-panel .three-panel--panel h3 {
   text-align: center;
   font-family: var(--text-font);
+  margin: 5px auto;
+}
+
+.news-background .three-panel .three-panel--panel p {
+  margin: 0px auto;
 }
 
 .news-background .three-panel .three-panel--panel .panel-link-button {
@@ -131,6 +137,17 @@
   margin: 5px auto;
 }
 
+.joining-cape-btn {
+  display: inline-block;
+  position: absolute;
+  right: 200px;
+}
+
+.down-arrow {
+  height: 18px;
+  transform: translate(2px, 2px);
+}
+
 @media (max-width: 480px) {}
 
 @media (max-width: 550px) {
@@ -181,6 +198,7 @@
 
   .news-background {
     height: auto;
+    padding-bottom: 60px;
   }
 
   .news-background .three-panel {
@@ -191,6 +209,13 @@
     margin: 60px auto;
     max-width: 380px;
     padding: 60px;
+  }
+
+
+  .joining-cape-btn {
+    display: inline-block;
+    margin: 0 auto;
+    right: 100px;
   }
 }
 
