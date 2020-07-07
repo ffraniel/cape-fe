@@ -37,13 +37,10 @@ const Home = () => {
           <div className="three-panel--panel">
             <h3>SUPPORT</h3>
             <p>
-              CAPE supports members by coming together for meetings to discuss
-              their own work and the issues they are facing. Professionals whose
-              role is to provide advice and support to Designated leads in
-              Schools are often doing so without supervision for themselves.
-              Child protection work is difficult, complex and sensitive and CAPE
-              aims to support members by meeting on a regular basis and through
-              the member's forum.
+              Child protection work is difficult, complex and sensitive. CAPE
+              supports members through regular meetings and this website and
+              forum. CAPE Professionals provide advice, training and support to
+              Designated leads in Schools a network of support for members.
             </p>
             <a
               className="btn secondary-btn basic-box-shadow"
@@ -56,8 +53,8 @@ const Home = () => {
             <h3>DEVELOPMENT OPPORTUNITIES</h3>
             <p>
               CAPE members are professionals who provide training and
-              consultancy to Designated Leads in schools. Cape recognises that
-              CAPE members need to continuously update their own knowledge and
+              consultancy to Designated Leads in schools. CAPE recognises that
+              our members need to continuously update their knowledge and
               development opportunities are offered to CAPE members.
             </p>
             <a
@@ -70,11 +67,11 @@ const Home = () => {
           <div className="three-panel--panel">
             <h3>PROFESSIONAL PRACTICE</h3>
             <p>
-              CAPE is a long standing organisation and recognised as useful
-              partners in developing practice. CAPE regularly responds to
-              Government consultations and CAPE has representation on a number
-              of national development groups set up to inform and improve
-              professional practice.
+              CAPE is a long-standing organisation which aims to continually
+              improve safeguarding practice across the education sector. CAPE
+              regularly responds to Government consultations and has
+              representation on a number of national development groups set up
+              to inform and improve professional practice.
             </p>
             <a
               className="btn secondary-btn basic-box-shadow"
