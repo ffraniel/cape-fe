@@ -34,3 +34,9 @@
 .latest-block .latest-preview {
   margin: 5px auto;
 }
+
+.latest-categories-list {}
+
+.latest-categories-list .latest-list-category-list-item {
+  margin: 0 10px;
+}

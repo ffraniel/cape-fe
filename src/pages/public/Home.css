@@ -33,12 +33,7 @@
 
 .jumbo-image-container {
   background-color: #96CB99;
-}
-
-.jumbo-image-container img {
-  margin: 200px auto;
-  width: 560px;
-  display: block;
+  position: relative;
 }
 
 .news-background {
@@ -61,7 +56,7 @@
 .news-background .three-panel .three-panel--panel {
   background-color: white;
   border-radius: 10px;
-  padding: 30px;
+  padding: 18px;
   font-family: var(--text-font);
   text-align: center;
   box-shadow: 0px 6px 12px 0px #00000029;
@@ -151,9 +146,6 @@
 @media (max-width: 480px) {}
 
 @media (max-width: 550px) {
-  .jumbo-image-container {
-    display: none;
-  }
 
   .jumbo-text-container {
     padding-top: 95px;
@@ -170,6 +162,7 @@
   .jumbo-text {
     margin: 0px auto;
     padding: 60px;
+    margin-top: 60px;
   }
 
   .jumbo-text h1 {
@@ -188,13 +181,6 @@
     max-width: 300px;
   }
 
-  .jumbo-image-container {}
-
-  .jumbo-image-container img {
-    margin: 0 auto;
-    padding: 60px;
-    width: 80%;
-  }
 
   .news-background {
     height: auto;

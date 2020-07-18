@@ -3,7 +3,7 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import { fadeInConfig } from "../../animations";
-import conversationImage from "../../assets/conversation.svg";
+import Mosaic from "../../components/Mosaic";
 import JoinTemp from "../../components/JoinTemp";
 import downArrow from "../../assets/down-arrow.png";
 
@@ -14,7 +14,7 @@ const Home = () => {
     <>
       <animated.section className="jumbotron" style={animationProps}>
         <div className="jumbo-image-container">
-          <img src={conversationImage} alt="drawing of two adults talking" />
+          <Mosaic />
         </div>
         <div className="jumbo-text-container">
           <div className="jumbo-text">
