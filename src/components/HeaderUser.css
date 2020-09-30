@@ -13,9 +13,9 @@
   padding: 0 5px;
 }
 
-.user-header .desktop-menu li a:hover {
+/* .user-header .desktop-menu li a:hover {
   border-bottom: 2px solid blue;
-}
+} */
 
 .user-header .filter-container {
   display: none;
@@ -38,6 +38,7 @@
 
 .user-header .desktop-menu .filter-container li {
   border-bottom: 2px solid rgba(0, 0, 0, 0);
+
   transition: border-bottom 0.5s;
   padding: 0 5px;
 }

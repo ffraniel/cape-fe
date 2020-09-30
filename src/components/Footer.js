@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import { Link } from "react-router-dom";
-import logo from "../assets/GreenTrans.png";
+import logo from "../assets/WhiteTrans.png";
 const Footer = () => {
   return (
     <footer className="footer">
@@ -35,12 +35,12 @@ const Footer = () => {
           </ul>
         </div>
         <div className="footer-details">
-          <p>
-            Website by <a href="https://franwebdev.uk/">Francis Whitehead</a>
-          </p>
           <Link to="/">
             <img className="footer-logo" src={logo} alt="logo" />
           </Link>
+          <p className="author-link">
+            Website by <a href="https://franwebdev.uk/">Francis Whitehead</a>
+          </p>
         </div>
       </div>
     </footer>

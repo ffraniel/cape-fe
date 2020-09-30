@@ -12,24 +12,6 @@ const Footer = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/articles">News</Link>
-            </li>
-            <li>
-              <Link to="/category/events">Events</Link>
-            </li>
-            <li>
-              <Link to={"/category/resources"}>Resources</Link>
-            </li>
-            <li>
-              <Link to={"/category/guidance"}>Guidance</Link>
-            </li>
-            <li>
-              <Link to="/category/consultations">Consultations</Link>
-            </li>
-            <li>
-              <Link to={"/category/minutes"}>Minutes</Link>
-            </li>
-            <li>
               <a
                 href="https://cape.flarum.cloud/"
                 target="_blank"
@@ -47,12 +29,12 @@ const Footer = () => {
           </ul>
         </div>
         <div className="footer-details">
-          <p>
-            Website by <a href="https://franwebdev.uk/">Francis Whitehead</a>
-          </p>
           <Link to="/">
             <img className="footer-logo" src={logo} alt="logo" />
           </Link>
+          <p className="author-link">
+            Website by <a href="https://franwebdev.uk/">Francis Whitehead</a>
+          </p>
         </div>
       </div>
     </footer>

@@ -1,6 +1,6 @@
 .footer {
   background-color: grey;
-  height: 300px;
+  height: 250px;
   display: flex;
   z-index: 1;
   position: absolute;
@@ -28,8 +28,9 @@
   font-family: var(--text-font);
 }
 
-.footer-details p {
+.footer-details .author-link {
   font-size: 14px;
+  color: rgb(201, 200, 200);
 }
 
 .footer-col {
@@ -39,6 +40,10 @@
   padding: 30px 0;
 }
 
+.footer-col li {
+  padding: 0 10px;
+}
+
 .footer-col li a {
   text-decoration: none;
   font-family: var(--text-font);
@@ -46,4 +51,13 @@
 
 .footer .container {
   display: flex;
+}
+
+
+@media (max-width: 550px) {
+  .footer-logo {
+    width: 120px;
+    padding: 15px;
+    margin: auto;
+  }
 }
