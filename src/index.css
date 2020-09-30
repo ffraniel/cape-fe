@@ -31,6 +31,7 @@ body {
   --text-font: 'Poppins', sans-serif;
   --white-text-hover: rgb(255, 255, 255);
   --text-grey: #1A202C;
+  --lighter-text-grey: #272d3a;
   --first-alternating-colour: rgba(161, 161, 161, 0.5);
   --second-alternating-colour: rgba(201, 201, 241, 0.5);
   --header-colour: rgb(49, 104, 53);
@@ -48,6 +49,7 @@ body {
   display: inline-block;
   text-align: center;
   transition: color 0.25s, background-color 0.25s;
+  border: none;
 }
 
 .button:hover {

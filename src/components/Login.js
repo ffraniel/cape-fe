@@ -48,7 +48,7 @@ const Login = () => {
     <section className="form-element">
       {loginLoading && <Loading />}
       <h3>Log In</h3>
-      <p>Members only area.</p>
+      <p>Members area</p>
       {loginError && (
         <h3 className="red-text login-error-animation">
           Incorrect Username and/or Password. Please try again.
