@@ -5,6 +5,7 @@
   transform: translateY(-50%);
 }
 
+
 .mosaic-image {
   width: 140px;
   height: 90px;
@@ -12,6 +13,11 @@
   margin: 15px;
   border-radius: 3px;
   opacity: 0.9;
+  transition: opacity 0.25s;
+}
+
+.mosaic-image:hover {
+  opacity: 1;
 }
 
 
