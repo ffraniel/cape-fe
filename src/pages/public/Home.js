@@ -73,16 +73,6 @@ const Home = () => {
             <img className="down-arrow" src={downArrow} alt="Down Arrow" />
           </span>
         </a>
-        {/* <div className="dark-background">
-          <div className="medium-vertical-padding container">
-            <h3>MORE EEEEsfjsdjgvd</h3>
-            <p>
-              So if we had more text it would go herere, weshsd dssof, CAPE
-              supports members by coming together for meetings to discuss their
-              own work and the issues they are facing. Professionals{" "}
-            </p>
-          </div>
-        </div> */}
       </section>
       <JoinTemp />
     </>
