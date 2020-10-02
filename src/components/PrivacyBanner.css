@@ -1,0 +1,66 @@
+@keyframes scrollUp {
+  from {
+    transform: translate(0, 100%);
+  }
+
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+.privacy-banner {
+  position: fixed;
+  bottom: 0;
+  transform: translate(0, 100%);
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 60px;
+  background-color: rgb(4, 48, 4);
+  z-index: 2;
+  font-family: var(--text-font);
+  animation: scrollUp 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+
+.privacy-banner.hidden {
+  display: none;
+}
+
+.privacy-banner .banner-container {
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.privacy-banner .banner-container p {
+  display: inline;
+  color: white;
+  color: var(--white-text);
+}
+
+.privacy-banner .banner-container p a {
+  margin: 0 0 0 10px;
+  color: blue;
+}
+
+.privacy-banner .banner-container p a:hover {
+  color: rgb(158, 189, 207);
+}
+
+.privacy-banner .banner-container .privacy-banner-btn {
+  width: 120px;
+  margin: 10px 0;
+  padding: 0px 10px;
+  display: inline;
+  background-color: green;
+  color: white;
+  color: var(--white-text);
+  transition: background-color 0.25s;
+}
+
+.privacy-banner .banner-container .privacy-banner-btn:hover {
+  background-color: rgb(13, 153, 13);
+}

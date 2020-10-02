@@ -24,6 +24,9 @@ const Footer = () => {
               <Link to="/login">Log In</Link>
             </li>
             <li>
+              <Link to="/privacy">Privacy</Link>
+            </li>
+            <li>
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSdgx1Gi71VOqhUStqZj6QVZIoYyz816i_KMhSoVMiGb8PGopw/viewform?usp=sf_link"
                 target="_blank"
