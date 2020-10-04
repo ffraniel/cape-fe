@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./Index.css";
 import HeaderPublic from "../../components/HeaderPublic";
@@ -14,7 +14,27 @@ import ScrollToTop from "../../components/ScrollToTop";
 import PrivacyBanner from "../../components/PrivacyBanner";
 
 const Index = () => {
-  // all the frontend goes here
+  const [isLocalStorageAllowed, setIsLocalStorageAllowed] = useState("");
+
+  useEffect(() => {
+    let allowPrivacyLocalStorage = window.localStorage.getItem("allow-storage");
+    if (allowPrivacyLocalStorage === "true") {
+      let allowPrivacyBool = allowPrivacyLocalStorage === "true" ? true : false;
+      setIsLocalStorageAllowed(allowPrivacyBool);
+    }
+  }, []);
+
+  const handleAllowStorageChange = () => {
+    setIsLocalStorageAllowed((prevState) => {
+      if (prevState === true) {
+        window.localStorage.removeItem("email-login");
+        window.localStorage.setItem("allow-storage", "false");
+      } else {
+        window.localStorage.setItem("allow-storage", "true");
+      }
+      return !prevState;
+    });
+  };
 
   return (
     <section className="index">
@@ -39,14 +59,20 @@ const Index = () => {
               <LoginPage />
             </Route>
             <Route path="/privacy">
-              <Privacy />
+              <Privacy
+                isLocalStorageAllowed={isLocalStorageAllowed}
+                handleAllowStorageChange={handleAllowStorageChange}
+              />
             </Route>
             <Route>
               <NoMatch default />
             </Route>
           </Switch>
         </div>
-        <PrivacyBanner />
+        <PrivacyBanner
+          isLocalStorageAllowed={isLocalStorageAllowed}
+          handleAllowStorageChange={handleAllowStorageChange}
+        />
         <Footer />
       </Router>
     </section>

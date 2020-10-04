@@ -3,7 +3,7 @@ import "./Privacy.css";
 import { useSpring, animated } from "react-spring";
 import { animationConfig } from "../../animations";
 
-const Privacy = () => {
+const Privacy = ({ isLocalStorageAllowed, handleAllowStorageChange }) => {
   const animationProps = useSpring(animationConfig);
 
   return (
@@ -34,6 +34,37 @@ const Privacy = () => {
           is stored is the email address - there is no other data attached that
           could be compromised.
         </p>
+        <h4>
+          If you wish to change your privacy setting use the toggle below.
+        </h4>
+        {isLocalStorageAllowed !== "" && (
+          <form>
+            <label className="switch">
+              {isLocalStorageAllowed
+                ? "Permissions Allowed"
+                : "Permissions Denied"}
+              <input
+                className="checkbox"
+                type="checkbox"
+                name="privacy-checkbox"
+                checked={isLocalStorageAllowed}
+                onChange={handleAllowStorageChange}
+              />
+            </label>
+          </form>
+        )}
+        {isLocalStorageAllowed === "" && (
+          <button
+            className={
+              isLocalStorageAllowed
+                ? "privacy-btn allowed"
+                : "privacy-btn disallowed"
+            }
+            onClick={handleAllowStorageChange}
+          >
+            {isLocalStorageAllowed ? "Disagree" : "Agree"}
+          </button>
+        )}
       </animated.div>
     </div>
   );

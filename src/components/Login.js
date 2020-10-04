@@ -10,9 +10,12 @@ const Login = () => {
   const [loginLoading, setLoginLoading] = useState(false);
 
   useEffect(() => {
-    let storedEmail = window.localStorage.getItem("email-login");
-    if (storedEmail) {
-      setEmail(storedEmail);
+    let allowPrivacyLocalStorage = window.localStorage.getItem("allow-storage");
+    if (allowPrivacyLocalStorage === "true") {
+      let storedEmail = window.localStorage.getItem("email-login");
+      if (storedEmail) {
+        setEmail(storedEmail);
+      }
     }
   }, []);
 

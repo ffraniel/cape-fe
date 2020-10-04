@@ -15,7 +15,7 @@
   left: 0;
   right: 0;
   width: 100%;
-  height: 60px;
+  min-height: 60px;
   background-color: rgb(4, 48, 4);
   z-index: 2;
   font-family: var(--text-font);
@@ -51,7 +51,6 @@
 }
 
 .privacy-banner .banner-container .privacy-banner-btn {
-  width: 120px;
   margin: 10px 0;
   padding: 0px 10px;
   display: inline;
@@ -63,4 +62,24 @@
 
 .privacy-banner .banner-container .privacy-banner-btn:hover {
   background-color: rgb(13, 153, 13);
+}
+
+@media (max-width: 700px) {
+  .privacy-banner {
+    min-height: 70px;
+  }
+
+  .privacy-banner .banner-container {
+    max-width: 95%;
+  }
+
+  .privacy-banner .banner-container p {
+    font-size: 0.75rem;
+  }
+
+  .privacy-banner .banner-container .privacy-banner-btn {
+    max-height: 40px;
+    font-size: 0.9rem;
+    margin: 5px;
+  }
 }
