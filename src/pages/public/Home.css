@@ -186,7 +186,8 @@
 
   .news-background {
     height: auto;
-    padding-bottom: 60px;
+    padding-bottom: 0px;
+    padding: 20px;
   }
 
   .news-background .three-panel {
@@ -194,7 +195,7 @@
   }
 
   .news-background .three-panel .three-panel--panel {
-    margin: 60px auto;
+    margin: 60px auto 0;
     max-width: 380px;
     padding: 60px;
   }

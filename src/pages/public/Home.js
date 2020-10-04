@@ -5,7 +5,6 @@ import { useSpring, animated } from "react-spring";
 import { fadeInConfig } from "../../animations";
 import Mosaic from "../../components/Mosaic";
 import JoinTemp from "../../components/JoinTemp";
-import downArrow from "../../assets/down-arrow.png";
 
 const Home = () => {
   const animationProps = useSpring(fadeInConfig);
@@ -64,15 +63,6 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <a
-          className="btn secondary-btn basic-box-shadow joining-cape-btn"
-          href="#joining-cape"
-        >
-          Joining CAPE{" "}
-          <span>
-            <img className="down-arrow" src={downArrow} alt="Down Arrow" />
-          </span>
-        </a>
       </section>
       <JoinTemp />
     </>
