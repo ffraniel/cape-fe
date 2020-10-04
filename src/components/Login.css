@@ -10,10 +10,12 @@
 }
 
 .form-element form {
-  background: #e6e6e6;
-  box-shadow: 0 2px 5px 1px #a49b9b;
   border-radius: 5px;
   padding: 15px;
+  margin: 20px auto 60px;
+  background: #EDF2F7;
+  background-color: whitesmoke;
+  box-shadow: 0px 3px 12px 1px #00000033;
 }
 
 .form-element input {
@@ -21,7 +23,7 @@
   font-family: var(--text-font);
   font-size: 1rem;
   margin: 10px auto;
-  padding: 5px;
+  padding: 10px;
 }
 
 .form-element input[type="text"] {
@@ -48,6 +50,7 @@
   font-weight: 900;
   display: block;
   text-align: center;
+  color: var(--text-grey);
 }
 
 .login-error-animation {

@@ -3,21 +3,20 @@ import "./Login.css";
 import fire from "../config/fire";
 import Loading from "./Loading";
 
-const Login = () => {
+const Login = ({ isLocalStorageAllowed }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginError, setLoginError] = useState(null);
   const [loginLoading, setLoginLoading] = useState(false);
 
   useEffect(() => {
-    let allowPrivacyLocalStorage = window.localStorage.getItem("allow-storage");
-    if (allowPrivacyLocalStorage === "true") {
+    if (isLocalStorageAllowed) {
       let storedEmail = window.localStorage.getItem("email-login");
       if (storedEmail) {
         setEmail(storedEmail);
       }
     }
-  }, []);
+  }, [isLocalStorageAllowed]);
 
   const handleInput = (e) => {
     e.preventDefault();
@@ -38,7 +37,9 @@ const Login = () => {
       .then(() => {
         setLoginError(false);
         setLoginLoading(false);
-        window.localStorage.setItem("email-login", email);
+        if (isLocalStorageAllowed) {
+          window.localStorage.setItem("email-login", email);
+        }
       })
       .catch(function (error) {
         // setLoginError(error.message);
@@ -48,7 +49,7 @@ const Login = () => {
   };
 
   return (
-    <section className="form-element">
+    <section className="form-element container">
       {loginLoading && <Loading />}
       <h3>Log In</h3>
       <p>Members area</p>
