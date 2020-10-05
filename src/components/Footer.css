@@ -1,5 +1,5 @@
 .footer {
-  background-color: grey;
+  background-color: #5c5858;
   height: 250px;
   display: flex;
   z-index: 1;
@@ -47,6 +47,19 @@
 .footer-col li a {
   text-decoration: none;
   font-family: var(--text-font);
+  color: var(--white-text);
+}
+
+.footer-col li a:hover {
+  color: rgb(168, 167, 167);
+}
+
+.footer .footer-details .author-link a {
+  color: var(--white-text);
+}
+
+.footer .footer-details .author-link a:hover {
+  color: rgb(168, 167, 167);
 }
 
 .footer .container {
