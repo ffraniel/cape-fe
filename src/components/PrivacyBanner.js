@@ -10,6 +10,9 @@ const PrivacyBanner = ({ isLocalStorageAllowed, handleAllowStorageChange }) => {
           ? "privacy-banner hidden"
           : "privacy-banner"
       }
+      role="dialog"
+      tabIndex="-1"
+      aria-label="Privacy popup asking you if user agrees to terms allowing use of browser Local Storage and email address for account"
     >
       <div className="banner-container">
         <p>

@@ -66,7 +66,7 @@ const Login = ({ isLocalStorageAllowed }) => {
           placeholder="Email"
           onChange={handleInput}
           value={email}
-          autocomplete="username email"
+          autoComplete="username email"
         />
         <label htmlFor="password">Password</label>
         <input

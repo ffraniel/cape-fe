@@ -2,6 +2,7 @@
 
 .feed .no-more-results {
   margin: 10px 30px;
+  color: var(--lighter-text-grey);
 }
 
 .feed .get-more-btn {
