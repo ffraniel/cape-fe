@@ -52,7 +52,6 @@
 
 .privacy-banner .banner-container .privacy-banner-btn {
   margin: 10px 0;
-  padding: 0px 10px;
   display: inline;
   background-color: green;
   color: white;
@@ -74,12 +73,20 @@
   }
 
   .privacy-banner .banner-container p {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
+    margin: 20px;
+  }
+
+}
+
+@media (max-width: 550px) {
+
+  .privacy-banner .banner-container p {
+    font-size: 0.85rem;
   }
 
   .privacy-banner .banner-container .privacy-banner-btn {
-    max-height: 40px;
-    font-size: 0.9rem;
     margin: 5px;
+    margin: 8px;
   }
 }

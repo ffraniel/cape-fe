@@ -16,8 +16,8 @@ const PrivacyBanner = ({ isLocalStorageAllowed, handleAllowStorageChange }) => {
     >
       <div className="banner-container">
         <p>
-          Lots of text with a link to the
-          <Link to="/privacy">Privacy page</Link>.
+          Allow use of cookies
+          <Link to="/privacy">Privacy page</Link>
         </p>
         <button
           className="btn privacy-banner-btn"
