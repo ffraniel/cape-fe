@@ -44,6 +44,19 @@
   margin: 5px 0px;
 }
 
+.article-html p {
+  line-height: 2rem;
+}
+
+.article-html img {
+  display: block;
+  box-sizing: border-box;
+  max-width: 100%;
+  object-fit: contain;
+  margin: 0 auto;
+  padding: 0;
+  height: auto !important;
+}
 
 @media (max-width: 550px) {
   .article-container .article-item .article-title {

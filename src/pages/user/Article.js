@@ -67,6 +67,7 @@ const Article = () => {
           <div className="article-body large-padding">
             <div className="container">
               <div
+                className="article-html"
                 dangerouslySetInnerHTML={{ __html: data.article.text.html }}
               ></div>
               <div className="categories-list">
