@@ -7,6 +7,7 @@ import { useSpring, animated } from "react-spring";
 import Loading from "../../components/Loading";
 import Breadcrumb from "../../components/Breadcrumb";
 import DateFormatter from "../../components/DateFormatter";
+import MainImage from "../../components/MainImage";
 
 const Article = () => {
   const { articleID } = useParams();
@@ -66,6 +67,12 @@ const Article = () => {
           </div>
           <div className="article-body large-padding">
             <div className="container">
+              {data.article.images?.url && (
+                <MainImage
+                  alt={data.article.title}
+                  src={data.article.images.url}
+                />
+              )}
               <div
                 className="article-html"
                 dangerouslySetInnerHTML={{ __html: data.article.text.html }}

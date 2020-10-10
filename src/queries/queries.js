@@ -95,6 +95,9 @@ const getArticle = gql`
       text {
         html
       }
+      images {
+        url
+      }
     }
   }
 `;

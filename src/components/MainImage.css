@@ -1,0 +1,38 @@
+.main-image-loading-indicator {
+  text-align: center;
+  animation: glowText 0.6s infinite alternate;
+}
+
+.article-main-image {
+  display: block;
+  box-sizing: border-box;
+  max-width: 100%;
+  width: 100%;
+  object-fit: contain;
+  margin: 0 auto;
+  padding: 0;
+  height: auto !important;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes glowText {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0.95;
+    transform: scale(1.2);
+  }
+}
