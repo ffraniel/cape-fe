@@ -54,3 +54,15 @@
   margin: 10px 30px;
   color: var(--lighter-text-grey);
 }
+
+.list-article-block .list-image-container {
+  max-width: 300px;
+  margin: 10px auto;
+  border-radius: 3px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.list-article-block .list-image-container:hover {
+  transform: scale(1.05);
+}

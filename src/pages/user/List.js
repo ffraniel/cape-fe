@@ -3,6 +3,7 @@ import "./List.css";
 import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import DateFormatter from "../../components/DateFormatter";
+import MainImage from "../../components/MainImage";
 
 const List = (props) => {
   const { data } = props;
@@ -45,6 +46,16 @@ const List = (props) => {
               <Link className="list-title-link" to={`/article/${article.id}`}>
                 <h1 className="list-title">{article.title}</h1>
               </Link>
+              {article.images && article.images.url && (
+                <div className="list-image-container">
+                  <Link to={`/article/${article.id}`}>
+                    <MainImage
+                      src={article.images.url}
+                      alt={`For article "${article.title}"`}
+                    />
+                  </Link>
+                </div>
+              )}
               {article.author ? (
                 <h3 className="list-author">{article.author}</h3>
               ) : (

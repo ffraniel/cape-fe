@@ -50,6 +50,9 @@ const getArticlesPreviewB = gql`
       text {
         text
       }
+      images {
+        url
+      }
     }
   }
 `;
@@ -74,6 +77,9 @@ const getArticlesByThemeB = gql`
       membersOnly
       text {
         text
+      }
+      images {
+        url
       }
     }
   }
@@ -146,6 +152,9 @@ const getConference = gql`
       text {
         text
         html
+      }
+      images {
+        url
       }
     }
   }

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Latest.css";
 import DateFormatter from "../components/DateFormatter";
+import MainImage from "../components/MainImage";
 
 const Latest = ({ article }) => {
   console.log(article);
@@ -21,6 +22,16 @@ const Latest = ({ article }) => {
         <Link className="latest-link" to={`/article/${article.id}`}>
           <h1 className="latest-title">{article.title}</h1>
         </Link>
+        {article.images && article.images.url && (
+          <div className="latest-image-container">
+            <Link to={`/article/${article.id}`}>
+              <MainImage
+                src={article.images.url}
+                alt={`For article "${article.title}"`}
+              />
+            </Link>
+          </div>
+        )}
         {article.author ? (
           <h3 className="latest-author">{article.author}</h3>
         ) : (

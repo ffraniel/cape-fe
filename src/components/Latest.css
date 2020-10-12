@@ -23,6 +23,19 @@
   margin: 10px auto 20px;
 }
 
+.latest-block .latest-image-container {
+  max-width: 300px;
+  max-height: 300px;
+  margin: 10px auto;
+  border-radius: 3px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.latest-block .latest-image-container:hover {
+  transform: scale(1.05);
+}
+
 .latest-block .article-list-date {
   margin: 5px auto;
 }

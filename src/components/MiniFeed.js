@@ -2,6 +2,7 @@ import React from "react";
 import "./MiniFeed.css";
 import { Link } from "react-router-dom";
 import DateFormatter from "../components/DateFormatter";
+import MainImage from "../components/MainImage";
 
 const MiniFeed = ({ articles, category }) => {
   let isCategory = category !== undefined && category.length > 0;
@@ -16,6 +17,16 @@ const MiniFeed = ({ articles, category }) => {
                 {article.title}
               </h3>
             </Link>
+            {article.images && article.images.url && (
+              <div className="mini-feed-image-container">
+                <Link to={`/article/${article.id}`}>
+                  <MainImage
+                    src={article.images.url}
+                    alt={`For article "${article.title}"`}
+                  />
+                </Link>
+              </div>
+            )}
             <h5 className="mini-feed--grid-preview--author">
               {article.author ? article.author : "Editor"}
             </h5>
