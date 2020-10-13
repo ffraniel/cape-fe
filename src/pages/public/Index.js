@@ -56,7 +56,10 @@ const Index = () => {
               <Constitution />
             </Route>
             <Route path="/login">
-              <LoginPage isLocalStorageAllowed={isLocalStorageAllowed} />
+              <LoginPage
+                isLocalStorageAllowed={isLocalStorageAllowed}
+                handleAllowStorageChange={handleAllowStorageChange}
+              />
             </Route>
             <Route path="/privacy">
               <Privacy

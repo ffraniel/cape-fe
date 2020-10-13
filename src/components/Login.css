@@ -4,7 +4,6 @@
   font-family: var(--text-font);
 }
 
-
 .form-element h3 {
   font-family: var(--text-font);
 }
@@ -46,11 +45,27 @@
 
 }
 
-.form-element form label {
+.form-element form .label {
   font-weight: 900;
   display: block;
   text-align: center;
   color: var(--text-grey);
+}
+
+.form-element .remember-me-line {
+  text-align: left;
+  padding: 0 15px;
+  display: flex;
+}
+
+.form-element .remember-me-line input, .form-element .remember-me-line p  {
+  display: inline-block;
+}
+
+.form-element .remember-me-line input {
+  margin: 0 0 0 auto;
+  height: 25px;
+  width: 25px;
 }
 
 .login-error-animation {

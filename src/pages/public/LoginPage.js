@@ -4,7 +4,7 @@ import { animationConfig } from "../../animations";
 import { useSpring, animated } from "react-spring";
 import Login from "../../components/Login";
 
-const LoginPage = ({ isLocalStorageAllowed }) => {
+const LoginPage = ({ isLocalStorageAllowed, handleAllowStorageChange }) => {
   const animationProps = useSpring(animationConfig);
 
   return (
@@ -13,7 +13,10 @@ const LoginPage = ({ isLocalStorageAllowed }) => {
       style={animationProps}
     >
       <div className="header-trigger">
-        <Login isLocalStorageAllowed={isLocalStorageAllowed} />
+        <Login
+          isLocalStorageAllowed={isLocalStorageAllowed}
+          handleAllowStorageChange={handleAllowStorageChange}
+        />
       </div>
     </animated.div>
   );

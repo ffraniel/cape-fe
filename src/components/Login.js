@@ -3,7 +3,7 @@ import "./Login.css";
 import fire from "../config/fire";
 import Loading from "./Loading";
 
-const Login = ({ isLocalStorageAllowed }) => {
+const Login = ({ isLocalStorageAllowed, handleAllowStorageChange }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginError, setLoginError] = useState(null);
@@ -59,7 +59,9 @@ const Login = ({ isLocalStorageAllowed }) => {
         </h3>
       )}
       <form onSubmit={handleSubmit}>
-        <label htmlFor="email">Email</label>
+        <label className="label" htmlFor="email">
+          Email
+        </label>
         <input
           type="text"
           name="email"
@@ -68,7 +70,9 @@ const Login = ({ isLocalStorageAllowed }) => {
           value={email}
           autoComplete="username email"
         />
-        <label htmlFor="password">Password</label>
+        <label className="label" htmlFor="password">
+          Password
+        </label>
         <input
           type="password"
           name="password"
@@ -76,6 +80,15 @@ const Login = ({ isLocalStorageAllowed }) => {
           onChange={handleInput}
           value={password}
         />
+        <div className="remember-me-line">
+          <label htmlFor="privacy-checkbox">Remember Me</label>
+          <input
+            type="checkbox"
+            name="privacy-checkbox"
+            checked={isLocalStorageAllowed}
+            onChange={handleAllowStorageChange}
+          />
+        </div>
         <input className="btn primary-btn" type="submit" value="LOG IN" />
       </form>
     </section>
