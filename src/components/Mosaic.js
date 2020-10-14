@@ -1,7 +1,6 @@
 import React from "react";
 import "./Mosaic.css";
-// import cape1 from "../assets/cape-1.jpg";
-// import cape2 from "../assets/cape-2.jpg";
+import LazyImage from "../components/LazyImage";
 import cape1 from "../assets/conference-photos/conference-1.jpg";
 import cape2 from "../assets/conference-photos/conference-2.jpg";
 import cape3 from "../assets/conference-photos/conference-3.jpg";
@@ -18,84 +17,34 @@ import cape13 from "../assets/conference-photos/conference-13.jpg";
 import cape14 from "../assets/conference-photos/conference-14.jpg";
 import cape15 from "../assets/conference-photos/conference-15.jpg";
 
+const imageArray = [
+  cape1,
+  cape2,
+  cape3,
+  cape4,
+  cape5,
+  cape6,
+  cape7,
+  cape8,
+  cape9,
+  cape10,
+  cape11,
+  cape12,
+  cape13,
+  cape14,
+  cape15,
+];
+
 const Mosaic = () => {
   return (
     <div className="mosaic">
-      <img
-        className="mosaic-image"
-        src={cape1}
-        alt="taken at cape conference"
-      />
-      <img
-        className="mosaic-image"
-        src={cape2}
-        alt="taken at cape conference"
-      />
-      <img
-        className="mosaic-image"
-        src={cape3}
-        alt="taken at cape conference"
-      />
-      <img
-        className="mosaic-image"
-        src={cape4}
-        alt="taken at cape conference"
-      />
-      <img
-        className="mosaic-image"
-        src={cape5}
-        alt="taken at cape conference"
-      />
-      <img
-        className="mosaic-image"
-        src={cape6}
-        alt="taken at cape conference"
-      />
-      <img
-        className="mosaic-image"
-        src={cape7}
-        alt="taken at cape conference"
-      />
-      <img
-        className="mosaic-image"
-        src={cape8}
-        alt="taken at cape conference"
-      />
-      <img
-        className="mosaic-image"
-        src={cape9}
-        alt="taken at cape conference"
-      />
-      <img
-        className="mosaic-image"
-        src={cape10}
-        alt="taken at cape conference"
-      />
-      <img
-        className="mosaic-image"
-        src={cape11}
-        alt="taken at cape conference"
-      />
-      <img
-        className="mosaic-image"
-        src={cape12}
-        alt="taken at cape conference"
-      />
-      <img
-        className="mosaic-image"
-        src={cape13}
-        alt="taken at cape conference"
-      />
-      <img
-        className="mosaic-image"
-        src={cape14}
-        alt="taken at cape conference"
-      />
-      <img
-        className="mosaic-image"
-        src={cape15}
-        alt="taken at cape conference"
-      />
+      {imageArray.map((image, key) => (
+        <LazyImage
+          alt={"Photo from 2019 CAPE conference"}
+          src={image}
+          key={key}
+        />
+      ))}
     </div>
   );
 };

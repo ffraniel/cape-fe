@@ -1,0 +1,40 @@
+.loading-image {
+  filter: blur(3px);
+  width: 140px;
+  height: 90px;
+  overflow: hidden;
+  margin: 15px;
+  border-radius: 3px;
+  opacity: 0.9;
+}
+
+.lazy-loading-indicator {
+  text-align: center;
+  animation: glowText 0.6s infinite alternate;
+}
+
+.lazy-image {
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes glowText {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0.95;
+    transform: scale(1.2);
+  }
+}
