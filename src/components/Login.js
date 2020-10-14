@@ -51,7 +51,7 @@ const Login = ({ isLocalStorageAllowed, handleAllowStorageChange }) => {
   return (
     <section className="form-element container">
       {loginLoading && <Loading />}
-      <h3>Log In</h3>
+      <h3 className="login-title">Log In</h3>
       <p>Members area</p>
       {loginError && (
         <h3 className="red-text login-error-animation">

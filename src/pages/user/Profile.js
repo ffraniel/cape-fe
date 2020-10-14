@@ -235,6 +235,13 @@ const Profile = () => {
           )}
         </>
       )}
+      <div className="medium-padding profile--more">
+        <h3>Leaving CAPE website</h3>
+        <p>
+          Should you wish to remove yourself from the CAPE website please
+          contact the current CAPE Chair.
+        </p>
+      </div>
     </animated.div>
   );
 };
