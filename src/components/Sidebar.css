@@ -2,6 +2,7 @@
   position: fixed;
   height: 100vh;
   width: 220px;
+  background-color: rgb(235, 241, 235);
   background-color: var(--white-text);
 }
 
@@ -20,6 +21,7 @@
 
 .dash--aside ul li a {
   text-decoration: none;
+  color: #1A202C;
   color: var(--text-grey);
   font-family: var(--text-font);
   border-bottom: 2px solid rgba(0, 0, 0, 0);

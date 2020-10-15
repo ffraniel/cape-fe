@@ -16,6 +16,17 @@
 
 .article-container .article-item .categories-list .category-list-link {
   margin: 5px;
+  
+  text-decoration: none;
+  color: #1A202C;
+  color: var(--text-grey);
+  font-family: var(--text-font);
+  border-bottom: 2px solid #8b8b8b;
+  transition: border-bottom 0.5s;
+}
+
+.article-container .article-item .categories-list .category-list-link:hover {
+  border-bottom: 2px solid #1A202c;
 }
 
 .article-header {

@@ -23,6 +23,8 @@
 
 .user-header .filter-trigger {
   color: var(--white-text);
+  color:rgb(235, 241, 235);
+  font-size: 20px;
   font-size: var(--link-text-size);
   display: inline-block;
   z-index: 2;
@@ -52,8 +54,14 @@
   color: rgb(235, 241, 235);
   color: var(--white-text);
   border: none;
+  font-size: 20px;
   font-size: var(--link-text-size);
   padding: 3px 5px;
+}
+
+.user-header .category-btn:hover {
+  color: rgb(255, 255, 255);
+  color: var(--white-text-hover);
 }
 
 .user-header .close-mob-nav-cross {

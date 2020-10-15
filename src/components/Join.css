@@ -101,11 +101,13 @@
   border: solid 0.5px grey;
   border-radius: 3px;
   background-color: white;
+  color: rgb(43, 43, 43);
   color: var(--text-grey);
   transition: background-color 0.3s, color 0.3s;
 }
 
 .google-form-link:hover {
+  background-color: grey;
   background-color: var(--text-grey);
   color: white;
 }

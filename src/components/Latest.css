@@ -6,6 +6,7 @@
 
 .latest-block .latest-link {
   color: var(--header-colour);
+  color:rgb(49, 104, 53);
   transition: color 0.3s;
 }
 
@@ -18,9 +19,15 @@
 }
 
 .latest-block .latest-link .latest-title {
+  color: #1A202C;
   color: var(--text-grey);
   font-size: 4rem;
   margin: 10px auto 20px;
+}
+
+.latest-block .latest-link .latest-title:hover {
+  color: #272d3a;
+  color: var(--lighter-text-grey);
 }
 
 .latest-block .latest-image-container {
@@ -48,10 +55,18 @@
   margin: 5px auto;
 }
 
-.latest-categories-list {}
-
 .latest-categories-list .latest-list-category-list-item {
+  text-decoration: none;
+  color: #1A202C;
+  color: var(--text-grey);
+  font-family: var(--text-font);
+  border-bottom: 2px solid #8b8b8b;
+  transition: border-bottom 0.5s;
   margin: 0 10px;
+}
+
+.latest-categories-list .latest-list-category-list-item:hover {
+  border-bottom: 2px solid #1A202c;
 }
 
 @media (max-width: 900px) {

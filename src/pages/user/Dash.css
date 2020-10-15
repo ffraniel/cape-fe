@@ -3,6 +3,7 @@
 }
 
 .recent-article-preview .mini-feed {
+  background-color: rgba(161, 161, 161, 0.5);
   background-color: var(--first-alternating-colour);
   padding-top: 40px;
 

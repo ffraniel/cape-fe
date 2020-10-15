@@ -1,14 +1,15 @@
 .jumbotron {
-  display: grid;
-  grid-template-columns: 50% 1fr;
+  display: flex;
   height: 100vh;
 }
 
 .jumbo-text-container {
   background-color: #4FA753;
+  width: 50%;
 }
 
 .jumbo-text {
+  color: white;
   color: var(--white-text);
   font-family: var(--text-font);
   margin: 200px auto;
@@ -34,6 +35,7 @@
 .jumbo-image-container {
   background-color: #96CB99;
   position: relative;
+  width: 50%;
 }
 
 .news-background {
@@ -47,7 +49,7 @@
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 35px;
+  grid-gap: 10px;
   margin: 0 auto;
   width: 75%;
   transform: translate(0, -20px);
@@ -60,7 +62,26 @@
   font-family: var(--text-font);
   text-align: left;
   box-shadow: 0px 6px 12px 0px #00000029;
+  margin: 0 10px;
 }
+
+.news-background .three-panel .three-panel--panel:nth-of-type(1) {
+  -ms-grid-row:1; 
+   -ms-grid-column:1; 
+}
+
+.news-background .three-panel .three-panel--panel:nth-of-type(2) {
+  -ms-grid-row: 1; 
+   -ms-grid-column: 2; 
+}
+
+.news-background .three-panel .three-panel--panel:nth-of-type(3) {
+  -ms-grid-row: 1; 
+   -ms-grid-column: 3; 
+}
+
+
+
 
 .news-background .three-panel .three-panel--panel h3 {
   text-align: center;
@@ -162,6 +183,16 @@
   .jumbotron {
     display: block;
     height: auto;
+  }
+
+  .jumbo-image-container {
+    display: block;
+    width: 100%;
+  }
+
+  .jumbo-text-container {
+    display: block;
+    width: 100%;
   }
 
   .jumbo-text {

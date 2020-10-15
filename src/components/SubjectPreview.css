@@ -1,8 +1,10 @@
 .subject-preview:nth-of-type(even) {
+  background-color: rgba(161, 161, 161, 0.5);
   background-color: var(--first-alternating-colour);
 }
 
 .subject-preview:nth-of-type(odd) {
+  background-color: rgba(201, 201, 241, 0.5);
   background-color: var(--second-alternating-colour);
 }
 
@@ -14,5 +16,6 @@
   padding: 15px 5px 5px 30px;
   margin: 5px auto 0;
   font-family: var(--text-font);
+  color: #1A202C;
   color: var(--text-grey)
 }
