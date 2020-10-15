@@ -49,6 +49,7 @@
 
 .user-header .category-btn {
   background-color: transparent;
+  color: rgb(235, 241, 235);
   color: var(--white-text);
   border: none;
   font-size: var(--link-text-size);

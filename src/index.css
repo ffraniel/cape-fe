@@ -35,6 +35,7 @@ body {
   --first-alternating-colour: rgba(161, 161, 161, 0.5);
   --second-alternating-colour: rgba(201, 201, 241, 0.5);
   --header-colour: rgb(49, 104, 53);
+  --handle-vars-nav-background: unset;
 }
 
 .btn {
