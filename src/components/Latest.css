@@ -5,8 +5,9 @@
 }
 
 .latest-block .latest-link {
-  color: var(--header-colour);
+  font-size: 4rem;
   color:rgb(49, 104, 53);
+  color: var(--header-colour);
   transition: color 0.3s;
 }
 
