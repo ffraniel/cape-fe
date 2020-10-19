@@ -17,6 +17,7 @@ import Article from "./Article";
 import UserFooter from "../../components/UserFooter";
 import ScrollToTop from "../../components/ScrollToTop";
 import Sidebar from "../../components/Sidebar";
+import Favourites from "../user/FavouritesList";
 
 const Dashboard = () => {
   // all the logged in aceessible area goes here
@@ -24,15 +25,22 @@ const Dashboard = () => {
   const [favourites, setFavourites] = useState([]);
 
   useEffect(() => {
-    let localStorageFavourites = JSON.parse(
-      window.localStorage.getItem("favourites")
-    );
+    console.log("Get favs");
+    let localStorageFavouritesRaw = window.localStorage.getItem("favourites");
+    console.log("raw length", localStorageFavouritesRaw.length);
+    if (localStorageFavouritesRaw.length !== 0) {
+      let localStorageFavourites = JSON.parse(localStorageFavouritesRaw);
+      console.log("here it is");
+      console.log(localStorageFavourites);
+      setFavourites(localStorageFavourites);
+    }
+
     //add step where sort by data
-    setFavourites(localStorageFavourites);
   }, []);
 
   useEffect(() => {
     //synchornise data
+    console.log("set favs");
     window.localStorage.setItem("favourites", JSON.stringify(favourites));
   }, [favourites]);
 
@@ -82,6 +90,9 @@ const Dashboard = () => {
               </Route>
               <Route path="/category/:category">
                 <Category />
+              </Route>
+              <Route path="/favourites">
+                <Favourites favourites={favourites} />
               </Route>
               <Route path="/article/:articleID">
                 <Article

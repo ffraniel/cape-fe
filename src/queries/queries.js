@@ -129,6 +129,29 @@ const getArticlesByTheme = gql`
   }
 `;
 
+const getArticlesByIDList = gql`
+  query($id: [ID!]) {
+    articles(where: { id_in: $id }) {
+      author
+      createdAt
+      updatedAt
+      title
+      id
+      categories {
+        title
+      }
+      event
+      membersOnly
+      text {
+        text
+      }
+      images {
+        url
+      }
+    }
+  }
+`;
+
 const getConference = gql`
   query($membersOnly: Boolean) {
     articles(
@@ -189,4 +212,5 @@ export {
   getConference,
   getArticlesPreviewB,
   getArticlesByThemeB,
+  getArticlesByIDList,
 };
