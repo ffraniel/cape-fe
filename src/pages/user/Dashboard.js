@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -20,6 +20,42 @@ import Sidebar from "../../components/Sidebar";
 
 const Dashboard = () => {
   // all the logged in aceessible area goes here
+
+  const [favourites, setFavourites] = useState([]);
+
+  useEffect(() => {
+    let localStorageFavourites = JSON.parse(
+      window.localStorage.getItem("favourites")
+    );
+    //add step where sort by data
+    setFavourites(localStorageFavourites);
+  }, []);
+
+  useEffect(() => {
+    //synchornise data
+    window.localStorage.setItem("favourites", JSON.stringify(favourites));
+  }, [favourites]);
+
+  const addFavourite = (id) => {
+    let newFavouritesArray = [];
+    for (var i = 0; i < favourites.length; i++) {
+      newFavouritesArray[i] = favourites[i];
+    }
+    newFavouritesArray.push(id);
+    setFavourites(newFavouritesArray);
+  };
+
+  const removeFavourite = (id) => {
+    let removedFavouriteArray = favourites.filter((itemID) => {
+      return itemID !== id;
+    });
+    setFavourites(removedFavouriteArray);
+  };
+
+  const orderChronological = (bool) => {
+    console.log("bool :", bool);
+  };
+
   return (
     <section className="dashboard">
       <Router>
@@ -48,7 +84,11 @@ const Dashboard = () => {
                 <Category />
               </Route>
               <Route path="/article/:articleID">
-                <Article />
+                <Article
+                  favourites={favourites}
+                  addFavourite={addFavourite}
+                  removeFavourite={removeFavourite}
+                />
               </Route>
               <Route exact path="/login">
                 <Redirect to="/" />

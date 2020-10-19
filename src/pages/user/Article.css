@@ -9,6 +9,23 @@
   color: rgb(127, 120, 245);
 }
 
+.article-container .article-item .fav-button {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 0 2px;
+  margin: 5px auto;
+}
+
+.article-container .article-item .fav-button:focus { 
+  outline-color: rgba(0, 0, 255, 0.5);
+  box-shadow: 0 0 10px 0 rgb(161, 161, 255);
+}
+
+.article-container .article-item .fav-button .fav-button-img { 
+  width: 30px;
+  margin: 0;
+}
+
 .article-container .article-item .categories-list {
   text-align: left;
   padding: 30px 5px;
@@ -16,7 +33,6 @@
 
 .article-container .article-item .categories-list .category-list-link {
   margin: 5px;
-  
   text-decoration: none;
   color: #1A202C;
   color: var(--text-grey);

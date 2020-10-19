@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Article.css";
 import { useQuery } from "@apollo/react-hooks";
 import { Link, useParams } from "react-router-dom";
@@ -8,9 +8,21 @@ import Loading from "../../components/Loading";
 import Breadcrumb from "../../components/Breadcrumb";
 import DateFormatter from "../../components/DateFormatter";
 import MainImage from "../../components/MainImage";
+import HollowLikeImg from "../../assets/star.svg";
+import SolidLikeImg from "../../assets/star-filled.svg";
 
-const Article = () => {
+const Article = ({ favourites, addFavourite, removeFavourite }) => {
   const { articleID } = useParams();
+
+  const [isArticleInFavourites, setIsArticleInFavourites] = useState(false);
+
+  useEffect(() => {
+    if (favourites) {
+      if (favourites.includes(articleID)) {
+        setIsArticleInFavourites(true);
+      }
+    }
+  }, [articleID, favourites]);
 
   const animationProps = useSpring({
     opacity: 1,
@@ -27,6 +39,20 @@ const Article = () => {
       id: articleID,
     },
   });
+
+  const toggleFav = (e) => {
+    e.preventDefault();
+    if (isArticleInFavourites) {
+      //remove
+      removeFavourite(articleID);
+      setIsArticleInFavourites(false);
+      console.log("it's already there");
+    } else {
+      //add to favs
+      addFavourite(articleID);
+      setIsArticleInFavourites(true);
+    }
+  };
 
   if (data && (data.article === null || data.article.length === 0)) {
     return (
@@ -63,6 +89,13 @@ const Article = () => {
               ) : (
                 <h3 className="article-author">Editor</h3>
               )}
+              <button className="fav-button" onClick={toggleFav}>
+                <img
+                  className="fav-button-img"
+                  src={isArticleInFavourites ? SolidLikeImg : HollowLikeImg}
+                  alt="like button"
+                />
+              </button>
             </div>
           </div>
           <div className="article-body large-padding">
