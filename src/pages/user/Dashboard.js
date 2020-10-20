@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,31 +18,12 @@ import UserFooter from "../../components/UserFooter";
 import ScrollToTop from "../../components/ScrollToTop";
 import Sidebar from "../../components/Sidebar";
 import Favourites from "../user/FavouritesList";
+import useLocalStorage from "../../hooks/useLocalStorage";
 
 const Dashboard = () => {
   // all the logged in aceessible area goes here
 
-  const [favourites, setFavourites] = useState([]);
-
-  useEffect(() => {
-    console.log("Get favs");
-    let localStorageFavouritesRaw = window.localStorage.getItem("favourites");
-    console.log("raw length", localStorageFavouritesRaw.length);
-    if (localStorageFavouritesRaw.length !== 0) {
-      let localStorageFavourites = JSON.parse(localStorageFavouritesRaw);
-      console.log("here it is");
-      console.log(localStorageFavourites);
-      setFavourites(localStorageFavourites);
-    }
-
-    //add step where sort by data
-  }, []);
-
-  useEffect(() => {
-    //synchornise data
-    console.log("set favs");
-    window.localStorage.setItem("favourites", JSON.stringify(favourites));
-  }, [favourites]);
+  const [favourites, setFavourites] = useLocalStorage("favourites", []);
 
   const addFavourite = (id) => {
     let newFavouritesArray = [];
@@ -58,10 +39,6 @@ const Dashboard = () => {
       return itemID !== id;
     });
     setFavourites(removedFavouriteArray);
-  };
-
-  const orderChronological = (bool) => {
-    console.log("bool :", bool);
   };
 
   return (
