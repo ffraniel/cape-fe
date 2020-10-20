@@ -17,7 +17,7 @@ import Article from "./Article";
 import UserFooter from "../../components/UserFooter";
 import ScrollToTop from "../../components/ScrollToTop";
 import Sidebar from "../../components/Sidebar";
-import Favourites from "../user/FavouritesList";
+import Favourites from "../user/Favourites";
 import useLocalStorage from "../../hooks/useLocalStorage";
 
 const Dashboard = () => {
@@ -69,7 +69,11 @@ const Dashboard = () => {
                 <Category />
               </Route>
               <Route path="/favourites">
-                <Favourites favourites={favourites} />
+                <Favourites
+                  favourites={favourites}
+                  addFavourite={addFavourite}
+                  removeFavourite={removeFavourite}
+                />
               </Route>
               <Route path="/article/:articleID">
                 <Article

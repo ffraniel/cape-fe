@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Article.css";
 import { useQuery } from "@apollo/react-hooks";
 import { Link, useParams } from "react-router-dom";
@@ -13,16 +13,19 @@ import SolidLikeImg from "../../assets/star-filled.svg";
 
 const Article = ({ favourites, addFavourite, removeFavourite }) => {
   const { articleID } = useParams();
+  console.log("does favs include it :", favourites.includes(articleID));
+  console.log("ID: ", articleID);
+  console.log("list: ", favourites);
 
-  const [isArticleInFavourites, setIsArticleInFavourites] = useState(false);
+  // const [isArticleInFavourites, setIsArticleInFavourites] = useState(false);
 
-  useEffect(() => {
-    if (favourites) {
-      if (favourites.includes(articleID)) {
-        setIsArticleInFavourites(true);
-      }
-    }
-  }, [articleID, favourites]);
+  // useEffect(() => {
+  //   if (favourites) {
+  //     if (favourites.includes(articleID)) {
+  //       setIsArticleInFavourites(true);
+  //     }
+  //   }
+  // }, [articleID, favourites]);
 
   const animationProps = useSpring({
     opacity: 1,
@@ -42,15 +45,12 @@ const Article = ({ favourites, addFavourite, removeFavourite }) => {
 
   const toggleFav = (e) => {
     e.preventDefault();
-    if (isArticleInFavourites) {
+    if (favourites.includes(articleID)) {
       //remove
       removeFavourite(articleID);
-      setIsArticleInFavourites(false);
-      console.log("it's already there");
     } else {
       //add to favs
       addFavourite(articleID);
-      setIsArticleInFavourites(true);
     }
   };
 
@@ -92,7 +92,11 @@ const Article = ({ favourites, addFavourite, removeFavourite }) => {
               <button className="fav-button" onClick={toggleFav}>
                 <img
                   className="fav-button-img"
-                  src={isArticleInFavourites ? SolidLikeImg : HollowLikeImg}
+                  src={
+                    favourites.includes(articleID)
+                      ? SolidLikeImg
+                      : HollowLikeImg
+                  }
                   alt="like button"
                 />
               </button>

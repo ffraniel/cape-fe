@@ -27,6 +27,9 @@ const Sidebar = () => {
         <li>
           <NavLink to={"/category/minutes"}>Minutes</NavLink>
         </li>
+        <li>
+          <NavLink to={"/favourites"}>Favourites</NavLink>
+        </li>
       </ul>
     </aside>
   );

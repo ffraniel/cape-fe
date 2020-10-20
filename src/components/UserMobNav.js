@@ -69,12 +69,22 @@ const UserMobNav = ({ isMobNavOpen, setIsMobNavOpen }) => {
           </a>
         </li>
         <li>
-          <NavLink onClick={closeNav} className="" to="/constitution">
+          <NavLink onClick={closeNav} to="/constitution">
             Constitution
           </NavLink>
         </li>
         <li>
-          <NavLink className="" onClick={closeNav} to="/profile">
+          <NavLink onClick={closeNav} to={"/favourites"}>
+            Favourites
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            conClick={closeNav}
+            className=""
+            onClick={closeNav}
+            to="/profile"
+          >
             Profile
           </NavLink>
         </li>

@@ -14,6 +14,7 @@ const SubjectHeading = ({ categoryText }) => {
           {categoryText === "Guidance" && <GuidanceText />}
           {categoryText === "Resources" && <ResourcesText />}
           {categoryText === "Minutes" && <MinutesText />}
+          {categoryText === "Favourites" && <FavouritesText />}
         </p>
       </div>
     </div>
@@ -23,7 +24,7 @@ const SubjectHeading = ({ categoryText }) => {
 const NewsText = () => <>All the latest news about Child Protection</>;
 
 const EventsText = () => (
-  <>Keep up to date with the latest CAPE conferences and events.</>
+  <>Keep up to date with the latest CAPE conferences and events</>
 );
 
 const GuidanceText = () => (
@@ -35,5 +36,7 @@ const ResourcesText = () => (
 );
 
 const MinutesText = () => <>All the latest news about Child Protection</>;
+
+const FavouritesText = () => <>A place to save and manage articles</>;
 
 export default SubjectHeading;
