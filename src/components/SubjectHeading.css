@@ -1,5 +1,6 @@
 .subject-heading {
   padding: 20px 0;
+  font-family: var(--text-font);
   /* background-color: rgb(174, 219, 174); */
 }
 

@@ -1,0 +1,17 @@
+.favourites .no-favourites {
+  font-family: var(--text-font);
+}
+
+.favourites .no-favourites h3 {
+  margin: 5px auto;
+  font-size: 1em;
+  color: #272d3a;
+  color: var(--lighter-text-grey);
+}
+
+.favourites .no-favourites p {
+  margin: 0 auto;
+  color: #272d3a;
+  color: var(--lighter-text-grey);
+  font-size: 0.75em;
+}

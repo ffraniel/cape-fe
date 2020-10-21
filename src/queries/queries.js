@@ -130,8 +130,8 @@ const getArticlesByTheme = gql`
 `;
 
 const getArticlesByIDList = gql`
-  query($id: [ID!]) {
-    articles(where: { id_in: $id }) {
+  query($ids: [ID!]!) {
+    articles(where: { id_in: $ids }) {
       author
       createdAt
       updatedAt

@@ -13,19 +13,6 @@ import SolidLikeImg from "../../assets/star-filled.svg";
 
 const Article = ({ favourites, addFavourite, removeFavourite }) => {
   const { articleID } = useParams();
-  console.log("does favs include it :", favourites.includes(articleID));
-  console.log("ID: ", articleID);
-  console.log("list: ", favourites);
-
-  // const [isArticleInFavourites, setIsArticleInFavourites] = useState(false);
-
-  // useEffect(() => {
-  //   if (favourites) {
-  //     if (favourites.includes(articleID)) {
-  //       setIsArticleInFavourites(true);
-  //     }
-  //   }
-  // }, [articleID, favourites]);
 
   const animationProps = useSpring({
     opacity: 1,

@@ -37,6 +37,12 @@ const ResourcesText = () => (
 
 const MinutesText = () => <>All the latest news about Child Protection</>;
 
-const FavouritesText = () => <>A place to save and manage articles</>;
+const FavouritesText = () => (
+  <>
+    A place to save and manage articles.
+    <br />
+    Click the red cross to remove an article from your favourites
+  </>
+);
 
 export default SubjectHeading;
