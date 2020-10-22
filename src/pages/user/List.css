@@ -5,6 +5,7 @@
 .list-article-block {
   text-align: center;
   max-width: 100%;
+  border-bottom: 1px dotted rgb(184, 184, 184);
 }
 
 .list-article-block .list-title-link {

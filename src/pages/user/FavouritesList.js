@@ -23,7 +23,7 @@ const FavouritesList = (props) => {
         articles.map((article) => {
           return (
             <article className="favourites-article" key={article.id}>
-              <div className="container">
+              <div className="article-container">
                 <Link
                   className="favourites-title-link"
                   to={`/article/${article.id}`}
