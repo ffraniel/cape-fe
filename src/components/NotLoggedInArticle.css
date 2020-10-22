@@ -1,0 +1,18 @@
+.not-logged-in {
+  margin-top: 90px;
+  font-family: var(--text-font);
+  background-color: #E2E8F0;
+  line-height: 1.8;
+  
+}
+
+.not-logged-in--title {
+  color: #1A202C;
+  color: var(--text-grey);
+  margin: 5px 0;  
+}
+
+.not-logged-in--text {
+  color: #272d3a;
+  color: var(--lighter-text-grey);
+}

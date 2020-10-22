@@ -10,6 +10,7 @@ import LoginPage from "./LoginPage";
 import Privacy from "./Privacy";
 import NoMatch from "../../components/NoMatch";
 import Footer from "../../components/Footer";
+import NotLoggedInArticle from "../../components/NotLoggedInArticle";
 import ScrollToTop from "../../components/ScrollToTop";
 import PrivacyBanner from "../../components/PrivacyBanner";
 
@@ -66,6 +67,9 @@ const Index = () => {
                 isLocalStorageAllowed={isLocalStorageAllowed}
                 handleAllowStorageChange={handleAllowStorageChange}
               />
+            </Route>
+            <Route path="/article/:articleID">
+              <NotLoggedInArticle />
             </Route>
             <Route>
               <NoMatch default />
