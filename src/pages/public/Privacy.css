@@ -1,5 +1,9 @@
 .privacy-page {
   margin-top: 90px;
+  font-family: var(--text-font);
+  color: #1A202C;
+  color: var(--text-grey);
+  line-height: 1.8;
 }
 
 .privacy-page .checkbox {
