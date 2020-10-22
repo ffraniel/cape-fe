@@ -1,7 +1,7 @@
 import React from "react";
 import "./Favourites.css";
 import { useQuery } from "@apollo/react-hooks";
-import { getArticlesByIDList, hardWiredByIDList } from "../../queries/queries";
+import { getArticlesByIDList } from "../../queries/queries";
 import FavouritesList from "./FavouritesList";
 import Loading from "../../components/Loading";
 import SubjectHeading from "../../components/SubjectHeading";

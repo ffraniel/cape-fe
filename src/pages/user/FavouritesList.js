@@ -5,7 +5,7 @@ import { useSpring, animated } from "react-spring";
 // import DateFormatter from "../../components/DateFormatter";
 
 const FavouritesList = (props) => {
-  const { articles, favourites, removeFavourite } = props;
+  const { articles, removeFavourite } = props;
 
   const animationProps = useSpring({
     opacity: 1,
