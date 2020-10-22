@@ -23,7 +23,7 @@
   display: block;
   font-size: 1.75rem;
   display: flex;
-  padding: 0.25rem 2rem;
+  padding: 0.025rem 2rem;
 }
 
 .mob-nav ul li a {
@@ -50,6 +50,5 @@
   .mob-nav {
     width: 100%;
     width: 100vw;
-    border: solid red 1px;
   }
 }

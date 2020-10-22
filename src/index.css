@@ -78,7 +78,7 @@ body {
   background-color: #226FB7;
   color: var(--white-text);
   width: 140px;
-  margin: 10px 5px;
+  margin: 10px 0;
   padding: 3px;
 }
 
