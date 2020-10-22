@@ -61,6 +61,9 @@ const List = (props) => {
               ) : (
                 <h3 className="list-author">Editor</h3>
               )}
+              <p className="list-preview">
+                {article.text.text.split(" ").slice(0, 30).join(" ")}...
+              </p>
               <div className="list-categories-list">
                 {article.categories.map((category) => {
                   return (
@@ -74,9 +77,6 @@ const List = (props) => {
                   );
                 })}
               </div>
-              <p className="list-preview">
-                {article.text.text.split(" ").slice(0, 30).join(" ")}...
-              </p>
             </div>
           </article>
         );

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import { animationConfig } from "../../animations";
 import "./Profile.css";
@@ -11,7 +12,7 @@ const Profile = () => {
 
   let welcome;
   if (user) {
-    welcome = `Hello ${user.email}`;
+    welcome = `Hi ${user.email}`;
   } else {
     welcome = "There appears to have been an error. Try refreshing the page.";
   }
@@ -135,112 +136,117 @@ const Profile = () => {
 
   return (
     <animated.div className="profile-page" style={animationProps}>
-      {loadingPassword && <Loading />}
-      <h4 className="header-trigger">{welcome}</h4>
-      <h3>Managing Your Password</h3>
-      {errorMessage && (
-        <h3 className="password-reset-error-message">{errorMessage}</h3>
-      )}
-      {updateSucess && (
-        <h3 className="password-reset-success-message">
-          Password Successfully Updated
-        </h3>
-      )}
-      {!updateSucess && (
-        <>
-          {!accessGranted && (
-            <form
-              className="update-password container"
-              onSubmit={handleAccessUpdate}
-            >
-              <p className="form-text-label">
-                If you wish to change your account password use the form below.
-              </p>
-              <h5 className="form-text-label">
-                Confirm your current account details
-              </h5>
-              <label htmlFor="email">Email</label>
-              <input
-                className={
-                  errorMessage ? "input-error input-text" : "input-text"
-                }
-                type="text"
-                name="email"
-                placeholder="email@address.org"
-                onChange={handleInput}
-                value={email}
-              />
-              <label htmlFor="current-password">Password</label>
-              <input
-                className={
-                  errorMessage ? "input-error input-text" : "input-text"
-                }
-                type="password"
-                name="current-password"
-                placeholder="Password"
-                onChange={handleInput}
-                value={currentPassword}
-              />
-
-              <input
-                className="btn submit-btn"
-                type="submit"
-                value="Confirm your password"
-              />
-            </form>
-          )}
-          {accessGranted && (
-            <form
-              className="update-password container"
-              onSubmit={handlePasswordUpdate}
-            >
-              <p className="form-text-label">Set a new password</p>
-              <label htmlFor="password1">Password</label>
-              <input
-                className={
-                  errorMessage ? "input-error input-text" : "input-text"
-                }
-                type="password"
-                name="password1"
-                placeholder="Password"
-                onChange={handleInput}
-                value={password1}
-              />
-
-              <p className="form-text-label">Confirm your new password</p>
-              <label htmlFor="password2">
-                Please confirm your new password.
-              </label>
-              <input
-                className={
-                  errorMessage ? "input-error input-text" : "input-text"
-                }
-                type="password"
-                name="password2"
-                placeholder="Password"
-                onChange={handleInput}
-                value={password2}
-              />
-              <div className="center container">
-                <button className="btn cancel-btn" onClick={cancelProcess}>
-                  Cancel
-                </button>
+      <div className="container">
+        {loadingPassword && <Loading />}
+        <h4 className="header-trigger">{welcome}</h4>
+        <h3>Managing Your Password</h3>
+        {errorMessage && (
+          <h3 className="password-reset-error-message">{errorMessage}</h3>
+        )}
+        {updateSucess && (
+          <div className="successful-home-link-container">
+            <h3 className="password-reset-success-message">
+              Password Successfully Updated
+            </h3>
+            <Link className="successful-home-link" to="/">
+              Home
+            </Link>
+          </div>
+        )}
+        {!updateSucess && (
+          <>
+            {!accessGranted && (
+              <form className="update-password" onSubmit={handleAccessUpdate}>
+                <p className="form-text-label">
+                  If you wish to change your account password use the form
+                  below.
+                </p>
+                <h5 className="form-text-label">
+                  Confirm your current account details
+                </h5>
+                <label htmlFor="email">Email</label>
                 <input
-                  className="btn submit-password-btn"
-                  type="submit"
-                  value="Change Password"
+                  className={
+                    errorMessage ? "input-error input-text" : "input-text"
+                  }
+                  type="text"
+                  name="email"
+                  placeholder="email@address.org"
+                  onChange={handleInput}
+                  value={email}
                 />
-              </div>
-            </form>
-          )}
-        </>
-      )}
-      <div className="medium-padding profile--more">
-        <h3>Leaving CAPE website</h3>
-        <p>
-          Should you wish to remove yourself from the CAPE website please
-          contact the current CAPE Chair.
-        </p>
+                <label htmlFor="current-password">Password</label>
+                <input
+                  className={
+                    errorMessage ? "input-error input-text" : "input-text"
+                  }
+                  type="password"
+                  name="current-password"
+                  placeholder="Password"
+                  onChange={handleInput}
+                  value={currentPassword}
+                />
+
+                <input
+                  className="btn submit-btn"
+                  type="submit"
+                  value="Confirm your password"
+                />
+              </form>
+            )}
+            {accessGranted && (
+              <form
+                className="update-password container"
+                onSubmit={handlePasswordUpdate}
+              >
+                <p className="form-text-label">Set a new password</p>
+                <label htmlFor="password1">Password</label>
+                <input
+                  className={
+                    errorMessage ? "input-error input-text" : "input-text"
+                  }
+                  type="password"
+                  name="password1"
+                  placeholder="Password"
+                  onChange={handleInput}
+                  value={password1}
+                />
+
+                <p className="form-text-label">Confirm your new password</p>
+                <label htmlFor="password2">
+                  Please confirm your new password.
+                </label>
+                <input
+                  className={
+                    errorMessage ? "input-error input-text" : "input-text"
+                  }
+                  type="password"
+                  name="password2"
+                  placeholder="Password"
+                  onChange={handleInput}
+                  value={password2}
+                />
+                <div className="center container">
+                  <input
+                    className="btn submit-password-btn"
+                    type="submit"
+                    value="Change Password"
+                  />
+                  <button className="btn cancel-btn" onClick={cancelProcess}>
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            )}
+          </>
+        )}
+        <div className="profile--more">
+          <h3>Leaving CAPE website</h3>
+          <p>
+            Should you wish to remove yourself from the CAPE website please
+            contact the current CAPE Chair.
+          </p>
+        </div>
       </div>
     </animated.div>
   );

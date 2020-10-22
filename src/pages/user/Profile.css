@@ -1,12 +1,13 @@
 .profile-page {
   font-family: var(--text-font);
-  margin: 50px;
 }
 
 .profile-page h4 {
   padding-top: 20px;
   margin: 20px 0 10px;
+  font-size: 0.9em;
   color: var(--text-grey);
+  word-break: break-word;
 }
 
 .profile-page h3 {
@@ -92,7 +93,7 @@
   font-size: 1.25rem;
   color: white;
   height: auto;
-  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .update-password .submit-password-btn {
@@ -105,21 +106,86 @@
   font-size: 1.25rem;
   color: white;
   height: auto;
-  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .password-reset-success-message {
-  color: green;
+  color: rgb(11, 83, 11) !important;
+
+}
+
+.successful-home-link-container {
   padding-bottom: 90vh;
+  display: block;
+}
+.successful-home-link {
+  text-decoration: none;
+  font-family: var(--text-font);
+  color: #272d3a;
+  color: var(--lighter-text-grey);
+}
+
+.successful-home-link:hover {
+  text-decoration: underline;
 }
 
 .password-reset-error-message {
-  color: red;
+  color: rgb(226, 56, 44) !important;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
   .update-password {
     margin: 30px auto;
     width: 100%;
+  }
+  .update-password .submit-btn {
+    font-size: 1rem;
+    width: auto;
+  }
+  .profile--more {
+    padding: 30px 0;
+    font-size: 0.9em;
+  }
+
+  .submit-btn {
+    font-size: 0.9em;
+  }
+  
+  .update-password .submit-btn {
+    font-size: 0.9rem;
+  }
+
+  .update-password input {
+    margin: 5px auto 15px;
+    font-size: 1rem;
+    width: 75%;
+    max-width: 320px;
+    padding: 12px; 
+  }
+  
+  .update-password .cancel-btn {
+    font-size: 0.9rem;
+    margin: 5px;
+  }
+  
+  .update-password .submit-password-btn {
+    font-size: 0.9rem;
+    margin: 5px;
+  }
+  
+}
+
+@media (max-width: 400px) {
+  .update-password .center {
+    display: block;
+  }
+  .update-password .cancel-btn {
+    width: 75%;
+    margin: 10px auto;
+  }
+  
+  .update-password .submit-password-btn {
+    width: 75%;
+    margin: 10px auto;
   }
 }

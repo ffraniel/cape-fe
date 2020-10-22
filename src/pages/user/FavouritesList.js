@@ -48,7 +48,10 @@ const FavouritesList = (props) => {
                 </button>
                 <div className="favourites-category-list">
                   {article.categories.map((category) => (
-                    <p className="favourites-category-list-item">
+                    <p
+                      className="favourites-category-list-item"
+                      key={article.id + category.title}
+                    >
                       {category.title}
                       <span>|</span>
                     </p>

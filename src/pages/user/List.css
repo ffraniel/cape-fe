@@ -71,3 +71,17 @@
 .list-article-block .list-image-container:hover {
   transform: scale(1.05);
 }
+
+@media (max-width: 550px) {
+  .list-article-block .list-title-link .list-title {
+    font-size: 1.25rem;
+  }
+  .list-article-block .list-category-list-item {
+    font-size: 0.9em;
+  }
+  .list-article-block .list-preview {
+    font-size: 0.9em;
+    width: 100%;
+    margin: 10px 0;
+  }
+}

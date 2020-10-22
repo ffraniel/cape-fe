@@ -14,3 +14,16 @@
   margin: 20px 40px;
   color: var(--text-grey);
 }
+
+@media (max-width: 550px) {
+  .subject-heading .subject-heading--header {
+    font-size: 1.5rem;
+  }
+  .subject-heading .subject-heading--text-container {
+    font-size: 0.9em;
+    margin: 0 40px;
+  }
+  .subject-heading .subject-heading--text {
+    font-size: 0.9em;
+  }
+}
