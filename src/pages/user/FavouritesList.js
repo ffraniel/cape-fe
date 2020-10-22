@@ -17,12 +17,23 @@ const FavouritesList = (props) => {
     },
   });
 
+  const handleRemove = (id) => {
+    document.getElementById(id).classList.add("fade-out");
+    setTimeout(() => {
+      removeFavourite(id);
+    }, 1000);
+  };
+
   return (
     <animated.div style={animationProps} className="favourites-list">
       {articles &&
         articles.map((article) => {
           return (
-            <article className="favourites-article" key={article.id}>
+            <article
+              className="favourites-article"
+              key={article.id}
+              id={article.id}
+            >
               <div className="article-container">
                 <Link
                   className="favourites-title-link"
@@ -41,7 +52,7 @@ const FavouritesList = (props) => {
                 <button
                   className="favourites-delete-button"
                   onClick={() => {
-                    removeFavourite(article.id);
+                    handleRemove(article.id);
                   }}
                 >
                   x

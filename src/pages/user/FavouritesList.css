@@ -6,7 +6,14 @@
 
 .favourites-list .favourites-article {
   padding: 10px 0;
+  opacity: 1;
+  transition: all 0.5s;
 }
+
+.favourites-article.fade-out {
+  opacity: 0;
+  transform: translate(600px);
+} 
 
 .favourites-list .favourites-article .article-container {
   position: relative;
