@@ -74,7 +74,7 @@
 }
 
 .favourites-list .favourites-delete-button {
-  background-color: rgb(196 102 102);
+  background-color: #c46666;
   color: rgb(248, 248, 248);
   font-size: 26px;
   border-radius: 3px;
@@ -91,5 +91,6 @@
 .favourites-list .favourites-delete-button:hover {
   box-shadow:0px 3px 12px 1px #00000085;
   background-color: rgb(199 54 54);
+  background-color: #c46666;
   transform: scale(1.1);
 }

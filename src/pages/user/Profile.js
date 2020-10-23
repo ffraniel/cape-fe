@@ -240,13 +240,13 @@ const Profile = () => {
             )}
           </>
         )}
-        <div className="profile--more">
+        {/* <div className="profile--more">
           <h3>Leaving CAPE website</h3>
           <p>
             Should you wish to remove yourself from the CAPE website please
             contact the current CAPE Chair.
           </p>
-        </div>
+        </div> */}
       </div>
     </animated.div>
   );
