@@ -88,7 +88,8 @@
 }
 
 .public-header nav ul li a {
-  padding: 0 10px;
+  padding: 0 0.6em;
+  padding: 0 0.4vw;
 }
 
 @media (min-width: 900px) {
@@ -137,6 +138,7 @@
 @media (min-width: 1280px) {
 
   .public-header nav .desktop-menu li {
-    padding: 0 10px;
+    padding: 0 0.6em;
+    padding: 0 0.5vw;
   }
 }

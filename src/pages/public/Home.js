@@ -40,7 +40,7 @@ const Home = () => {
               Child protection work is difficult, complex and sensitive. CAPE
               supports members through regular meetings and this website and
               forum. CAPE professionals provide advice, training and support to
-              designated leads in Schools and offer a network of support for its
+              Designated Leads in Schools and offer a network of support for its
               members.
             </p>
           </div>
@@ -49,8 +49,8 @@ const Home = () => {
             <p>
               CAPE members are professionals who provide training and
               consultancy to Designated Leads in schools. CAPE recognises that
-              our members need to continuously update their knowledge and,
-              therefore, development opportunities are offered to CAPE members.
+              our members need to continuously update their knowledge. Regular
+              development opportunities are offered to CAPE members.
             </p>
           </div>
           <div className="three-panel--panel">
@@ -58,7 +58,7 @@ const Home = () => {
             <p>
               CAPE is a long-standing organisation which aims to continually
               improve safeguarding practice across education. CAPE regularly
-              responds to Government consultations and has representation on a
+              responds to government consultations and has representation on a
               number of national development groups setup to inform and improve
               professional practice.
             </p>
