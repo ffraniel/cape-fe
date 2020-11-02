@@ -24,7 +24,7 @@ const Home = () => {
               settings
             </h2>
             <Link className="btn primary-btn" to="/about">
-              Learn More
+              About CAPE
             </Link>
             <Link className="btn secondary-btn" to="/conferences">
               Conferences
