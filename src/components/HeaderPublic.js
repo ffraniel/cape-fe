@@ -102,6 +102,7 @@ const HeaderPublic = () => {
           </li>
         </ul>
         <button onClick={handleMenuClick} className="menu-btn">
+          <span className="accessible-text">Menu</span>
           {isMobNavOpen && <span className="close-mob-nav-cross">x</span>}
           {!isMobNavOpen && (
             <>

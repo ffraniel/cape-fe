@@ -92,6 +92,16 @@
   padding: 0 0.4vw;
 }
 
+.menu-btn .accessible-text {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
 @media (min-width: 900px) {
   .header nav {
     display: flex;
