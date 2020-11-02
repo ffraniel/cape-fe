@@ -5,16 +5,16 @@ import { getArticlesByThemeB } from "../queries/queries";
 import { useQuery } from "@apollo/react-hooks";
 
 const SubjectPreview = ({ previewSubject }) => {
-  const { loading, error, data } = useQuery(getArticlesByThemeB, {
-    variables: {
-      category: previewSubject,
-      first: 4,
-    },
-  });
-
   const capitalisedSubject = previewSubject[0]
     .toUpperCase()
     .concat(previewSubject.slice(1));
+
+  const { loading, error, data } = useQuery(getArticlesByThemeB, {
+    variables: {
+      category: capitalisedSubject,
+      first: 4,
+    },
+  });
 
   return (
     <div className={`${previewSubject}-preview subject-preview`}>

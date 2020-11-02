@@ -13,7 +13,8 @@ import { ApolloProvider } from "@apollo/react-hooks";
 // });
 
 const client = new ApolloClient({
-  uri: "https://api-euwest.graphcms.com/v1/ck8d06wpg49we01dm8kxibu1v/master",
+  uri:
+    "https://api-eu-central-1.graphcms.com/v2/ck8d06wpg49we01dm8kxibu1v/master",
 });
 
 ReactDOM.render(

@@ -12,10 +12,14 @@ const Category = () => {
   const [lastEntry, setLastEntry] = useState("");
   const [noMoreArticles, setNoMoreArticles] = useState(false);
 
+  const capitalisedCategory = category[0]
+    .toUpperCase()
+    .concat(category.slice(1));
+
   const skipValue = 5;
   const { loading, error, data, fetchMore } = useQuery(getArticlesByThemeB, {
     variables: {
-      category: category,
+      category: capitalisedCategory,
       first: skipValue,
     },
   });
@@ -34,7 +38,7 @@ const Category = () => {
     fetchMore({
       query: getArticlesByThemeB,
       variables: {
-        category: category,
+        category: capitalisedCategory,
         first: skipValue,
         after: lastEntry,
       },

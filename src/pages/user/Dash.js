@@ -20,7 +20,7 @@ const Dash = () => {
   return (
     <div className="dash">
       {loading && <Loading />}
-      {data && (
+      {data && data.articles.length > 0 && (
         <>
           <div className="latest-article-container">
             <Latest article={data.articles[0]} />
@@ -30,12 +30,17 @@ const Dash = () => {
           </div>
         </>
       )}
+      {data && data.articles.length === 0 && <h3>No articles</h3>}
       <SubjectPreview previewSubject={"events"} />
       <SubjectPreview previewSubject={"resources"} />
       <SubjectPreview previewSubject={"guidance"} />
       <SubjectPreview previewSubject={"consultation"} />
       <SubjectPreview previewSubject={"minutes"} />
-      {error && <h3>ERROR</h3>}
+      {error && (
+        <div className="medium-vertical-padding">
+          <h3>ERROR</h3>
+        </div>
+      )}
       {error && console.log("ERROR: ", error.toString())}
     </div>
   );
