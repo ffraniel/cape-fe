@@ -26,9 +26,6 @@ const Favourites = ({ favourites, addFavourite, removeFavourite }) => {
         <h3>ERROR {console.log("error: ", error)}</h3>
       )}
 
-      {favourites.length > 0 &&
-        data &&
-        console.log("THAT DATA: ", data.articles)}
       {favourites.length > 0 && data && (
         <FavouritesList
           articles={data.articles}
