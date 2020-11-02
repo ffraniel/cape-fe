@@ -4,7 +4,7 @@ import { useSpring, animated } from "react-spring";
 import { animationConfig } from "../../animations";
 import "./Profile.css";
 import fire from "../../config/fire";
-import firebase from "firebase";
+import firebase from "firebase/app";
 import Loading from "../../components/Loading";
 
 const Profile = () => {
@@ -29,7 +29,6 @@ const Profile = () => {
 
   const handleInput = (e) => {
     e.preventDefault();
-    console.log("input here");
     if (errorMessage) {
       console.log("if error here");
       setErrorMessage(false);
@@ -185,6 +184,7 @@ const Profile = () => {
                   placeholder="Password"
                   onChange={handleInput}
                   value={currentPassword}
+                  autoComplete="off"
                 />
 
                 <input
@@ -210,6 +210,7 @@ const Profile = () => {
                   placeholder="Password"
                   onChange={handleInput}
                   value={password1}
+                  autoComplete="off"
                 />
 
                 <p className="form-text-label">Confirm your new password</p>
@@ -225,6 +226,7 @@ const Profile = () => {
                   placeholder="Password"
                   onChange={handleInput}
                   value={password2}
+                  autoComplete="off"
                 />
                 <div className="center container">
                   <input

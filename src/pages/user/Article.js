@@ -57,7 +57,6 @@ const Article = ({ favourites, addFavourite, removeFavourite }) => {
       <Breadcrumb text={"Back"} />
       {loading && <Loading />}
       {error && <h1>ERROR{console.log("error: ", error)}</h1>}
-      {data && console.log(data)}
       {data && (
         <article className="article-item" key={data.article.id}>
           <div className="article-header medium-vertical-padding">
