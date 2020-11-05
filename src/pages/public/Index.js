@@ -79,6 +79,7 @@ const Index = () => {
         <PrivacyBanner
           isLocalStorageAllowed={isLocalStorageAllowed}
           handleAllowStorageChange={handleAllowStorageChange}
+          setIsLocalStorageAllowed={setIsLocalStorageAllowed}
         />
         <Footer />
       </Router>

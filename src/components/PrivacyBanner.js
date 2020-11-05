@@ -2,7 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./PrivacyBanner.css";
 
-const PrivacyBanner = ({ isLocalStorageAllowed, handleAllowStorageChange }) => {
+const PrivacyBanner = ({
+  isLocalStorageAllowed,
+  handleAllowStorageChange,
+  setIsLocalStorageAllowed,
+}) => {
   return (
     <div
       className={
@@ -19,12 +23,22 @@ const PrivacyBanner = ({ isLocalStorageAllowed, handleAllowStorageChange }) => {
           Allow use of cookies
           <Link to="/privacy">Privacy page</Link>
         </p>
-        <button
-          className="btn privacy-banner-btn"
-          onClick={handleAllowStorageChange}
-        >
-          Agree
-        </button>
+        <div>
+          <button
+            className="btn privacy-banner-btn"
+            onClick={handleAllowStorageChange}
+          >
+            Agree
+          </button>
+          <button
+            onClick={() => {
+              setIsLocalStorageAllowed(false);
+            }}
+            className="btn deny-btn"
+          >
+            <span>Deny</span>x
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -63,6 +63,30 @@
   background-color: rgb(13, 153, 13);
 }
 
+.banner-container .deny-btn {
+  background: none;
+  color: white;
+  font-size: 1.5em;
+  border: none;
+  width: auto;
+  height: 1.5em;
+  margin: auto 0;
+  line-height: 1em;
+}
+
+.deny-btn span {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+.banner-container .deny-btn:hover {
+  color: rgb(177, 177, 177);
+}
+
 @media (max-width: 700px) {
   .privacy-banner {
     min-height: 70px;
@@ -89,4 +113,9 @@
     margin: 5px;
     margin: 8px;
   }
+
+  .banner-container .deny-btn {
+    display: none;
+  }
+
 }
