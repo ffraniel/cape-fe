@@ -79,6 +79,7 @@ const Login = ({ isLocalStorageAllowed, handleAllowStorageChange }) => {
           placeholder="Password"
           onChange={handleInput}
           value={password}
+          autoComplete="off"
         />
         <div className="remember-me-line">
           <label htmlFor="privacy-checkbox">Remember Me</label>
