@@ -59,7 +59,7 @@ const About = () => {
           CAPE welcomes applications for membership from people in similar roles
           who are interested in contributing to or expanding our work and are
           able to reach meetings in the North of England. Please get in touch
-          via the membership application page.
+          via the membership application form.
         </p>
         <h3>About CAPE</h3>
         <p>
