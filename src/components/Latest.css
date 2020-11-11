@@ -70,6 +70,12 @@
   border-bottom: 2px solid #1A202c;
 }
 
+.latest--read-more {
+  font-size:0.95em;
+  margin: 5px auto;
+  width: 120px;
+}
+
 @media (max-width: 900px) {
   .latest-block {
     padding: 2rem;

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import DateFormatter from "../../components/DateFormatter";
 import MainImage from "../../components/MainImage";
+import regularExp from "../../utility/regularExpression";
 
 const List = (props) => {
   const { data } = props;
@@ -62,7 +63,12 @@ const List = (props) => {
                 <h3 className="list-author">Editor</h3>
               )}
               <p className="list-preview">
-                {article.text.text.split(" ").slice(0, 30).join(" ")}...
+                {article.text.text
+                  .replace(regularExp, " ")
+                  .split(" ")
+                  .slice(0, 30)
+                  .join(" ")}
+                ...
               </p>
               <div className="list-categories-list">
                 {article.categories.map((category) => {

@@ -3,6 +3,7 @@ import "./FavouritesList.css";
 import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 // import DateFormatter from "../../components/DateFormatter";
+import regularExp from "../../utility/regularExpression";
 
 const FavouritesList = (props) => {
   const { articles, removeFavourite } = props;
@@ -47,7 +48,12 @@ const FavouritesList = (props) => {
                   <h3 className="favourites-author">Editor</h3>
                 )}
                 <p className="favourites-preview">
-                  {article.text.text.split(" ").slice(0, 15).join(" ")}...
+                  {article.text.text
+                    .replace(regularExp, " ")
+                    .split(" ")
+                    .slice(0, 15)
+                    .join(" ")}
+                  ...
                 </p>
                 <button
                   className="favourites-delete-button"

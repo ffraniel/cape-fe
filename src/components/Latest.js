@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./Latest.css";
 import DateFormatter from "../components/DateFormatter";
 import MainImage from "../components/MainImage";
+import regularExp from "../utility/regularExpression";
 
 const Latest = ({ article }) => {
   return (
@@ -37,8 +38,19 @@ const Latest = ({ article }) => {
           <h3 className="latest-author">Editor</h3>
         )}
         <p className="latest-preview">
-          {article.text.text.split(" ").slice(0, 45).join(" ")}...
+          {article.text.text
+            .replace(regularExp, " ")
+            .split(" ")
+            .slice(0, 45)
+            .join(" ")}
+          ...
         </p>
+        <Link
+          className="btn secondary-btn latest--read-more"
+          to={`/article/${article.id}`}
+        >
+          Read
+        </Link>
         <div className="latest-categories-list">
           {article.categories.map((category) => {
             return (

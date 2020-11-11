@@ -3,6 +3,7 @@ import "./MiniFeed.css";
 import { Link } from "react-router-dom";
 import DateFormatter from "../components/DateFormatter";
 import MainImage from "../components/MainImage";
+import regularExp from "../utility/regularExpression";
 
 const MiniFeed = ({ articles, category }) => {
   let isCategory = category !== undefined && category.length > 0;
@@ -38,7 +39,12 @@ const MiniFeed = ({ articles, category }) => {
             )}
             <div className="tiny-preview-container">
               <p className="tiny-preview">
-                {article.text.text.split(" ").slice(0, 12).join(" ")}...
+                {article.text.text
+                  .replace(regularExp, " ")
+                  .split(" ")
+                  .slice(0, 12)
+                  .join(" ")}
+                ...
               </p>
             </div>
           </li>
