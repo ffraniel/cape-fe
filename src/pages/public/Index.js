@@ -13,6 +13,7 @@ import Footer from "../../components/Footer";
 import NotLoggedInArticle from "../../components/NotLoggedInArticle";
 import ScrollToTop from "../../components/ScrollToTop";
 import PrivacyBanner from "../../components/PrivacyBanner";
+import PasswordReset from "../public/PasswordReset";
 
 const Index = () => {
   const [isLocalStorageAllowed, setIsLocalStorageAllowed] = useState("");
@@ -67,6 +68,9 @@ const Index = () => {
                 isLocalStorageAllowed={isLocalStorageAllowed}
                 handleAllowStorageChange={handleAllowStorageChange}
               />
+            </Route>
+            <Route path="/passwordreset">
+              <PasswordReset />
             </Route>
             <Route path="/article/:articleID">
               <NotLoggedInArticle />
