@@ -16,7 +16,7 @@ const Sidebar = () => {
           <NavLink to={"/category/events"}>Events</NavLink>
         </li>
         <li>
-          <NavLink to={"/category/resources"}>Resources</NavLink>
+          <NavLink to={"/category/resource"}>Resources</NavLink>
         </li>
         <li>
           <NavLink to={"/category/guidance"}>Guidance</NavLink>

@@ -32,7 +32,7 @@ const Dash = () => {
       )}
       {data && data.articles.length === 0 && <h3>No articles</h3>}
       <SubjectPreview previewSubject={"events"} />
-      <SubjectPreview previewSubject={"resources"} />
+      <SubjectPreview previewSubject={"resource"} />
       <SubjectPreview previewSubject={"guidance"} />
       <SubjectPreview previewSubject={"consultation"} />
       <SubjectPreview previewSubject={"minutes"} />
