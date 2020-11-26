@@ -33,7 +33,7 @@
 .user-header .filter-trigger:hover .filter-container {
   display: block;
   position: fixed;
-  transform: translate(0, -10px);
+  transform: translate(0, -13px);
   padding: 45px;
   background-color: #264f2f;
 }
