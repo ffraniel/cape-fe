@@ -15,7 +15,7 @@ const SubjectHeading = ({ categoryText }) => {
           {categoryText === "News" && <NewsText />}
           {categoryText === "Events" && <EventsText />}
           {categoryText === "Guidance" && <GuidanceText />}
-          {categoryText === "Resource" && <ResourcesText />}
+          {categoryText === "Resources" && <ResourcesText />}
           {categoryText === "Minutes" && <MinutesText />}
           {categoryText === "Favourites" && <FavouritesText />}
         </p>
