@@ -1,0 +1,32 @@
+.event-item {
+  margin: 100px auto;
+  font-family: var(--text-font);
+  color: #2D3748;
+  line-height: 1.8;
+}
+
+.event-item .conference-back-btn--container {
+  border: solid red 1px;
+}
+
+.conference-back-btn {
+  margin: 120px 100px;
+}
+
+.event-post-date {
+  margin: 5px auto;
+}
+
+.event-post-date--updated {
+  color: rgb(29, 151, 13);
+}
+
+.event-title {
+  margin: 10px auto;
+  font-size: 1.5em;
+}
+
+.event-date {
+  font-weight: 400;
+  margin: 5px auto;
+}

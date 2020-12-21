@@ -152,25 +152,13 @@ const getArticlesByIDList = gql`
   }
 `;
 
-const getConference = gql`
+const getEvents = gql`
   query($membersOnly: Boolean) {
-    articles(
-      where: {
-        AND: [
-          { categories_some: { title: "Events" } }
-          { event: true }
-          { membersOnly: $membersOnly }
-        ]
-      }
-    ) {
+    events(where: { AND: [{ membersOnly: $membersOnly }] }) {
       createdAt
       updatedAt
       id
       title
-      categories {
-        title
-      }
-      event
       membersOnly
       text {
         text
@@ -179,6 +167,27 @@ const getConference = gql`
       images {
         url
       }
+      date
+    }
+  }
+`;
+
+const getEvent = gql`
+  query($id: ID) {
+    event(where: { id: $id }) {
+      createdAt
+      updatedAt
+      id
+      title
+      membersOnly
+      text {
+        text
+        html
+      }
+      images {
+        url
+      }
+      date
     }
   }
 `;
@@ -209,7 +218,8 @@ export {
   getArticlesByTheme,
   getConstitution,
   idsForLength,
-  getConference,
+  getEvents,
+  getEvent,
   getArticlesPreviewB,
   getArticlesByThemeB,
   getArticlesByIDList,

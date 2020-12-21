@@ -11,6 +11,7 @@ import Privacy from "./Privacy";
 import NoMatch from "../../components/NoMatch";
 import Footer from "../../components/Footer";
 import NotLoggedInArticle from "../../components/NotLoggedInArticle";
+import Event from "../../components/Event";
 import ScrollToTop from "../../components/ScrollToTop";
 import PrivacyBanner from "../../components/PrivacyBanner";
 import PasswordReset from "../public/PasswordReset";
@@ -50,6 +51,9 @@ const Index = () => {
             </Route>
             <Route path="/about">
               <About />
+            </Route>
+            <Route path="/conferences/:conferenceID">
+              <Event />
             </Route>
             <Route path="/conferences">
               <Conferences />

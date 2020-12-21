@@ -18,6 +18,8 @@ import UserFooter from "../../components/UserFooter";
 import ScrollToTop from "../../components/ScrollToTop";
 import Sidebar from "../../components/Sidebar";
 import Favourites from "../user/Favourites";
+import PrivateEvent from "./PrivateEvent";
+import PrivateEvents from "./PrivateEvents";
 import useLocalStorage from "../../hooks/useLocalStorage";
 
 const Dashboard = () => {
@@ -67,6 +69,12 @@ const Dashboard = () => {
               </Route>
               <Route path="/category/:category">
                 <Category />
+              </Route>
+              <Route path="/events/:conferenceID">
+                <PrivateEvent />
+              </Route>
+              <Route path="/events">
+                <PrivateEvents />
               </Route>
               <Route path="/favourites">
                 <Favourites
