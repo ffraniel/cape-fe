@@ -98,7 +98,7 @@ const HeaderUser = () => {
                 <NavLink to={"/category/events"}>Events</NavLink>
               </li>
               <li>
-                <NavLink to={"/category/resource"}>Resources</NavLink>
+                <NavLink to={"/category/resources"}>Resources</NavLink>
               </li>
               <li>
                 <NavLink to={"/category/guidance"}>Guidance</NavLink>

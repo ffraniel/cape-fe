@@ -39,7 +39,7 @@ const UserMobNav = ({ isMobNavOpen, setIsMobNavOpen }) => {
           </NavLink>
         </li>
         <li>
-          <NavLink onClick={closeNav} to={"/category/resource"}>
+          <NavLink onClick={closeNav} to={"/category/resources"}>
             Resources
           </NavLink>
         </li>

@@ -32,9 +32,9 @@ const Dash = () => {
       )}
       {data && data.articles.length === 0 && <h3>No articles</h3>}
       <SubjectPreview previewSubject={"events"} />
-      <SubjectPreview previewSubject={"resource"} />
+      <SubjectPreview previewSubject={"resources"} />
       <SubjectPreview previewSubject={"guidance"} />
-      <SubjectPreview previewSubject={"consultation"} />
+      <SubjectPreview previewSubject={"consultations"} />
       <SubjectPreview previewSubject={"minutes"} />
       {error && (
         <div className="medium-vertical-padding">

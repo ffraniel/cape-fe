@@ -3,9 +3,6 @@ import "./SubjectHeading.css";
 import Breadcrumb from "./Breadcrumb";
 
 const SubjectHeading = ({ categoryText }) => {
-  if (categoryText === "Resource") {
-    categoryText = categoryText + "s";
-  }
   return (
     <div className="subject-heading">
       <Breadcrumb text={"Back to Home"} />
