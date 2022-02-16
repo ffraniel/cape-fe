@@ -34,7 +34,7 @@ const UserMobNav = ({ isMobNavOpen, setIsMobNavOpen }) => {
           </NavLink>
         </li>
         <li>
-          <NavLink onClick={closeNav} to="/events">
+          <NavLink onClick={closeNav} to="/category/events">
             Events
           </NavLink>
         </li>

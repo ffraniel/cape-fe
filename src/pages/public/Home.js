@@ -26,8 +26,8 @@ const Home = () => {
             <Link className="btn primary-btn" to="/about">
               About CAPE
             </Link>
-            <Link className="btn secondary-btn" to="/conferences">
-              Conferences
+            <Link className="btn secondary-btn" to="/events">
+              Events
             </Link>
           </div>
         </div>

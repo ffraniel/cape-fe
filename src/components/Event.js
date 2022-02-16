@@ -2,14 +2,14 @@ import React from "react";
 import "./Event.css";
 import { useQuery } from "@apollo/react-hooks";
 import { Link, useParams } from "react-router-dom";
-import { getEvent } from "../queries/queries";
+import { getEvent, getArticle } from "../queries/queries";
 import { useSpring, animated } from "react-spring";
 import Loading from "./Loading";
 import DateFormatter from "./DateFormatter";
 import MainImage from "./MainImage";
 
 const Event = () => {
-  const { conferenceID } = useParams();
+  const { articleID } = useParams();
 
   const animationProps = useSpring({
     opacity: 1,
@@ -21,9 +21,9 @@ const Event = () => {
     },
   });
 
-  const { loading, error, data } = useQuery(getEvent, {
+  const { loading, error, data } = useQuery(getArticle, {
     variables: {
-      id: conferenceID,
+      id: articleID,
     },
   });
 
@@ -44,35 +44,35 @@ const Event = () => {
       {data && (
         <article className="event-item public-conference">
           <div className="conference-back-btn--container">
-            <Link className="conference-back-btn" to="/conferences">
-              Back to Conferences
+            <Link className="conference-back-btn" to="/events">
+              Back to Events
             </Link>
           </div>
           <div className="">
             <div className="container">
               <h6 className="event-post-date">
-                <DateFormatter date={data.event.updatedAt} />
+                <DateFormatter date={data.article.updatedAt} />
               </h6>
-              {data.event.updatedAt !== data.event.createdAt && (
+              {data.article.updatedAt !== data.article.createdAt && (
                 <h6 className="event-post-date event-post-date--updated">
                   Updated
                 </h6>
               )}
-              <h1 className="header-trigger event-title">{data.event.title}</h1>
-              <h4 className="event-date">{data.event.date}</h4>
+              <h1 className="header-trigger event-title">{data.article.title}</h1>
+              <h4 className="event-date">{data.article.date}</h4>
             </div>
           </div>
           <div className="article-body">
             <div className="container">
-              {data.event.images && data.event.images[0] && (
+              {data.article.images && data.article.images.url && (
                 <MainImage
-                  alt={data.event.title}
-                  src={data.event.images[0].url}
+                  alt={data.article.title}
+                  src={data.article.images.url}
                 />
               )}
               <div
                 className="article-html"
-                dangerouslySetInnerHTML={{ __html: data.event.text.html }}
+                dangerouslySetInnerHTML={{ __html: data.article.text.html }}
               ></div>
             </div>
           </div>

@@ -85,6 +85,37 @@ const getArticlesByThemeB = gql`
   }
 `;
 
+const getPublicEvents = gql`
+  query($category: String, $first: Int, $after: String, $membersOnly: Boolean) {
+    articles(
+      where: { categories_some: { title: $category }
+      AND: [{ membersOnly: $membersOnly }]
+      }
+      first: $first
+      after: $after
+      orderBy: createdAt_DESC
+    ) {
+      author
+      createdAt
+      updatedAt
+      id
+      title
+      categories {
+        title
+      }
+      event
+      membersOnly
+      text {
+        text
+      }
+      images {
+        url
+      }
+    }
+  }
+`;
+
+
 const getArticle = gql`
   query($id: ID) {
     article(where: { id: $id }) {
@@ -223,4 +254,5 @@ export {
   getArticlesPreviewB,
   getArticlesByThemeB,
   getArticlesByIDList,
+  getPublicEvents
 };

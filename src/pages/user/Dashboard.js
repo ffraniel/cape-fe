@@ -70,12 +70,12 @@ const Dashboard = () => {
               <Route path="/category/:category">
                 <Category />
               </Route>
-              <Route path="/events/:conferenceID">
+              {/* <Route path="/events/:conferenceID">
                 <PrivateEvent />
               </Route>
               <Route path="/events">
                 <PrivateEvents />
-              </Route>
+              </Route> */}
               <Route path="/favourites">
                 <Favourites
                   favourites={favourites}

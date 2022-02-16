@@ -22,8 +22,8 @@ const PublicMobNav = ({ isMobNavOpen, setIsMobNavOpen }) => {
             </NavLink>
           </li>
           <li>
-            <NavLink onClick={closeNav} to="/conferences">
-              Conferences
+            <NavLink onClick={closeNav} to="/events">
+              Events
             </NavLink>
           </li>
           <li>

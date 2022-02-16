@@ -5,12 +5,10 @@
   line-height: 1.8;
 }
 
-.event-item .conference-back-btn--container {
-  border: solid red 1px;
-}
-
-.conference-back-btn {
-  margin: 120px 100px;
+.conference-back-btn--container {
+  width: 80%;
+  max-width: 42em;
+  margin: 0 auto;
 }
 
 .event-post-date {

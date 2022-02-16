@@ -86,8 +86,8 @@ const HeaderPublic = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className="show-nav-location" to="/conferences">
-              Conferences
+            <NavLink className="show-nav-location" to="/events">
+              Events
             </NavLink>
           </li>
           <li>

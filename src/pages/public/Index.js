@@ -4,14 +4,14 @@ import "./Index.css";
 import HeaderPublic from "../../components/HeaderPublic";
 import Home from "./Home";
 import About from "./About";
-import Conferences from "./Conferences";
+import Events from "./Events";
+import Event from "../../components/Event";
 import Constitution from "../Constitution";
 import LoginPage from "./LoginPage";
 import Privacy from "./Privacy";
 import NoMatch from "../../components/NoMatch";
 import Footer from "../../components/Footer";
 import NotLoggedInArticle from "../../components/NotLoggedInArticle";
-import Event from "../../components/Event";
 import ScrollToTop from "../../components/ScrollToTop";
 import PrivacyBanner from "../../components/PrivacyBanner";
 import PasswordReset from "../public/PasswordReset";
@@ -52,11 +52,11 @@ const Index = () => {
             <Route path="/about">
               <About />
             </Route>
-            <Route path="/conferences/:conferenceID">
+            <Route path="/events/:articleID">
               <Event />
             </Route>
-            <Route path="/conferences">
-              <Conferences />
+            <Route path="/events">
+              <Events />
             </Route>
             <Route path="/constitution">
               <Constitution />

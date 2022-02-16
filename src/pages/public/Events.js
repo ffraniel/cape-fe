@@ -1,15 +1,18 @@
 import React from "react";
-import "./Conferences.css";
+import "./Events.css";
 import { useQuery } from "@apollo/react-hooks";
-import { getEvents } from "../../queries/queries";
+import { getEvents, getArticlesByThemeB, getPublicEvents } from "../../queries/queries";
 import { useSpring, animated } from "react-spring";
 import { animationConfig } from "../../animations";
-import EventsList from "../../components/EventsList";
+// import EventsList from "../../components/EventsList";
+import PublicList from "../../components/PublicList";
 import Loading from "../../components/Loading";
 
-const Conferences = () => {
-  const { loading, error, data } = useQuery(getEvents, {
+const Events = () => {
+  const { loading, error, data } = useQuery(getPublicEvents, {
     variables: {
+      category: "Events",
+      first: 5,
       membersOnly: false,
     },
   });
@@ -17,17 +20,17 @@ const Conferences = () => {
   const animationProps = useSpring(animationConfig);
 
   return (
-    <div className="conferences conferences-public page medium-vertical-padding">
+    <div className="conferences conferences-public page small-vertical-padding">
       <div className="">
         <animated.h3
           style={animationProps}
           className="header-trigger conferences-page-title"
         >
-          Conferences and Events
+          Events
         </animated.h3>
         {loading && <Loading />}
         {error && <h1>ERROR{console.log("error: ", error)}</h1>}
-        {data && data.events.length === 0 && (
+        {data && data.articles.length === 0 && (
           <animated.div style={animationProps}>
             <h3>
               Currently there are no public events upcoming. Members please sign
@@ -35,10 +38,10 @@ const Conferences = () => {
             </h3>
           </animated.div>
         )}
-        {data && <EventsList data={data} isPrivate={false} />}
+        {data && <PublicList data={data} />}
       </div>
     </div>
   );
 };
 
-export default Conferences;
+export default Events;
