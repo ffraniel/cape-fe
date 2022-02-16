@@ -27,15 +27,35 @@ const Event = () => {
     },
   });
 
-  if (data && data.events && data.events.length === 0) {
+  if (data && data.article && data.article.membersOnly) {
+    
     return (
-      <animated.div style={animationProps} className="category">
-        <article className="container full-height-page">
-          <h3>No Event found. Something has gone wrong.</h3>
+      <div className="container">
+        <article className="event-item public-conference">
+          <h1>Please sign in to read this article.</h1>
+          <p>This is a members only article or event you are trying to view and you need to be logged in to see it.</p>
+          <p>If you wish to become a member please complete the joining form</p>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSd2KOJPuJRgdnaIZmo85tX7M4NXcHLCrNJTdjQZ88AXRbCliw/viewform?usp=sf_link"
+            target="_blank"
+            className="google-form-link"
+            rel="noopener noreferrer"
+          >
+            Go to Join form
+          </a>
         </article>
-      </animated.div>
-    );
+      </div>
+    )
   }
+  // if (data) {
+  //   return (
+  //     <animated.div style={animationProps} className="category">
+  //       <article className="container full-height-page">
+  //         <h3>No Event found. Something has gone wrong.</h3>
+  //       </article>
+  //     </animated.div>
+  //   );
+  // }
 
   return (
     <animated.div style={animationProps}>
