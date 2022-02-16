@@ -2,7 +2,7 @@ import React from "react";
 import "./Event.css";
 import { useQuery } from "@apollo/react-hooks";
 import { Link, useParams } from "react-router-dom";
-import { getEvent, getArticle } from "../queries/queries";
+import { getArticle } from "../queries/queries";
 import { useSpring, animated } from "react-spring";
 import Loading from "./Loading";
 import DateFormatter from "./DateFormatter";

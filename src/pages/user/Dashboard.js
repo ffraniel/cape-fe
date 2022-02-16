@@ -18,8 +18,8 @@ import UserFooter from "../../components/UserFooter";
 import ScrollToTop from "../../components/ScrollToTop";
 import Sidebar from "../../components/Sidebar";
 import Favourites from "../user/Favourites";
-import PrivateEvent from "./PrivateEvent";
-import PrivateEvents from "./PrivateEvents";
+// import PrivateEvent from "./PrivateEvent";
+// import PrivateEvents from "./PrivateEvents";
 import useLocalStorage from "../../hooks/useLocalStorage";
 
 const Dashboard = () => {

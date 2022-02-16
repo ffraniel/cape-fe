@@ -1,7 +1,7 @@
 import React from "react";
 import "./Events.css";
 import { useQuery } from "@apollo/react-hooks";
-import { getEvents, getArticlesByThemeB, getPublicEvents } from "../../queries/queries";
+import { getPublicEvents } from "../../queries/queries";
 import { useSpring, animated } from "react-spring";
 import { animationConfig } from "../../animations";
 // import EventsList from "../../components/EventsList";
