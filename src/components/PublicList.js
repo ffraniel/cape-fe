@@ -8,6 +8,7 @@ import regularExp from "../utility/regularExpression";
 
 const PublicList = (props) => {
   const { data } = props;
+  const publicArticlesOnly = data.articles.filter(article =>  !article.membersOnly === true);
 
   const animationProps = useSpring({
     opacity: 1,
@@ -19,7 +20,7 @@ const PublicList = (props) => {
     },
   });
 
-  if (data.articles.length === 0) {
+  if (publicArticlesOnly === 0) {
     return (
       <animated.div style={animationProps} className="list">
         <article>
@@ -31,7 +32,7 @@ const PublicList = (props) => {
 
   return (
     <animated.div style={animationProps} className="public-list">
-      {data.articles.map((article, i) => {
+      {publicArticlesOnly.map((article, i) => {
         return (
           <article
             className={`list-article-block public-list--article`}
@@ -70,6 +71,9 @@ const PublicList = (props) => {
                   .join(" ")}
                 ...
               </p>
+              <Link className="list--read-link" to={`/events/${article.id}`}>
+                Read More
+              </Link>
             </div>
           </article>
         );

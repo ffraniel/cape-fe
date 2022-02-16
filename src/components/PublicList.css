@@ -13,6 +13,10 @@
   padding: 30px 0;
 }
 
+.public-list--article:last-of-type {
+  border-bottom: none;
+}
+
 .public-list .list-title-link {
   color: #2D3748;
   text-decoration: none;
@@ -20,4 +24,15 @@
 
 .public-list .list-title-link:hover {
   text-decoration: underline;
+}
+
+.public-list .list--read-link {
+  color: #226FB7;
+  transition: background-color 0.25s;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+.public-list .list--read-link:hover {
+  color: rgb(17, 78, 134);
 }
