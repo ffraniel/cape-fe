@@ -10,8 +10,14 @@
 }
 
 .conferences-page-title {
-  margin: 0 65px -10px;
   font-size: 2em;
+  margin: 0 40px -10px;
+}
+
+@media (min-width: 550px) {
+  .conferences-page-title {
+    margin: 0 65px -10px;
+  }
 }
 
 .conferences-public {

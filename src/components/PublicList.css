@@ -36,3 +36,7 @@
 .public-list .list--read-link:hover {
   color: rgb(17, 78, 134);
 }
+
+.public-list .article-item-date-updated {
+  color: #1d970d;
+}

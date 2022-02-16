@@ -9,7 +9,13 @@
   width: 80%;
   max-width: 42em;
   margin: 0 auto;
+  padding-top: 10px;
 }
+
+.conference-back-btn {
+  font-weight: 700;
+}
+
 
 .event-post-date {
   margin: 5px auto;
