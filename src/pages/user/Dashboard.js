@@ -18,6 +18,8 @@ import UserFooter from "../../components/UserFooter";
 import ScrollToTop from "../../components/ScrollToTop";
 import Sidebar from "../../components/Sidebar";
 import Favourites from "../user/Favourites";
+import Archive from "../user/Archive";
+import ArchiveArticle from "./ArchiveArticle";
 // import PrivateEvent from "./PrivateEvent";
 // import PrivateEvents from "./PrivateEvents";
 import useLocalStorage from "../../hooks/useLocalStorage";
@@ -90,6 +92,12 @@ const Dashboard = () => {
                   removeFavourite={removeFavourite}
                 />
               </Route>
+              <Route exact path="/archive">
+                <Archive />
+              </Route>
+              <Route path="/archive/:archiveYear">
+                <ArchiveArticle />
+              </Route> 
               <Route exact path="/login">
                 <Redirect to="/" />
               </Route>

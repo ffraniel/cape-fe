@@ -15,6 +15,7 @@ const SubjectHeading = ({ categoryText }) => {
           {categoryText === "Resources" && <ResourcesText />}
           {categoryText === "Minutes" && <MinutesText />}
           {categoryText === "Favourites" && <FavouritesText />}
+          {categoryText === "Archive" && <ArchiveText />}
         </p>
       </div>
     </div>
@@ -44,5 +45,7 @@ const FavouritesText = () => (
     Click the red cross to remove an article from your favourites
   </>
 );
+
+const ArchiveText = () => <>An archive of KCSIE reports</>;
 
 export default SubjectHeading;
