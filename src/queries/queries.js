@@ -85,6 +85,29 @@ const getArticlesByThemeB = gql`
   }
 `;
 
+const getArchives = gql`
+  {
+    archives {
+      title
+      id
+      year
+    }
+  }
+`;
+
+const getArchiveText = gql`
+  query($year: Int) {
+    archives (where: { year: $year }) {
+      title
+      id
+      year
+      text {
+        html
+      }
+    }
+  }
+`;
+
 const getPublicEvents = gql`
   query($category: String, $first: Int, $after: String, $membersOnly: Boolean) {
     articles(
@@ -254,5 +277,7 @@ export {
   getArticlesPreviewB,
   getArticlesByThemeB,
   getArticlesByIDList,
-  getPublicEvents
+  getPublicEvents,
+  getArchives,
+  getArchiveText
 };

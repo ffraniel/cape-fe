@@ -6,7 +6,7 @@ import { useSpring, animated } from "react-spring";
 import Loading from "../../components/Loading";
 import Breadcrumb from "../../components/Breadcrumb";
 import SubjectHeading from "../../components/SubjectHeading";
-// import { getArchives } from "../../queries/queries";
+import { getArchives } from "../../queries/queries";
 
 const Archive = () => {
 
@@ -20,11 +20,7 @@ const Archive = () => {
     },
   });
 
-  const list = [
-    {title: "KSCIE 2017", id: "a", year: 2017}, 
-    {title: "KSCIE 2018", id: "b", year: 2018}, 
-    {title: "KSCIE 2019", id: "c", year: 2019}
-  ];
+  const { loading, error, data } = useQuery(getArchives);
 
   const [ordering, setOrdering] = useState("DESC");
   const [listInOrder, setListInOrder] = useState();
@@ -40,7 +36,11 @@ const Archive = () => {
     return (
       <div className="archive-list-page">
         <SubjectHeading categoryText={"Archive"} />
-        <section className="archive-list-container">        
+        {loading && <Loading />}
+        {error && <h1>ERROR{console.log("error: ", error)}</h1>}
+        {data && data.archives && (
+        
+        <section className="archive-list-container">     
           <div className="select-container">
             <label htmlFor="sort-order">Sort in <span className="red">{ordering === "ASCE" ? "ascending" : "descending"}</span> order</label>
             <select value={ordering} onChange={handleOrderingChange} name="sort-order" id="sort-order">
@@ -49,14 +49,14 @@ const Archive = () => {
             </select>
           </div>
           <ul className="archive-list">
-            {ordering === "DESC" && list.sort((a, b) => a.year - b.year).map(listItem => {
+            {ordering === "DESC" && data.archives.sort((a, b) => a.year - b.year).map(listItem => {
               return (
                 <li key={listItem.id}>
                   <Link to={`/archive/${listItem.year}`}>{listItem.title}</Link>
                 </li>
               )
             })}
-            {ordering === "ASCE" && list.sort((a, b) => b.year - a.year).map(listItem => {
+            {ordering === "ASCE" && data.archives.sort((a, b) => b.year - a.year).map(listItem => {
               return (
                 <li key={listItem.id}>
                   <Link to={`/archive/${listItem.year}`}>{listItem.title}</Link>
@@ -65,6 +65,9 @@ const Archive = () => {
             })}
           </ul>
         </section>
+
+        )}
+
       </div>
     )
   };
@@ -74,8 +77,8 @@ const Archive = () => {
     <animated.div style={animationProps} className="article-container ">
       {/* {loading && <Loading />}
       {error && <h1>ERROR{console.log("error: ", error)}</h1>} */}
-      {list && (
-        <ArchiveList list={list} />
+      {data && data.archives && (
+        <ArchiveList list={data.archives} />
       )}
     </animated.div>
   );

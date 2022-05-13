@@ -35,7 +35,11 @@
   color: var(--text-grey);
 }
 
+.archive-list li {
+  margin: 5px 0;
+}
+
 .archive-list a {
   color: rgb(27, 27, 27);
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
