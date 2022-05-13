@@ -18,9 +18,24 @@
 .select-container select {
   display: block;
   margin: 10px 0;
+  padding: 5px 10px;
+  font-size: 1em;
+}
+
+.select-container .red {
+  color: var(--header-colour);
+  color: rgb(49, 104, 53);
+  font-weight: 900;
 }
 
 .archive-list {
   list-style: none;
   padding-left: 0;
+  color: #1A202C;
+  color: var(--text-grey);
+}
+
+.archive-list a {
+  color: rgb(27, 27, 27);
+  font-size: 2rem;
 }

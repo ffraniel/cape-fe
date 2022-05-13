@@ -42,7 +42,7 @@ const Archive = () => {
         <SubjectHeading categoryText={"Archive"} />
         <section className="archive-list-container">        
           <div className="select-container">
-            <label htmlFor="sort-order">Sort by {ordering}</label>
+            <label htmlFor="sort-order">Sort in <span className="red">{ordering === "ASCE" ? "ascending" : "descending"}</span> order</label>
             <select value={ordering} onChange={handleOrderingChange} name="sort-order" id="sort-order">
               <option value="DESC">DESC</option>
               <option value="ASCE">ASCE</option>
