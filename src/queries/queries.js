@@ -91,19 +91,7 @@ const getArchives = gql`
       title
       id
       year
-    }
-  }
-`;
-
-const getArchiveText = gql`
-  query($year: Int) {
-    archives (where: { year: $year }) {
-      title
-      id
-      year
-      text {
-        html
-      }
+      fileLink
     }
   }
 `;
@@ -278,6 +266,5 @@ export {
   getArticlesByThemeB,
   getArticlesByIDList,
   getPublicEvents,
-  getArchives,
-  getArchiveText
+  getArchives
 };

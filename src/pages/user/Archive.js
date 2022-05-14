@@ -1,10 +1,8 @@
 import React, {useState} from "react";
 import "./Archive.css";
 import { useQuery } from "@apollo/react-hooks";
-import { Link, useParams } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import Loading from "../../components/Loading";
-import Breadcrumb from "../../components/Breadcrumb";
 import SubjectHeading from "../../components/SubjectHeading";
 import { getArchives } from "../../queries/queries";
 
@@ -40,7 +38,7 @@ const Archive = () => {
         {error && <h1>ERROR{console.log("error: ", error)}</h1>}
         {data && data.archives && (
         
-        <section className="archive-list-container">     
+        <section className="archive-list-container">    
           <div className="select-container">
             <label htmlFor="sort-order">Sort in <span className="red">{ordering === "ASCE" ? "ascending" : "descending"}</span> order</label>
             <select value={ordering} onChange={handleOrderingChange} name="sort-order" id="sort-order">
@@ -52,14 +50,22 @@ const Archive = () => {
             {ordering === "DESC" && data.archives.sort((a, b) => a.year - b.year).map(listItem => {
               return (
                 <li key={listItem.id}>
-                  <Link to={`/archive/${listItem.year}`}>{listItem.title}</Link>
+                  <a 
+                    href={listItem.fileLink}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >{listItem.title}</a>
                 </li>
               )
             })}
             {ordering === "ASCE" && data.archives.sort((a, b) => b.year - a.year).map(listItem => {
               return (
                 <li key={listItem.id}>
-                  <Link to={`/archive/${listItem.year}`}>{listItem.title}</Link>
+                  <a 
+                    href={listItem.fileLink}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >{listItem.title}</a>
                 </li>
               )
             })}

@@ -28,6 +28,9 @@ const Sidebar = () => {
           <NavLink to={"/category/minutes"}>Minutes</NavLink>
         </li>
         <li>
+          <NavLink to={"/archive"}>KCSIE Archive</NavLink>
+        </li>
+        <li>
           <NavLink to={"/favourites"}>Favourites</NavLink>
         </li>
       </ul>

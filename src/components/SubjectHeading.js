@@ -46,6 +46,6 @@ const FavouritesText = () => (
   </>
 );
 
-const ArchiveText = () => <>An archive of KCSIE reports</>;
+const ArchiveText = () => <>An archive of links to KCSIE reports</>;
 
 export default SubjectHeading;

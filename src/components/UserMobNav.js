@@ -59,6 +59,11 @@ const UserMobNav = ({ isMobNavOpen, setIsMobNavOpen }) => {
           </NavLink>
         </li>
         <li>
+          <NavLink onClick={closeNav} to={"/archive"}>
+            KCSIE Archive
+          </NavLink>
+        </li>
+        <li>
           <a
             onClick={closeNav}
             href="https://cape.flarum.cloud/"

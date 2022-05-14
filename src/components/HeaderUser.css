@@ -33,14 +33,14 @@
 .user-header .filter-trigger:hover .filter-container {
   display: block;
   position: fixed;
-  transform: translate(0, -13px);
-  padding: 45px;
+  transform: translate(120px, -13px);
+  padding: 10px 5px 10px 5px;
   background-color: #264f2f;
 }
 
 .user-header .desktop-menu .filter-container li {
   border-bottom: 2px solid rgba(0, 0, 0, 0);
-
+  display: block;
   transition: border-bottom 0.5s;
   padding: 0 5px;
 }
