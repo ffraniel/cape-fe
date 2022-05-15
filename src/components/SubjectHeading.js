@@ -3,6 +3,12 @@ import "./SubjectHeading.css";
 import Breadcrumb from "./Breadcrumb";
 
 const SubjectHeading = ({ categoryText }) => {
+  if (categoryText === "CYPMHC") {
+    categoryText = "Children & Young People's Mental Health Coalition";
+  } else if (categoryText === "Archive") {
+    categoryText = "KCSIE Reports Archive";
+  }
+
   return (
     <div className="subject-heading">
       <Breadcrumb text={"Back to Home"} />
@@ -15,7 +21,8 @@ const SubjectHeading = ({ categoryText }) => {
           {categoryText === "Resources" && <ResourcesText />}
           {categoryText === "Minutes" && <MinutesText />}
           {categoryText === "Favourites" && <FavouritesText />}
-          {categoryText === "Archive" && <ArchiveText />}
+          {categoryText === "KCSIE Reports Archive" && <ArchiveText />}
+          {categoryText === "Children & Young People's Mental Health Coalition" && <CYPMHCText />}
         </p>
       </div>
     </div>
@@ -46,6 +53,8 @@ const FavouritesText = () => (
   </>
 );
 
-const ArchiveText = () => <>An archive of links to KCSIE reports</>;
+const ArchiveText = () => <>Archive of links to KCSIE reports</>;
+
+const CYPMHCText = () => <>Articles from Children and Young People's Mental Health Coalition </>;
 
 export default SubjectHeading;

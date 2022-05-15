@@ -101,6 +101,10 @@
   font-size: 0.95rem;
 }
 
+.mini-feed--article-grid :nth-of-type(4) {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .mini-feed--article-grid {
     -ms-grid-columns: 1fr 1fr;

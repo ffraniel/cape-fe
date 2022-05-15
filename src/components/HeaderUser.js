@@ -110,6 +110,9 @@ const HeaderUser = () => {
                 <NavLink to={"/category/minutes"}>Minutes</NavLink>
               </li>
               <li>
+                <NavLink to={"/category/CYPMHC"}>CYPMHC</NavLink>
+              </li>
+              <li>
                 <NavLink to={"/archive"}>KCSIE Archive</NavLink>
               </li>
             </ul>

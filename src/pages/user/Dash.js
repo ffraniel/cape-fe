@@ -36,6 +36,7 @@ const Dash = () => {
       <SubjectPreview previewSubject={"guidance"} />
       <SubjectPreview previewSubject={"consultations"} />
       <SubjectPreview previewSubject={"minutes"} />
+      <SubjectPreview previewSubject={"CYPMHC"} />
       {error && (
         <div className="medium-vertical-padding">
           <h3>ERROR</h3>

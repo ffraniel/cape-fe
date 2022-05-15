@@ -59,6 +59,11 @@ const UserMobNav = ({ isMobNavOpen, setIsMobNavOpen }) => {
           </NavLink>
         </li>
         <li>
+          <NavLink onClick={closeNav} to={"/category/CYPMHC"}>
+            CYPMHC
+          </NavLink>
+        </li>
+        <li>
           <NavLink onClick={closeNav} to={"/archive"}>
             KCSIE Archive
           </NavLink>

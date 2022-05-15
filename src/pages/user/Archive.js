@@ -20,10 +20,7 @@ const Archive = () => {
 
   const { loading, error, data } = useQuery(getArchives);
 
-  const [ordering, setOrdering] = useState("DESC");
-  const [listInOrder, setListInOrder] = useState();
-
-  // change ordering to isDescending, use boolean, have one list as it comes through, then flip it
+  const [ordering, setOrdering] = useState("Chron");
 
   function handleOrderingChange(e) {
     setOrdering(e.target.value);
@@ -40,14 +37,14 @@ const Archive = () => {
         
         <section className="archive-list-container">    
           <div className="select-container">
-            <label htmlFor="sort-order">Sort in <span className="red">{ordering === "ASCE" ? "ascending" : "descending"}</span> order</label>
+            <label htmlFor="sort-order">Sorted in <span className="red">{ordering === "Chron" ? "Chronological" : "Reverse"}</span> order</label>
             <select value={ordering} onChange={handleOrderingChange} name="sort-order" id="sort-order">
-              <option value="DESC">DESC</option>
-              <option value="ASCE">ASCE</option>
+              <option value={"Chron"}>Chronological</option>
+              <option value={"Rev"}>Reverse Chronological</option>
             </select>
           </div>
           <ul className="archive-list">
-            {ordering === "DESC" && data.archives.sort((a, b) => a.year - b.year).map(listItem => {
+            {ordering === "Chron" && data.archives.sort((a, b) => a.year - b.year).map(listItem => {
               return (
                 <li key={listItem.id}>
                   <a 
@@ -58,7 +55,7 @@ const Archive = () => {
                 </li>
               )
             })}
-            {ordering === "ASCE" && data.archives.sort((a, b) => b.year - a.year).map(listItem => {
+            {ordering === "Rev" && data.archives.sort((a, b) => b.year - a.year).map(listItem => {
               return (
                 <li key={listItem.id}>
                   <a 
