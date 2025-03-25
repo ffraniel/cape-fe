@@ -2,13 +2,16 @@ import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { animationConfig } from "../../animations";
 import "./PasswordReset.css";
-import firebase from "firebase/app";
+// import firebase from "firebase/app";
+import fire from "../../config/fire";
+import { getAuth } from "firebase/auth";
+const auth = getAuth(fire);
 import Loading from "../../components/Loading";
 
 const PasswordReset = () => {
   const animationProps = useSpring(animationConfig);
 
-  var auth = firebase.auth();
+  // var auth = firebase.auth();
 
   const [email, setEmail] = useState("");
   const [resetRequested, setResetRequested] = useState(false);

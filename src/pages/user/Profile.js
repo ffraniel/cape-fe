@@ -3,12 +3,15 @@ import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import { animationConfig } from "../../animations";
 import "./Profile.css";
+// import fire from "../../config/fire";
+// import firebase from "firebase/app";
 import fire from "../../config/fire";
-import firebase from "firebase/app";
+import { getAuth } from "firebase/auth";
+const auth = getAuth(fire);
 import Loading from "../../components/Loading";
 
 const Profile = () => {
-  const user = fire.auth().currentUser;
+  const user = auth().currentUser;
 
   let welcome;
   if (user) {
@@ -80,8 +83,8 @@ const Profile = () => {
     e.preventDefault();
     setLoadingPassword(true);
 
-    var userForPassword = firebase.auth().currentUser;
-    const credential = firebase.auth.EmailAuthProvider.credential(
+    var userForPassword = auth().currentUser;
+    const credential = auth.EmailAuthProvider.credential(
       userForPassword.email,
       currentPassword
     );

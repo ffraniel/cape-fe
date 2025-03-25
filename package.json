@@ -5,14 +5,14 @@
   "dependencies": {
     "@apollo/react-hooks": "^3.1.5",
     "apollo-boost": "^0.4.9",
-    "firebase": "^7.23.0",
+    "firebase": "^11.5.0",
     "graphql": "^14.6.0",
     "react": "^16.13.1",
     "react-apollo": "^3.1.5",
     "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.3",
+    "react-scripts": "^5.0.1",
     "react-spring": "^8.0.27",
     "source-map-explorer": "^2.5.0"
   },
