@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./Login.css";
 import fire from "../config/fire";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import Loading from "./Loading";
 
 const Login = ({ isLocalStorageAllowed, handleAllowStorageChange }) => {
+
+  const auth = getAuth(fire);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginError, setLoginError] = useState(null);
@@ -31,9 +35,7 @@ const Login = ({ isLocalStorageAllowed, handleAllowStorageChange }) => {
     setLoginError(null);
     setLoginLoading(true);
     e.preventDefault();
-    fire
-      .auth()
-      .signInWithEmailAndPassword(email, password)
+    signInWithEmailAndPassword(auth, email, password)
       .then(() => {
         setLoginError(false);
         setLoginLoading(false);
@@ -43,6 +45,7 @@ const Login = ({ isLocalStorageAllowed, handleAllowStorageChange }) => {
       })
       .catch(function (error) {
         // setLoginError(error.message);
+        console.log(error.message);
         setLoginLoading(false);
         setLoginError(true);
       });

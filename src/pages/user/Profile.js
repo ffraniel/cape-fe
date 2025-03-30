@@ -6,12 +6,13 @@ import "./Profile.css";
 // import fire from "../../config/fire";
 // import firebase from "firebase/app";
 import fire from "../../config/fire";
-import { getAuth } from "firebase/auth";
-const auth = getAuth(fire);
+import { getAuth, EmailAuthProvider, reauthenticateWithCredential, updatePassword } from "firebase/auth";
+
 import Loading from "../../components/Loading";
 
 const Profile = () => {
-  const user = auth().currentUser;
+  const auth = getAuth(fire);
+  const user = auth.currentUser;
 
   let welcome;
   if (user) {
@@ -33,7 +34,7 @@ const Profile = () => {
   const handleInput = (e) => {
     e.preventDefault();
     if (errorMessage) {
-      console.log("if error here");
+      console.log("if error here - resets error message");
       setErrorMessage(false);
     }
     if (e.target.name === "email") {
@@ -50,8 +51,7 @@ const Profile = () => {
   const resetPassword = async (oldPassword, newPassword) => {
     setLoadingPassword(true);
 
-    return user
-      .updatePassword(newPassword)
+    return updatePassword(user, newPassword)
       .then(function () {
         console.log("yes friend, reset that password");
         setLoadingPassword(false);
@@ -83,14 +83,13 @@ const Profile = () => {
     e.preventDefault();
     setLoadingPassword(true);
 
-    var userForPassword = auth().currentUser;
-    const credential = auth.EmailAuthProvider.credential(
+    var userForPassword = user;
+    const credential = EmailAuthProvider.credential(
       userForPassword.email,
       currentPassword
     );
 
-    userForPassword
-      .reauthenticateWithCredential(credential)
+    reauthenticateWithCredential(user, credential)
       .then(function () {
         setLoadingPassword(false);
         setAccessGranted(true);

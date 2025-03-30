@@ -5,10 +5,10 @@ import "./PasswordReset.css";
 // import firebase from "firebase/app";
 import fire from "../../config/fire";
 import { getAuth } from "firebase/auth";
-const auth = getAuth(fire);
 import Loading from "../../components/Loading";
 
 const PasswordReset = () => {
+  const auth = getAuth(fire);
   const animationProps = useSpring(animationConfig);
 
   // var auth = firebase.auth();

@@ -2,11 +2,16 @@ import React, { useState, useEffect } from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import "./HeaderUser.css";
 import Logo from "../assets/WhiteTrans.png";
+// import fire from "../config/fire";
 import fire from "../config/fire";
+import { getAuth, signOut } from "firebase/auth";
 import UserMobNav from "./UserMobNav";
 // import { debounce } from "../utility/debounce";
 
 const HeaderUser = () => {
+
+  const auth = getAuth(fire);
+
   const [isMobNavOpen, setIsMobNavOpen] = useState(false);
 
   const handleMenuClick = (e) => {
@@ -16,10 +21,8 @@ const HeaderUser = () => {
 
   let history = useHistory();
 
-  const signOut = () => {
-    fire
-      .auth()
-      .signOut()
+  const signOutUser = () => {
+    signOut(auth)
       .then(function () {
         console.log("sign-out successful.");
         history.push("/");
@@ -145,7 +148,7 @@ const HeaderUser = () => {
             </NavLink>
           </li>
           <li>
-            <button className="btn sign-out-btn" onClick={signOut}>
+            <button className="btn sign-out-btn" onClick={signOutUser}>
               SIGN OUT
             </button>
           </li>
