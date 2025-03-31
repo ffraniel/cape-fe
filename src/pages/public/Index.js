@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import "./Index.css";
 import HeaderPublic from "../../components/HeaderPublic";
 import Home from "./Home";
@@ -9,9 +9,9 @@ import Event from "../../components/Event";
 import Constitution from "../Constitution";
 import LoginPage from "./LoginPage";
 import Privacy from "./Privacy";
-import NoMatch from "../../components/NoMatch";
+// import NoMatch from "../../components/NoMatch";
 import Footer from "../../components/Footer";
-import NotLoggedInArticle from "../../components/NotLoggedInArticle";
+// import NotLoggedInArticle from "../../components/NotLoggedInArticle";
 import ScrollToTop from "../../components/ScrollToTop";
 import PrivacyBanner from "../../components/PrivacyBanner";
 import PasswordReset from "../public/PasswordReset";
@@ -76,11 +76,8 @@ const Index = () => {
             <Route path="/passwordreset">
               <PasswordReset />
             </Route>
-            <Route path="/article/:articleID">
-              <NotLoggedInArticle />
-            </Route>
-            <Route>
-              <NoMatch default />
+            <Route path="/">
+                <Redirect default to="/" />
             </Route>
           </Switch>
         </div>

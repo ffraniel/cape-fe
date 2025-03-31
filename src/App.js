@@ -12,19 +12,20 @@ function App() {
 
   const [user, setUser] = useState(null);
 
-  const authListener = () => {
-    auth.onAuthStateChanged((newUser) => {
-      if (newUser) {
-        setUser(newUser);
-      } else {
-        setUser(null);
-      }
-    });
-  };
-
+  
   useEffect(() => {
+    const authListener = () => {
+      auth.onAuthStateChanged((newUser) => {
+        if (newUser) {
+          setUser(newUser);
+        } else {
+          setUser(null);
+        }
+      });
+    };
+    
     authListener();
-  }, [user]);
+  }, [user, auth]);
 
   return (
     <div className="App">
