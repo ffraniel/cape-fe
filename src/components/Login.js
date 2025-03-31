@@ -37,8 +37,6 @@ const Login = ({ isLocalStorageAllowed, handleAllowStorageChange }) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
-        setLoginError(false);
-        setLoginLoading(false);
         if (isLocalStorageAllowed) {
           window.localStorage.setItem("email-login", email);
         }
