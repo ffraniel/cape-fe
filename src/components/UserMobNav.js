@@ -2,20 +2,23 @@ import React from "react";
 import "./PublicMobNav.css";
 import { NavLink } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+// import fire from "../config/fire";
 import fire from "../config/fire";
+import { getAuth, signOut } from "firebase/auth";
 
 const UserMobNav = ({ isMobNavOpen, setIsMobNavOpen }) => {
+
+  const auth = getAuth(fire);
+
   let history = useHistory();
 
   const closeNav = () => {
     setIsMobNavOpen(false);
   };
 
-  const signOut = () => {
+  const signOutUser = () => {
     closeNav();
-    fire
-      .auth()
-      .signOut()
+    signOut(auth)
       .then(function () {
         console.log("sign-out successful.");
         history.push("/");
@@ -95,7 +98,7 @@ const UserMobNav = ({ isMobNavOpen, setIsMobNavOpen }) => {
         </li>
 
         <li>
-          <button className="btn sign-out-btn" onClick={signOut}>
+          <button className="btn sign-out-btn" onClick={signOutUser}>
             SIGN OUT
           </button>
         </li>
