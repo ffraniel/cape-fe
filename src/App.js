@@ -1,7 +1,7 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
 import "./App.css";
 import fire from "./config/fire";
-import { getAuth } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import Index from "./pages/public/Index";
 import Loading from "./components/Loading";
 const Dashboard = lazy(() => import("./pages/user/Dashboard"));
@@ -15,7 +15,7 @@ function App() {
   
   useEffect(() => {
     const authListener = () => {
-      auth.onAuthStateChanged((newUser) => {
+      onAuthStateChanged(auth, (newUser) => {
         if (newUser) {
           setUser(newUser);
         } else {

@@ -4,7 +4,7 @@ import { animationConfig } from "../../animations";
 import "./PasswordReset.css";
 // import firebase from "firebase/app";
 import fire from "../../config/fire";
-import { getAuth } from "firebase/auth";
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import Loading from "../../components/Loading";
 
 const PasswordReset = () => {
@@ -30,8 +30,7 @@ const PasswordReset = () => {
     setLoading(true);
     setError(false);
 
-    auth
-      .sendPasswordResetEmail(email)
+    sendPasswordResetEmail(auth, email)
       .then(function () {
         // Email sent
         setLoading(false);
